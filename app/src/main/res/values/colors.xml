@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_black">#000000</color>
+    <color name="color_black_87_percent">#DE000000</color>
+    <color name="color_black_55_percent">#8C000000</color>
+    <color name="color_black_54_percent">#8A000000</color>
+    <color name="color_black_38_percent">#61000000</color>
+
+    <color name="color_transparent">#00000000</color>
+
+    <!--BLUE-->
+    <color name="color_blue_facebook">#3a5998</color>
+    <color name="color_blue_facebook_selected">#314c83</color>
+    <color name="color_blue_A400">#00B0FF</color>
+    <color name="color_blue_A700">#0091EA</color>
+
+    <!--RED-->
+    <color name="color_red_500">#F44336</color>
+    <color name="color_red_800">#C62828</color>
+    <color name="color_red_900">#B71C1C</color>
+    <color name="color_red_A700">#D50000</color>
+    <color name="color_red_sunday">#ffff0000</color>
+    <color name="color_red_google">#f14336</color>
+    <color name="color_red_button_pressed">#c20000</color>
+
+    <!--INDIGO-->
+
+    <!--GREY-->
+    <color name="color_grey_100">#F5F5F5</color>
+    <color name="color_grey_300">#E0E0E0</color>
+    <color name="color_grey_400">#BDBDBD</color>
+    <color name="color_grey_500">#9E9E9E</color>
+    <color name="color_grey_600">#757575</color>
+    <color name="color_grey_700">#616161</color>
+    <color name="color_grey_900">#212121</color>
+    <color name="color_grey_search_info">#F2F2F2</color>
+
+    <color name="color_grey_login_register">#bebecc</color>
+    <color name="color_grey_google_selected">#f4f4f4</color>
+    <color name="color_grey_vehicle_selected">#f9f9f9</color>
+
+    <!--GREEN-->
+    <color name="color_green_400">#66BB6A</color>
+    <color name="color_green_A200">#69F0AE</color>
+    <color name="color_green_A400">#00E676</color>
+    <color name="color_green_A700">#00C853</color>
+
+    <!--RATING BAR-->
+
+    <!--LAYOUT ADD VEHICLE -->
+
+    <!--BOOKING STATUS-->
+    <color name="booking_status_canceled">#F25050</color>
+    <color name="booking_status_completed">#5DBC68</color>
+
+    <!--CALENDAR-->
+    <color name="greyed_out">#c7c7c7</color>
+
+    <color name="summer">#44eebd82</color>
+    <color name="fall">#44d8d27e</color>
+    <color name="winter">#44a1c1da</color>
+    <color name="spring">#448da64b</color>
+
+    <color name="color_bengkel_address_history">#505E6B</color>
+
+    <!-- PROMO LABEL -->
+    <color name="gratis_color_code_promo">#40c7f2</color>
+    <color name="paket_color_code_promo">#ec9249</color>
+    <color name="discount_color_code_promo">#5abc67</color>
+
+    <color name="green_point_color">#4ACD44</color>
+    <color name="red_point_color">#FF7373</color>
+
+    <color name="out_of_stock_background_color">#C6C6C6</color>
+    <color name="out_of_stock_text_color">#898989</color>
+
+    <!-- BORDER COLOR -->
+    <color name="border_edit_text">#eaedef</color>
+    <color name="background_edit_text_rating">#eff3f6</color>
+
+    <!-- Notification-->
+    <color name="notification_header_background">#eaeaea</color>
+    <color name="notification_header_font">#9c9c9c</color>
+
+</resources>

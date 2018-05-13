@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/introduction_one"
+    android:id="@+id/parent_linear_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="24dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:src="@drawable/homehelp_logo"
+            android:layout_marginBottom="25dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="testing"
+            android:textColor="@color/color_black"
+            android:textSize="20dp"
+            android:fontFamily="@font/museo300_regular"
+            android:id="@+id/tv_title"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Homehelp akan membantu membuat"
+            android:textColor="@color/color_black"
+            android:textSize="14dp"
+            android:letterSpacing="0.025"
+            android:lineSpacingExtra="6dp"
+            android:fontFamily="@font/proxima_nova_medium"
+            android:id="@+id/tv_description"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>
