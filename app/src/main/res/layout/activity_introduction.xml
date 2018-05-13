@@ -17,6 +17,41 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         app:ci_drawable="@drawable/circle_selected"
-        app:ci_drawable_unselected="@drawable/circle_unselected"></me.relex.circleindicator.CircleIndicator>
+        app:ci_drawable_unselected="@drawable/circle_unselected"
+        android:visibility="visible"></me.relex.circleindicator.CircleIndicator>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:id="@+id/ll_intro_register_login"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buat Akun"
+            android:textStyle="bold"
+            android:textColor="@color/color_white"
+            android:background="@drawable/signup_button"
+            android:gravity="center"
+            android:layout_weight="0.5"
+            android:layout_marginRight="10dp"
+            android:id="@+id/tv_sign_up"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:gravity="center"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_sign_in"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
