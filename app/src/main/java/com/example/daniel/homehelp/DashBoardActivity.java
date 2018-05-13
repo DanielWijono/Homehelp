@@ -13,7 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DashBoardActivity extends AppCompatActivity {
+public class DashBoardActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
 
     HomeFragment homeFragment;
     AgendaFragment agendaFragment;
@@ -86,5 +86,20 @@ public class DashBoardActivity extends AppCompatActivity {
                 Toast.makeText(this, "BELL CLICKED", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
     }
 }
