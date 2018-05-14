@@ -69,9 +69,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             app:itemBackground="@color/colorPrimary"
-            app:itemIconTint="@color/color_grey_400"
-            app:itemTextColor="@color/color_black"
-            app:menu="@menu/bottom_navigation_main" />
+            app:itemIconTint="@color/bnv_item_color"
+            app:itemTextColor="@color/bnv_item_color"
+            app:menu="@menu/bottom_navigation_main_menu" />
 
     </RelativeLayout>
 

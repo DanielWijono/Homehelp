@@ -40,6 +40,23 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
         setContentView(R.layout.activity_dash_board);
         ButterKnife.bind(this);
         initFragment();
+        buttonNavigationListener();
+    }
+
+    private void initFragment() {
+        homeFragment = new HomeFragment();
+        FragmentTransaction fx = getSupportFragmentManager().beginTransaction();
+        fx.replace(R.id.frame_layout, homeFragment);
+        fx.addToBackStack(null);
+        fx.commit();
+
+        agendaFragment = new AgendaFragment();
+        inboxFragment = new InboxFragment();
+        favoriteFragment = new FavoriteFragment();
+    }
+
+    private void buttonNavigationListener() {
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigation);
 
         bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -74,18 +91,6 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
                 return true;
             }
         });
-    }
-
-    private void initFragment() {
-        homeFragment = new HomeFragment();
-        FragmentTransaction fx = getSupportFragmentManager().beginTransaction();
-        fx.replace(R.id.frame_layout, homeFragment);
-        fx.addToBackStack(null);
-        fx.commit();
-
-        agendaFragment = new AgendaFragment();
-        inboxFragment = new InboxFragment();
-        favoriteFragment = new FavoriteFragment();
     }
 
     @OnClick({R.id.drawer_layout_view, R.id.btn_bell})
