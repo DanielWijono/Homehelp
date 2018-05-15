@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -19,9 +20,11 @@ import butterknife.ButterKnife;
 public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context context;
+    private RecyclerViewOnClick mRecyclerViewOnClick;
 
-    public HomeServiceAdapter(Context context) {
+    public HomeServiceAdapter(Context context, RecyclerViewOnClick mRecyclerViewOnClick) {
         this.context = context;
+        this.mRecyclerViewOnClick = mRecyclerViewOnClick;
     }
 
     public class HomeServiceListViewHolder extends RecyclerView.ViewHolder {
@@ -32,6 +35,8 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         TextView serviceDescription;
         @BindView(R.id.image_service)
         ImageView imageService;
+        @BindView(R.id.ll_home_service)
+        LinearLayout llHomeService;
 
         String[] introTitle = {"Bangunan", "Kelistrikan", "Hama"};
         String[] introDescription = {"Mencakup atap, lantai, pintu jendela dan saluran air", "Mencakup AC dan instalasi listrik",
@@ -44,10 +49,17 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             ButterKnife.bind(this, itemView);
         }
 
-        public void setView(int position) {
+        public void setView(final int position) {
             serviceTitle.setText(introTitle[position]);
             serviceDescription.setText(introDescription[position]);
             imageService.setBackgroundResource(introBgImage[position]);
+
+            llHomeService.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mRecyclerViewOnClick.itemOnClick(view, position);
+                }
+            });
         }
     }
 
@@ -62,7 +74,6 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         HomeServiceListViewHolder homeServiceListViewHolder = (HomeServiceListViewHolder) holder;
         homeServiceListViewHolder.setView(position);
-
     }
 
     @Override
