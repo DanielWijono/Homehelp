@@ -4,25 +4,25 @@
     <item
         android:id="@+id/action_home"
         android:enabled="true"
-        android:icon="@drawable/baseline_dehaze_black_18dp"
+        android:icon="@drawable/bottom_navigation_home"
         android:title="Home"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_agenda"
         android:enabled="true"
-        android:icon="@drawable/introduction_one"
+        android:icon="@drawable/bottom_navigation_agenda"
         android:title="Agenda"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_inbox"
         android:enabled="true"
-        android:icon="@drawable/circle_selected"
+        android:icon="@drawable/bottom_navigation_inbox"
         android:title="Inbox"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_favorite"
         android:enabled="true"
-        android:icon="@drawable/introduction_four"
+        android:icon="@drawable/bottom_navigation_favorite"
         android:title="Favorite"
         app:showAsAction="ifRoom" />
 </menu>
