@@ -1,0 +1,46 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!--PADDING & MARGIN-->
+    <dimen name="padding_margin_1dp">1dp</dimen>
+    <dimen name="padding_margin_2dp">2dp</dimen>
+    <dimen name="padding_margin_3dp">3dp</dimen>
+    <dimen name="padding_margin_4dp">4dp</dimen>
+    <dimen name="padding_margin_5dp">5dp</dimen>
+    <dimen name="padding_margin_6dp">6dp</dimen>
+    <dimen name="padding_margin_8dp">8dp</dimen>
+    <dimen name="padding_margin_10dp">10dp</dimen>
+    <dimen name="padding_margin_12dp">12dp</dimen>
+    <dimen name="padding_margin_16dp">16dp</dimen>
+    <dimen name="padding_margin_20dp">20dp</dimen>
+    <dimen name="padding_margin_24dp">24dp</dimen>
+    <dimen name="padding_margin_25dp">25dp</dimen>
+    <dimen name="padding_margin_26dp">26dp</dimen>
+    <dimen name="padding_margin_27dp">27dp</dimen>
+    <dimen name="padding_margin_28dp">28dp</dimen>
+    <dimen name="padding_margin_30dp">30dp</dimen>
+    <dimen name="padding_margin_32dp">32dp</dimen>
+    <dimen name="padding_margin_36dp">36dp</dimen>
+    <dimen name="padding_margin_40dp">40dp</dimen>
+    <dimen name="padding_margin_44dp">44dp</dimen>
+    <dimen name="padding_margin_48dp">48dp</dimen>
+    <dimen name="padding_margin_56dp">56dp</dimen>
+    <dimen name="padding_margin_80dp">80dp</dimen>
+
+    <!--FONT SIZE-->
+    <dimen name="normal_smaller_font_size">12dp</dimen>
+    <dimen name="normal_font_size">14dp</dimen>
+    <dimen name="normal_medium_font_size">16dp</dimen>
+    <dimen name="medium_font_size">18dp</dimen>
+    <dimen name="medium_large_font_size">20dp</dimen>
+    <dimen name="large_font_size">22dp</dimen>
+    <dimen name="extra_large_font_size">24dp</dimen>
+    <dimen name="double_xl_font_size">28dp</dimen>
+    <dimen name="most_large_font">40dp</dimen>
+
+    <!--TAB LAYOUT WIDTH-->
+    <dimen name="height_line_separator">0.5dp</dimen>
+
+    <dimen name="collapse_image_height">250dp</dimen>
+    <dimen name="promo_image_height">150dp</dimen>
+</resources>
