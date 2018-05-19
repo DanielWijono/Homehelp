@@ -8,8 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.shuhart.stepview.StepView;
@@ -18,6 +21,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AtapActivity extends AppCompatActivity {
 
@@ -41,6 +45,12 @@ public class AtapActivity extends AppCompatActivity {
     RecyclerView atapRecyclerView;
     @BindView(R.id.ll_footer)
     LinearLayout llFooter;
+    @BindView(R.id.scroll_view)
+    ScrollView scrollView;
+    @BindView(R.id.tv_harian)
+    TextView tvHarian;
+    @BindView(R.id.tv_borongan)
+    TextView tvBorongan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +61,8 @@ public class AtapActivity extends AppCompatActivity {
         Utils.setupAppToolbarForActivity(this, toolbar, "Pemesanan");
         initStepView();
         initRecyclerView();
+        scrollView.setFocusableInTouchMode(true);
+        scrollView.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
         atapRecyclerView.setNestedScrollingEnabled(false);
     }
 
@@ -86,5 +98,25 @@ public class AtapActivity extends AppCompatActivity {
         atapRecyclerView.setLayoutManager(new GridLayoutManager(this, 4));
         atapJobAdapter = new AtapJobAdapter(this);
         atapRecyclerView.setAdapter(atapJobAdapter);
+    }
+
+    @OnClick({R.id.tv_harian, R.id.tv_borongan})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tv_harian:
+                tvHarian.setBackgroundResource(R.drawable.signup_button);
+                tvHarian.setTextColor(getResources().getColor(R.color.color_white));
+
+                tvBorongan.setBackgroundResource(R.color.color_transparent);
+                tvBorongan.setTextColor(getResources().getColor(R.color.color_black));
+                break;
+            case R.id.tv_borongan:
+                tvBorongan.setBackgroundResource(R.drawable.signup_button);
+                tvBorongan.setTextColor(getResources().getColor(R.color.color_white));
+
+                tvHarian.setBackgroundResource(R.color.color_transparent);
+                tvHarian.setTextColor(getResources().getColor(R.color.color_black));
+                break;
+        }
     }
 }
