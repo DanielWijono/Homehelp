@@ -20,7 +20,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:src="@drawable/introduction_four"
                 android:id="@+id/img_atap"/>
 
@@ -30,7 +30,7 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginBottom="50dp"
                 android:id="@+id/ll_job_type">
 
                 <TextView
@@ -81,7 +81,7 @@
 
                 <android.support.v7.widget.RecyclerView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:clipToPadding="false"
                     android:id="@+id/atap_recycler_view"
                     android:scrollbars="none"></android.support.v7.widget.RecyclerView>
@@ -103,9 +103,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp"
+        android:padding="8dp"
         android:layout_alignParentBottom="true"
-        android:clipToPadding="true"
         android:background="@color/color_white"
         android:id="@+id/ll_footer">
 
@@ -139,7 +138,8 @@
             android:textStyle="bold"
             android:background="@drawable/next_button"
             android:layout_gravity="center"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:id="@+id/next_button"/>
 
     </LinearLayout>
 

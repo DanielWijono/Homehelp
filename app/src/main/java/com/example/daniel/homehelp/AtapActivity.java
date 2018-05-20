@@ -1,5 +1,6 @@
 package com.example.daniel.homehelp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.content.ContextCompat;
@@ -51,6 +52,8 @@ public class AtapActivity extends AppCompatActivity {
     TextView tvHarian;
     @BindView(R.id.tv_borongan)
     TextView tvBorongan;
+    @BindView(R.id.next_button)
+    TextView nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +103,7 @@ public class AtapActivity extends AppCompatActivity {
         atapRecyclerView.setAdapter(atapJobAdapter);
     }
 
-    @OnClick({R.id.tv_harian, R.id.tv_borongan})
+    @OnClick({R.id.tv_harian, R.id.tv_borongan, R.id.next_button})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_harian:
@@ -116,6 +119,9 @@ public class AtapActivity extends AppCompatActivity {
 
                 tvHarian.setBackgroundResource(R.color.color_transparent);
                 tvHarian.setTextColor(getResources().getColor(R.color.color_black));
+                break;
+            case R.id.next_button:
+                startActivity(new Intent(this, AtapActivityStep2.class));
                 break;
         }
     }
