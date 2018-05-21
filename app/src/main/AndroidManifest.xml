@@ -21,7 +21,9 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".DashBoardActivity" />
         <activity android:name=".BangunanActivity" />
-        <activity android:name=".AtapActivity"></activity>
+        <activity android:name=".AtapActivity" />
+        <activity android:name=".AtapActivityStep2" />
+        <activity android:name=".AtapActivityStep3"></activity>
     </application>
 
 </manifest>
