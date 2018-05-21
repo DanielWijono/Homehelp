@@ -66,6 +66,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true"
                     android:id="@+id/ll_notes">
 
                     <ImageView
@@ -78,7 +80,6 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:focusableInTouchMode="true"
                         android:hint="notes"
                         android:layout_gravity="center"/>
                 </LinearLayout>
