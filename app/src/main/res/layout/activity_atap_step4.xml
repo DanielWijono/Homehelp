@@ -42,7 +42,8 @@
                 android:gravity="center"
                 android:background="@drawable/next_button"
                 android:layout_margin="@dimen/padding_margin_16dp"
-                android:padding="@dimen/padding_margin_16dp"/>
+                android:padding="@dimen/padding_margin_16dp"
+                android:id="@+id/tv_order_button"/>
 
         </LinearLayout>
     </ScrollView>

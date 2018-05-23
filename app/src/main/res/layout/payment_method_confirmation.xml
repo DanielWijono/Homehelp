@@ -19,12 +19,12 @@
 
         <RadioGroup
             android:id="@+id/radioPayment"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <RadioButton
                 android:id="@+id/radioMale"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tunai"
                 android:textColor="@color/color_black"
@@ -33,14 +33,13 @@
 
             <RadioButton
                 android:id="@+id/radioFemale"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kartu Kredit"
                 android:textColor="@color/color_black"
                 android:textStyle="bold"/>
 
         </RadioGroup>
-
 
     </LinearLayout>
 

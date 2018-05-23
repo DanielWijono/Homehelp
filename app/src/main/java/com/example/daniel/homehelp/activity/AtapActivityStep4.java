@@ -4,10 +4,14 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -19,6 +23,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class AtapActivityStep4 extends AppCompatActivity {
 
@@ -36,6 +41,14 @@ public class AtapActivityStep4 extends AppCompatActivity {
     ImageView imgAtap;
     @BindView(R.id.scroll_view)
     ScrollView scrollView;
+    @BindView(R.id.radioMale)
+    RadioButton radioMale;
+    @BindView(R.id.radioFemale)
+    RadioButton radioFemale;
+    @BindView(R.id.radioPayment)
+    RadioGroup radioPayment;
+    @BindView(R.id.tv_order_button)
+    TextView tvOrderButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,5 +85,35 @@ public class AtapActivityStep4 extends AppCompatActivity {
                 .typeface(ResourcesCompat.getFont(this, R.font.proxima_nova_medium))
                 // other state methods are equal to the corresponding xml attributes
                 .commit();
+    }
+
+    private void confirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        View dialoglayout = getLayoutInflater().inflate(R.layout.confirmation_dialog, null, false);
+        builder.setView(dialoglayout);
+        final AlertDialog ad = builder.show();
+
+        TextView tvBack = dialoglayout.findViewById(R.id.back_dialog);
+        TextView tvNext = dialoglayout.findViewById(R.id.next_button_dialog);
+
+        tvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+            }
+        });
+
+        tvNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+            }
+        });
+    }
+
+    @OnClick(R.id.tv_order_button)
+    public void onViewClicked() {
+        confirmationDialog();
     }
 }
