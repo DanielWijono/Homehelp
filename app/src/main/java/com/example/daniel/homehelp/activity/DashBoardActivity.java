@@ -1,4 +1,4 @@
-package com.example.daniel.homehelp;
+package com.example.daniel.homehelp.activity;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.daniel.homehelp.BottomNavigationViewHelper;
+import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.fragment.AgendaFragment;
+import com.example.daniel.homehelp.fragment.FavoriteFragment;
+import com.example.daniel.homehelp.fragment.HomeFragment;
+import com.example.daniel.homehelp.fragment.InboxFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

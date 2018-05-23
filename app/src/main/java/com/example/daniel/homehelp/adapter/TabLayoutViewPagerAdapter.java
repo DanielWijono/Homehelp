@@ -1,4 +1,4 @@
-package com.example.daniel.homehelp;
+package com.example.daniel.homehelp.adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;

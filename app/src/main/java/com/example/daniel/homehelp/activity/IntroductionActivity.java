@@ -1,4 +1,4 @@
-package com.example.daniel.homehelp;
+package com.example.daniel.homehelp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.adapter.IntroductionAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

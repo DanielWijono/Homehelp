@@ -1,4 +1,4 @@
-package com.example.daniel.homehelp;
+package com.example.daniel.homehelp.adapter;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.RecyclingPagerAdapter;
 
 import butterknife.ButterKnife;
 

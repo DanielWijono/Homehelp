@@ -1,7 +1,9 @@
-package com.example.daniel.homehelp;
+package com.example.daniel.homehelp.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.daniel.homehelp.R;
 
 public class MainActivity extends AppCompatActivity {
 
