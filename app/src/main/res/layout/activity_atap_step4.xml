@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AtapActivityStep4">
+
+    <include layout="@layout/toolbar_atap"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scroll_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/introduction_four"
+                android:id="@+id/img_atap"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_black"></View>
+
+            <include layout="@layout/location_time_confirmation"></include>
+            <include layout="@layout/damage_description_confirmation"></include>
+            <include layout="@layout/payment_method_confirmation"></include>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pesan"
+                android:textColor="@color/color_black"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@drawable/next_button"
+                android:layout_margin="@dimen/padding_margin_16dp"
+                android:padding="@dimen/padding_margin_16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

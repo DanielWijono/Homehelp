@@ -23,7 +23,8 @@
         <activity android:name=".activity.BangunanActivity" />
         <activity android:name=".activity.AtapActivity" />
         <activity android:name=".activity.AtapActivityStep2" />
-        <activity android:name=".activity.AtapActivityStep3"></activity>
+        <activity android:name=".activity.AtapActivityStep3" />
+        <activity android:name=".activity.AtapActivityStep4"></activity>
     </application>
 
 </manifest>
