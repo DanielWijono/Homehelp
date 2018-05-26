@@ -40,8 +40,8 @@ public class IntroductionAdapter extends RecyclingPagerAdapter {
                 "demi kenyamanan keluarga","Perencanaan perbaikan dapat\n" +
                 "dilakukan dimanapun, kapanpun","Bebas rasa khawatir dengan pekerja\n" +
                 "professional dan jaminan pekerjaan"};
-        int [] introBgImage = {R.drawable.on_boarding_illustration_01, R.drawable.on_boarding_illustration_02,
-                R.drawable.on_boarding_illustration_03, R.drawable.on_boarding_illustration_04};
+        int [] introBgImage = {R.drawable.introduction_one, R.drawable.introduction_two,
+                R.drawable.introduction_three, R.drawable.introduction_four};
 
         LinearLayout parentLinearLayout = ButterKnife.findById(convertView, R.id.parent_linear_layout);
         TextView tvTitle = ButterKnife.findById(convertView, R.id.tv_title);

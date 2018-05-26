@@ -1,5 +1,6 @@
 package com.example.daniel.homehelp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.content.ContextCompat;
@@ -108,6 +109,7 @@ public class AtapActivityStep4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ad.dismiss();
+                startActivity(new Intent(AtapActivityStep4.this, FindingWorkerActivity.class));
             }
         });
     }

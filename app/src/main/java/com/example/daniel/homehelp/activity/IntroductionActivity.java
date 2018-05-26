@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.Utils;
 import com.example.daniel.homehelp.adapter.IntroductionAdapter;
 
 import butterknife.BindView;
@@ -32,6 +33,10 @@ public class IntroductionActivity extends AppCompatActivity implements ViewPager
     TextView tvSignUp;
     @BindView(R.id.tv_sign_in)
     TextView tvSignIn;
+    @BindView(R.id.tv_swipe_to_next)
+    TextView tvSwipeToNext;
+    @BindView(R.id.ll_swipe_to_next)
+    LinearLayout llSwipeToNext;
 
     int pageCount = 3;
 
@@ -60,9 +65,36 @@ public class IntroductionActivity extends AppCompatActivity implements ViewPager
         if (position == pageCount) {
             introductionIndicator.setVisibility(View.GONE);
             llIntroRegisterLogin.setVisibility(View.VISIBLE);
+            llSwipeToNext.setVisibility(View.GONE);
         } else {
             introductionIndicator.setVisibility(View.VISIBLE);
+            llSwipeToNext.setVisibility(View.VISIBLE);
             llIntroRegisterLogin.setVisibility(View.GONE);
+        }
+        switch (position) {
+            case 0:
+                tvSwipeToNext.setText("Ketuk untuk lanjut");
+                break;
+            case 1:
+                tvSwipeToNext.setText("Belum member ? Buat Akun");
+                tvSwipeToNext.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(IntroductionActivity.this, SignUpActivity.class));
+                        finish();
+                    }
+                });
+                break;
+            case 2:
+                tvSwipeToNext.setText("Belum member ? Buat Akun");
+                tvSwipeToNext.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(IntroductionActivity.this, SignUpActivity.class));
+                        finish();
+                    }
+                });
+                break;
         }
     }
 

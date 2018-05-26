@@ -34,8 +34,8 @@ import me.relex.circleindicator.CircleIndicator;
 
 public class HomeFragment extends Fragment implements RecyclerViewOnClick {
 
-    @BindView(R.id.search_view)
-    SearchView searchView;
+//    @BindView(R.id.search_view)
+//    SearchView searchView;
     @BindView(R.id.home_view_pager)
     ViewPager homeViewPager;
     @BindView(R.id.home_indicator)
