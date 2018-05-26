@@ -1,13 +1,16 @@
 package com.example.daniel.homehelp.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.daniel.homehelp.R;
@@ -23,6 +26,7 @@ import butterknife.ButterKnife;
 public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context context;
+
     private RecyclerViewOnClick mRecyclerViewOnClick;
 
     public HomeServiceAdapter(Context context, RecyclerViewOnClick mRecyclerViewOnClick) {
@@ -36,15 +40,27 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         TextView serviceTitle;
         @BindView(R.id.service_description)
         TextView serviceDescription;
+        @BindView(R.id.ll_home_title_desc_service)
+        LinearLayout llHomeTitleDescService;
         @BindView(R.id.image_service)
         ImageView imageService;
+        @BindView(R.id.img_parent_right_top)
+        ImageView imgParentRightTop;
+        @BindView(R.id.img_parent_right_bottom)
+        ImageView imgParentRightBottom;
+        @BindView(R.id.img_parent_left_bottom)
+        ImageView imgParentLeftBottom;
+        @BindView(R.id.img_parent_left_top)
+        ImageView imgParentLeftTop;
         @BindView(R.id.ll_home_service)
-        LinearLayout llHomeService;
+        RelativeLayout llHomeService;
+        @BindView(R.id.cardview_home_service)
+        CardView cardviewHomeService;
 
         String[] introTitle = {"Bangunan", "Kelistrikan", "Hama"};
         String[] introDescription = {"Mencakup atap, lantai, pintu jendela dan saluran air", "Mencakup AC dan instalasi listrik",
                 "Untuk perawatan rumah bebas hama"};
-        int[] introBgImage = {R.drawable.baseline_dehaze_black_18dp, R.drawable.introduction_one,
+        int[] introBgImage = {R.drawable.baseline_dehaze_black_18dp, R.drawable.baseline_dehaze_black_18dp,
                 R.drawable.baseline_dehaze_black_18dp, R.drawable.baseline_dehaze_black_18dp};
 
         public HomeServiceListViewHolder(View itemView) {
@@ -63,6 +79,38 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                     mRecyclerViewOnClick.itemOnClick(view, position);
                 }
             });
+
+            cardviewHomeService.setCardBackgroundColor(Color.TRANSPARENT);
+
+            if (position == 0) {
+                imgParentLeftBottom.setVisibility(View.VISIBLE);
+                imgParentRightBottom.setVisibility(View.VISIBLE);
+                imgParentLeftTop.setVisibility(View.GONE);
+                imgParentRightTop.setVisibility(View.GONE);
+
+                imgParentLeftBottom.setBackgroundResource(R.drawable.ic_rope_bottom);
+                imgParentRightBottom.setBackgroundResource(R.drawable.ic_rope_bottom);
+            }
+            if (position == 1) {
+                imgParentLeftBottom.setVisibility(View.VISIBLE);
+                imgParentRightBottom.setVisibility(View.VISIBLE);
+                imgParentLeftTop.setVisibility(View.VISIBLE);
+                imgParentRightTop.setVisibility(View.VISIBLE);
+
+                imgParentLeftBottom.setBackgroundResource(R.drawable.ic_rope_bottom);
+                imgParentRightBottom.setBackgroundResource(R.drawable.ic_rope_bottom);
+                imgParentLeftTop.setBackgroundResource(R.drawable.ic_rope_top);
+                imgParentRightTop.setBackgroundResource(R.drawable.ic_rope_top);
+            }
+            if (position == 2) {
+                imgParentLeftBottom.setVisibility(View.GONE);
+                imgParentRightBottom.setVisibility(View.GONE);
+                imgParentLeftTop.setVisibility(View.VISIBLE);
+                imgParentRightTop.setVisibility(View.VISIBLE);
+
+                imgParentLeftTop.setBackgroundResource(R.drawable.ic_rope_top);
+                imgParentRightTop.setBackgroundResource(R.drawable.ic_rope_top);
+            }
         }
     }
 

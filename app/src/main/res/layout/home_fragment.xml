@@ -11,14 +11,6 @@
         android:layout_height="wrap_content"
         android:background="@color/color_white">
 
-        <!--<android.support.v7.widget.SearchView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:layout_margin="20dp"-->
-            <!--app:queryHint="Apa yang ingin diperbaiki hari ini"-->
-            <!--android:background="@drawable/signup_border"-->
-            <!--android:id="@+id/search_view"></android.support.v7.widget.SearchView>-->
-
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -50,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_margin="20dp">
+                android:layout_margin="16dp">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -70,7 +62,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
-                android:paddingBottom="16dp"
+                android:layout_margin="@dimen/padding_margin_16dp"
+                android:background="@color/color_transparent"
                 android:id="@+id/service_home_recycler_view"
                 android:scrollbars="none"></android.support.v7.widget.RecyclerView>
 
