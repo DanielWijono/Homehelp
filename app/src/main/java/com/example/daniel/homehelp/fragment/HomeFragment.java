@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.daniel.homehelp.activity.DashBoardActivity;
@@ -46,6 +47,8 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick {
     ScrollView scrollView;
     @BindView(R.id.tips_home_recycler_view)
     RecyclerView tipsHomeRecyclerView;
+    @BindView(R.id.tv_first_title)
+    TextView tvFirstTitle;
 
     private View rootView;
     private DashBoardActivity mActivity;
@@ -86,6 +89,7 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick {
         scrollView.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
         serviceHomeRecyclerView.setNestedScrollingEnabled(false);
         tipsHomeRecyclerView.setNestedScrollingEnabled(false);
+        tvFirstTitle.setText("Apa yang ingin \ndiperbaiki hari ini ?");
 
         return rootView;
     }
