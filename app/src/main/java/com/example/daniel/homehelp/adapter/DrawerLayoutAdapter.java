@@ -23,6 +23,9 @@ public class DrawerLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private static final int TYPE_ITEM = 0;
     private static final int TYPE_HEADER = 1;
 
+    private int[] drawerImageArray = {R.drawable.ic_account, R.drawable.ic_rewards, R.drawable.ic_settings
+    ,R.drawable.ic_become_worker, R.drawable.ic_sign_out};
+
     public DrawerLayoutAdapter(Context context) {
         this.context = context;
         drawerArray = context.getResources().getStringArray(R.array.drawer_menu);
@@ -49,12 +52,7 @@ public class DrawerLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 ViewHolderItems viewHolderItems = (ViewHolderItems) holder;
 
                 viewHolderItems.tvTitle.setText(drawerArray[position - 1]);
-                viewHolderItems.tvTitle.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(context, "item position : "+position, Toast.LENGTH_SHORT).show();
-                    }
-                });
+                viewHolderItems.imgDrawer.setBackgroundResource(drawerImageArray[position - 1]);
                 break;
             case TYPE_HEADER:
                 ViewHolderHeader viewHolderHeader = (ViewHolderHeader) holder;
