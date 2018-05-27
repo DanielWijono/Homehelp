@@ -6,6 +6,11 @@
     android:orientation="vertical"
     tools:context="com.example.daniel.homehelp.activity.DashBoardActivity">
 
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout">
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -74,5 +79,19 @@
             app:menu="@menu/bottom_navigation_main_menu" />
 
     </RelativeLayout>
+
+        <LinearLayout
+            android:layoutDirection="ltr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:orientation="vertical"
+            android:background="@color/color_white"
+            android:id="@+id/ll_drawer">
+
+            <include layout="@layout/item_drawer_layout"></include>
+        </LinearLayout>
+
+    </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>

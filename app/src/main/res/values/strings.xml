@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">HomeHelp</string>
     <string name="type_of_job_desc">Tipe harian, biaya Rp 200.000 per tukang. Cocok untuk pekerjaan yang selesai dalam 1-3 hari</string>
+
+    <string name="my_account">Akun Saya</string>
+    <string name="homehelp_rewards">Home Help Rewards</string>
+    <string name="account_settings">Pengaturan AKun</string>
+    <string name="become_worker">Menjadi pekerja</string>
+    <string name="sign_out">Sign Out</string>
+
+    <string-array name="drawer_menu">
+        <item>@string/my_account</item>
+        <item>@string/homehelp_rewards</item>
+        <item>@string/account_settings</item>
+        <item>@string/become_worker</item>
+        <item>@string/sign_out</item>
+    </string-array>
 </resources>

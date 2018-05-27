@@ -28,6 +28,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     compile 'com.jakewharton:butterknife:8.5.1'
     compile 'me.relex:circleindicator:1.2.1@aar'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
