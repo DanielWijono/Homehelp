@@ -2,6 +2,7 @@ package com.example.daniel.homehelp.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,12 +35,12 @@ public class HomeTipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         TextView tipsTitle;
         @BindView(R.id.tips_desc)
         TextView tipsDesc;
+        @BindView(R.id.home_tips_card_view)
+        CardView homeTipsCardView;
 
-        String[] introTitle = {"Bangunan", "Kelistrikan", "Hama"};
-        String[] introDescription = {"Mencakup atap, lantai, pintu jendela dan saluran air", "Mencakup AC dan instalasi listrik",
-                "Untuk perawatan rumah bebas hama"};
-        int[] introBgImage = {R.drawable.introduction_one, R.drawable.introduction_two,
-                R.drawable.introduction_three, R.drawable.introduction_four};
+        String[] introTitle = {"Bangunan", "Kelistrikan"};
+        String[] introDescription = {"Mencakup atap, lantai, pintu\n jendela dan saluran air", "Mencakup AC dan \ninstalasi listrik"};
+        int[] introBgImage = {R.drawable.ic_tips_one, R.drawable.ic_tips_two};
 
         public HomeTipsListViewHolder(View itemView) {
             super(itemView);
@@ -50,6 +51,7 @@ public class HomeTipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             tipsTitle.setText(introTitle[position]);
             tipsDesc.setText(introDescription[position]);
             tipsImage.setBackgroundResource(introBgImage[position]);
+            homeTipsCardView.setCardElevation(2);
         }
     }
 
@@ -68,6 +70,6 @@ public class HomeTipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 2;
     }
 }

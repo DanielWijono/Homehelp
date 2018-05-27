@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activity.FindingWorkerActivity">
 
     <LinearLayout
@@ -57,7 +58,7 @@
                 android:text="Ke Menu"
                 android:textStyle="bold"
                 android:textColor="@color/color_grey_700"
-                android:fontFamily="@font/proxima_nova_medium"
+                app:fontFamily="@font/proxima_nova_medium"
                 android:letterSpacing="0.025"
                 android:lineSpacingExtra="6dp"
                 android:gravity="center"
@@ -72,7 +73,7 @@
                 android:text="Batalkan"
                 android:textStyle="bold"
                 android:textColor="@color/color_grey_700"
-                android:fontFamily="@font/proxima_nova_medium"
+                app:fontFamily="@font/proxima_nova_medium"
                 android:letterSpacing="0.025"
                 android:lineSpacingExtra="6dp"
                 android:gravity="center"
