@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -33,7 +34,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DashBoardActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
+public class DashBoardActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
     @BindView(R.id.drawer_layout_view)
     ImageView drawerLayoutView;
@@ -56,11 +57,7 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
 
-    HomeFragment homeFragment;
-    AgendaFragment agendaFragment;
-    InboxFragment inboxFragment;
-    FavoriteFragment favoriteFragment;
-
+    Fragment fragment;
     DrawerLayoutAdapter drawerLayoutAdapter;
 
     @Override
@@ -70,7 +67,8 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
         ButterKnife.bind(this);
         initFragment();
         initDrawerLayout();
-        buttonNavigationListener();
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigation);
+        bottomNavigation.setOnNavigationItemSelectedListener(DashBoardActivity.this);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -99,48 +97,9 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
     }
 
     private void initFragment() {
-        homeFragment = new HomeFragment();
-        FragmentTransaction fx = getSupportFragmentManager().beginTransaction();
-        fx.replace(R.id.frame_layout, homeFragment);
-        fx.commit();
-
-        agendaFragment = new AgendaFragment();
-        inboxFragment = new InboxFragment();
-        favoriteFragment = new FavoriteFragment();
-    }
-
-    private void buttonNavigationListener() {
-        BottomNavigationViewHelper.disableShiftMode(bottomNavigation);
-
-        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.action_home:
-                        FragmentTransaction fx = getSupportFragmentManager().beginTransaction();
-                        fx.replace(R.id.frame_layout, homeFragment);
-                        fx.commit();
-                        break;
-                    case R.id.action_agenda:
-                        FragmentTransaction fxAgenda = getSupportFragmentManager().beginTransaction();
-                        fxAgenda.replace(R.id.frame_layout, agendaFragment);
-                        fxAgenda.commit();
-                        break;
-                    case R.id.action_inbox:
-                        FragmentTransaction fxInbox = getSupportFragmentManager().beginTransaction();
-                        fxInbox.replace(R.id.frame_layout, inboxFragment);
-                        fxInbox.commit();
-                        break;
-                    case R.id.action_favorite:
-                        FragmentTransaction fxFavorite = getSupportFragmentManager().beginTransaction();
-                        fxFavorite.replace(R.id.frame_layout, favoriteFragment);
-                        fxFavorite.commit();
-                        break;
-                }
-
-                return true;
-            }
-        });
+        fragment = HomeFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+        toolbar.setVisibility(View.VISIBLE);
     }
 
     @OnClick({R.id.btn_bell})
@@ -165,5 +124,45 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if(fragment == null){
+            //prevent fragment.getClass crash
+            this.recreate();
+        } else {
+            switch (item.getItemId()) {
+                case R.id.action_home:
+                    if (fragment.getClass() != HomeFragment.class) {
+                        fragment = HomeFragment.newInstance();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+                        toolbar.setVisibility(View.VISIBLE);
+                    }
+                    break;
+                case R.id.action_agenda:
+                    if (fragment.getClass() != AgendaFragment.class) {
+                        fragment = AgendaFragment.newInstance();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+                        toolbar.setVisibility(View.GONE);
+                    }
+                    break;
+                case R.id.action_inbox:
+                    if (fragment.getClass() != InboxFragment.class) {
+                        fragment = InboxFragment.newInstance();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+                        toolbar.setVisibility(View.VISIBLE);
+                    }
+                    break;
+                case R.id.action_favorite:
+                    if (fragment.getClass() != FavoriteFragment.class) {
+                        fragment = FavoriteFragment.newInstance();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+                        toolbar.setVisibility(View.VISIBLE);
+                    }
+                    break;
+            }
+        }
+        return true;
     }
 }

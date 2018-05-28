@@ -75,6 +75,14 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick {
         super.onCreate(savedInstanceState);
     }
 
+    public static HomeFragment newInstance() {
+        Bundle args = new Bundle();
+
+        HomeFragment fragment = new HomeFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

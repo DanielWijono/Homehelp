@@ -42,6 +42,14 @@ public class InboxFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    public static InboxFragment newInstance() {
+        Bundle args = new Bundle();
+
+        InboxFragment fragment = new InboxFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

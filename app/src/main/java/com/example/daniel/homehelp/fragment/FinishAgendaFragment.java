@@ -9,32 +9,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.daniel.homehelp.activity.DashBoardActivity;
 import com.example.daniel.homehelp.R;
 
 import butterknife.ButterKnife;
 
-/**
- * Created by Daniel on 5/13/2018.
- */
-
-public class FavoriteFragment extends Fragment {
+public class FinishAgendaFragment extends Fragment {
 
     private View rootView;
-    private DashBoardActivity mActivity;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof DashBoardActivity) {
-            mActivity = (DashBoardActivity) context;
-        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mActivity = null;
     }
 
     @Override
@@ -42,18 +32,10 @@ public class FavoriteFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    public static FavoriteFragment newInstance() {
-        Bundle args = new Bundle();
-
-        FavoriteFragment fragment = new FavoriteFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.favorite_fragment, container, false);
+        rootView = inflater.inflate(R.layout.finish_agenda, container, false);
         ButterKnife.bind(this, rootView);
 
         return rootView;

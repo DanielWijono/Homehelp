@@ -1,13 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <TextView
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorAccent"
+        android:id="@+id/toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agenda"
+            android:textSize="@dimen/padding_margin_20dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:id="@+id/logo_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/padding_margin_10dp"
+            android:src="@drawable/ic_bell"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/agenda_tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:text="AGENDA"/>
+        android:minHeight="?actionBarSize"
+        android:background="@color/color_white"
+        app:tabSelectedTextColor="@color/color_blue_A400"
+        app:tabTextColor="@color/color_black"
+        app:tabIndicatorColor="@color/color_blue_A400"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabIndicatorHeight="@dimen/padding_margin_3dp"
+        app:tabGravity="fill" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding_margin_1dp"
+        android:background="@color/color_grey_300">
+    </View>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/agenda_view_pager">
+    </android.support.v4.view.ViewPager>
 
 </LinearLayout>

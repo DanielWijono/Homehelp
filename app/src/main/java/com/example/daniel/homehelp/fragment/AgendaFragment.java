@@ -4,14 +4,18 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.daniel.homehelp.activity.DashBoardActivity;
 import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.activity.DashBoardActivity;
+import com.example.daniel.homehelp.adapter.TabLayoutViewPagerAdapter;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -20,8 +24,15 @@ import butterknife.ButterKnife;
 
 public class AgendaFragment extends Fragment {
 
+    @BindView(R.id.agenda_tab_layout)
+    TabLayout agendaTabLayout;
+    @BindView(R.id.agenda_view_pager)
+    ViewPager agendaViewPager;
+
     private View rootView;
     private DashBoardActivity mActivity;
+    OnGoingAgendaFragment onGoingAgendaFragment = new OnGoingAgendaFragment();
+    FinishAgendaFragment finishAgendaFragment = new FinishAgendaFragment();
 
     @Override
     public void onAttach(Context context) {
@@ -42,12 +53,33 @@ public class AgendaFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    public static AgendaFragment newInstance() {
+        Bundle args = new Bundle();
+
+        AgendaFragment fragment = new AgendaFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.agenda_fragment, container, false);
         ButterKnife.bind(this, rootView);
 
+        int pos = agendaViewPager.getCurrentItem();
+        setupViewPager(pos);
+
         return rootView;
+    }
+
+    private void setupViewPager(int position) {
+        TabLayoutViewPagerAdapter adapter = new TabLayoutViewPagerAdapter(getFragmentManager());
+        adapter.addFragment(onGoingAgendaFragment, "Berlangsung");
+        adapter.addFragment(finishAgendaFragment, "Selesai");
+
+        agendaViewPager.setAdapter(adapter);
+        agendaViewPager.setCurrentItem(position);
+        agendaTabLayout.setupWithViewPager(agendaViewPager);
     }
 }
