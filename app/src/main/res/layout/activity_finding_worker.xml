@@ -65,6 +65,8 @@
                 android:padding="@dimen/padding_margin_8dp"
                 android:layout_weight="0.5"
                 android:layout_marginRight="10dp"
+                android:visibility="gone"
+                android:background="@drawable/signup_border"
                 android:id="@+id/tv_sign_up"/>
 
             <TextView
