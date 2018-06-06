@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.daniel.homehelp.MyApplication;
 import com.example.daniel.homehelp.R;
 
 import butterknife.BindView;
@@ -21,7 +22,7 @@ import butterknife.ButterKnife;
 
 public class AtapJobAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    Context context;
+    private Context context;
 
     public AtapJobAdapter(Context context) {
         this.context = context;
@@ -48,9 +49,50 @@ public class AtapJobAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             ButterKnife.bind(this, itemView);
         }
 
+        private void isHarianTrue() {
+            if (MyApplication.getInstance().isHarian()) {
+                llItemRoof.setAlpha(1);
+            } else {
+                llItemRoof.setAlpha(0.1f);
+            }
+        }
+
+        private void isBoronganTrue() {
+            if (MyApplication.getInstance().isBorongan()) {
+                llItemRoof.setAlpha(1);
+            } else {
+                llItemRoof.setAlpha(0.1f);
+            }
+        }
+
         public void setView(int position) {
             imgRoofJob.setBackgroundResource(serviceImage[position]);
             tvRoofJob.setText(serviceName[position]);
+
+            switch (position) {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    isHarianTrue();
+                    break;
+                case 3:
+                    isHarianTrue();
+                    break;
+                case 4:
+                    isHarianTrue();
+                    break;
+                case 5:
+                    isBoronganTrue();
+                    break;
+                case 6:
+                    isBoronganTrue();
+                    break;
+                case 7:
+                    isBoronganTrue();
+                    break;
+            }
         }
     }
 

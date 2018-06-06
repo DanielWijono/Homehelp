@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.daniel.homehelp.MyApplication;
 import com.example.daniel.homehelp.adapter.AtapJobAdapter;
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.Utils;
@@ -35,8 +36,6 @@ public class AtapActivity extends AppCompatActivity {
     StepView stepView;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
-    AtapJobAdapter atapJobAdapter;
     @BindView(R.id.ll_toolbar_atap)
     LinearLayout llToolbarAtap;
     @BindView(R.id.app_bar_layout_atap)
@@ -58,6 +57,8 @@ public class AtapActivity extends AppCompatActivity {
     @BindView(R.id.next_button)
     TextView nextButton;
 
+    AtapJobAdapter atapJobAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +71,8 @@ public class AtapActivity extends AppCompatActivity {
         scrollView.setFocusableInTouchMode(true);
         scrollView.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
         atapRecyclerView.setNestedScrollingEnabled(false);
+        MyApplication.getInstance().setIsHarian(true);
+        MyApplication.getInstance().setIsBorongan(false);
     }
 
     private void initStepView() {
@@ -115,6 +118,9 @@ public class AtapActivity extends AppCompatActivity {
 
                 tvBorongan.setBackgroundResource(R.color.color_transparent);
                 tvBorongan.setTextColor(getResources().getColor(R.color.color_black));
+                MyApplication.getInstance().setIsHarian(true);
+                MyApplication.getInstance().setIsBorongan(false);
+                atapRecyclerView.setAdapter(atapJobAdapter);
                 break;
             case R.id.tv_borongan:
                 tvBorongan.setBackgroundResource(R.drawable.signup_button);
@@ -122,6 +128,9 @@ public class AtapActivity extends AppCompatActivity {
 
                 tvHarian.setBackgroundResource(R.color.color_transparent);
                 tvHarian.setTextColor(getResources().getColor(R.color.color_black));
+                MyApplication.getInstance().setIsHarian(false);
+                MyApplication.getInstance().setIsBorongan(true);
+                atapRecyclerView.setAdapter(atapJobAdapter);
                 break;
             case R.id.next_button:
                 startActivity(new Intent(this, AtapActivityStep2.class));
