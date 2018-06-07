@@ -9,16 +9,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.daniel.homehelp.adapter.AtapKerusakanAdapter;
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.Utils;
+import com.example.daniel.homehelp.adapter.AtapKerusakanAdapter;
 import com.shuhart.stepview.StepView;
 
 import java.util.ArrayList;
@@ -57,8 +59,27 @@ public class AtapActivityStep3 extends AppCompatActivity {
     TextView nextButton;
     @BindView(R.id.ll_footer)
     LinearLayout llFooter;
+    @BindView(R.id.et_problem_desc)
+    EditText etProblemDesc;
 
-    String workType, notes, date;
+    String workType, notes, date, problemDesc;
+
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+            problemDesc = etProblemDesc.getText().toString();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +90,9 @@ public class AtapActivityStep3 extends AppCompatActivity {
         initStepView();
         Utils.setupAppToolbarForActivity(this, toolbar, "Pemesanan");
         getBundle();
+        etProblemDesc.addTextChangedListener(textWatcher);
     }
-
+    
     private void getBundle() {
         Bundle bundle = getIntent().getExtras();
 
@@ -129,7 +151,16 @@ public class AtapActivityStep3 extends AppCompatActivity {
                 }
                 break;
             case R.id.next_button:
-                startActivity(new Intent(this, AtapActivityStep4.class));
+                String replaceOpenBracket = String.valueOf(AtapKerusakanAdapter.listKerusakan).replace("[", "");
+                String finalReplace = replaceOpenBracket.replace("]", "");
+                Intent intent = new Intent(this, AtapActivityStep4.class);
+                intent.putExtra("WORK_TYPE", workType);
+                intent.putExtra("NOTES", notes);
+                intent.putExtra("DATE", date);
+                intent.putExtra("TOTAL_WORKER", tvTukangSum.getText().toString());
+                intent.putExtra("PROBLEM_DESC",problemDesc);
+                intent.putExtra("LIST_KERUSAKAN", finalReplace);
+                startActivity(intent);
                 break;
         }
     }

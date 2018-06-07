@@ -20,7 +20,8 @@
                 android:layout_height="wrap_content"
                 android:text="Tipe : Harian"
                 android:textColor="@color/color_black"
-                android:layout_weight="0.5"/>
+                android:layout_weight="0.5"
+                android:id="@+id/tv_work_type"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -69,7 +70,8 @@
                 android:layout_height="match_parent"
                 android:text="Ubah"
                 android:textColor="@color/color_black"
-                android:gravity="center_vertical"/>
+                android:gravity="center_vertical"
+                android:id="@+id/tv_damage_title"/>
         </LinearLayout>
 
         <TextView
@@ -85,7 +87,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_margin_8dp"
             android:text="Atap saya bocor blablabla"
-            android:textStyle="italic"/>
+            android:textStyle="italic"
+            android:id="@+id/tv_problem_desc"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -113,7 +116,8 @@
             android:layout_marginTop="@dimen/padding_margin_8dp"
             android:text="Jumlah tukang : 1"
             android:textStyle="bold"
-            android:textColor="@color/colorAccent"/>
+            android:textColor="@color/colorAccent"
+            android:id="@+id/tv_worker_sum"/>
 
         <View
             android:layout_width="match_parent"

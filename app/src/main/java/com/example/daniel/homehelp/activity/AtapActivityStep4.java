@@ -50,6 +50,19 @@ public class AtapActivityStep4 extends AppCompatActivity {
     RadioGroup radioPayment;
     @BindView(R.id.tv_order_button)
     TextView tvOrderButton;
+    @BindView(R.id.tv_work_type)
+    TextView tvWorkType;
+    @BindView(R.id.tv_damage_title)
+    TextView tvDamageTitle;
+    @BindView(R.id.tv_problem_desc)
+    TextView tvProblemDesc;
+    @BindView(R.id.tv_date_begin)
+    TextView tvDateBegin;
+    @BindView(R.id.tv_worker_sum)
+    TextView tvWorkerSum;
+
+    String workType, notes, date, listKerusakan, totalWorker, problemDesc;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +71,29 @@ public class AtapActivityStep4 extends AppCompatActivity {
         ButterKnife.bind(this);
         initStepView();
         Utils.setupAppToolbarForActivity(this, toolbar, "Pemesanan");
+        getBundle();
+        setUpView();
+    }
+
+    private void getBundle() {
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle != null) {
+            workType = bundle.getString("WORK_TYPE");
+            notes = bundle.getString("NOTES");
+            date = bundle.getString("DATE");
+            listKerusakan = bundle.getString("LIST_KERUSAKAN");
+            totalWorker = bundle.getString("TOTAL_WORKER");
+            problemDesc = bundle.getString("PROBLEM_DESC");
+        }
+    }
+
+    private void setUpView() {
+        tvWorkType.setText("Tipe : "+workType);
+        tvDamageTitle.setText(listKerusakan);
+        tvDateBegin.setText(date);
+        tvProblemDesc.setText(problemDesc);
+        tvWorkerSum.setText("Jumlah tukang : "+totalWorker);
     }
 
     private void initStepView() {
