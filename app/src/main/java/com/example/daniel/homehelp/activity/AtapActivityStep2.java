@@ -13,9 +13,12 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -71,11 +74,31 @@ public class AtapActivityStep2 extends AppCompatActivity {
     LinearLayout llFooter;
     @BindView(R.id.tv_date_begin)
     TextView tvDateBegin;
+    @BindView(R.id.et_notes)
+    EditText etNotes;
 
     private DatePickerDialog dateBeginDialog;
     private Calendar dateCalendar;
+    private String workType, notes;
     @SuppressLint("RestrictedApi")
     Context context = new ContextThemeWrapper(this, R.style.MyDatePickerDialogTheme);
+
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+            notes = etNotes.getText().toString();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,8 +110,17 @@ public class AtapActivityStep2 extends AppCompatActivity {
         dateCalendar = Calendar.getInstance();
         initCalendar();
         dateBeginDialog.getDatePicker().setTag(tvDateBegin.getId());
-
         DateTimeUtils.setInDateFormalFormat(dateCalendar, tvDateBegin);
+        getBundle();
+        etNotes.addTextChangedListener(textWatcher);
+    }
+
+    private void getBundle() {
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle != null) {
+            workType = bundle.getString("WORK_TYPE");
+        }
     }
 
     @SuppressWarnings("ResourceType")
@@ -149,7 +181,11 @@ public class AtapActivityStep2 extends AppCompatActivity {
                 dateBeginDialog.show();
                 break;
             case R.id.next_button:
-                startActivity(new Intent(this, AtapActivityStep3.class));
+                Intent intent = new Intent(this, AtapActivityStep3.class);
+                intent.putExtra("WORK_TYPE",workType);
+                intent.putExtra("NOTES",notes);
+                intent.putExtra("DATE", tvDateBegin.getText().toString());
+                startActivity(intent);
                 break;
         }
     }

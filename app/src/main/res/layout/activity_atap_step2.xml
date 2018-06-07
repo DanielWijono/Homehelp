@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_white"
     tools:context="com.example.daniel.homehelp.activity.AtapActivity">
 
     <include layout="@layout/toolbar_atap"></include>
@@ -81,7 +82,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="notes"
-                        android:layout_gravity="center"/>
+                        android:layout_gravity="center"
+                        android:id="@+id/et_notes"/>
                 </LinearLayout>
 
             </LinearLayout>

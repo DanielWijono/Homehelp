@@ -58,6 +58,8 @@ public class AtapActivityStep3 extends AppCompatActivity {
     @BindView(R.id.ll_footer)
     LinearLayout llFooter;
 
+    String workType, notes, date;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +68,17 @@ public class AtapActivityStep3 extends AppCompatActivity {
         initRecyclerView();
         initStepView();
         Utils.setupAppToolbarForActivity(this, toolbar, "Pemesanan");
+        getBundle();
+    }
+
+    private void getBundle() {
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle != null) {
+            workType = bundle.getString("WORK_TYPE");
+            notes = bundle.getString("NOTES");
+            date = bundle.getString("DATE");
+        }
     }
 
     private void initRecyclerView() {

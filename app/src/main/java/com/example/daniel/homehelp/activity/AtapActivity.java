@@ -58,6 +58,7 @@ public class AtapActivity extends AppCompatActivity {
     TextView nextButton;
 
     AtapJobAdapter atapJobAdapter;
+    String workType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class AtapActivity extends AppCompatActivity {
         atapRecyclerView.setNestedScrollingEnabled(false);
         MyApplication.getInstance().setIsHarian(true);
         MyApplication.getInstance().setIsBorongan(false);
+        workType = "harian";
     }
 
     private void initStepView() {
@@ -120,6 +122,7 @@ public class AtapActivity extends AppCompatActivity {
                 tvBorongan.setTextColor(getResources().getColor(R.color.color_black));
                 MyApplication.getInstance().setIsHarian(true);
                 MyApplication.getInstance().setIsBorongan(false);
+                workType = "harian";
                 atapRecyclerView.setAdapter(atapJobAdapter);
                 break;
             case R.id.tv_borongan:
@@ -130,10 +133,13 @@ public class AtapActivity extends AppCompatActivity {
                 tvHarian.setTextColor(getResources().getColor(R.color.color_black));
                 MyApplication.getInstance().setIsHarian(false);
                 MyApplication.getInstance().setIsBorongan(true);
+                workType = "borongan";
                 atapRecyclerView.setAdapter(atapJobAdapter);
                 break;
             case R.id.next_button:
-                startActivity(new Intent(this, AtapActivityStep2.class));
+                Intent intent = new Intent(this, AtapActivityStep2.class);
+                intent.putExtra("WORK_TYPE",workType);
+                startActivity(intent);
                 break;
         }
     }
