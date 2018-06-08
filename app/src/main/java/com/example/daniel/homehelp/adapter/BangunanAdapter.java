@@ -41,7 +41,7 @@ public class BangunanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         @BindView(R.id.rl_item_bangunan)
         RelativeLayout rlItemBangunan;
 
-        String[] serviceName = {"Atap", "Lantai", "Pintu & Jendela", "Saluran Air"};
+        String[] serviceName = {"Atap", "Lantai", "Pintu", "Saluran Air"};
 
         int[] introBgImageFavorite = {R.drawable.bottom_navigation_home, R.drawable.bottom_navigation_home,
                 R.drawable.bottom_navigation_home, R.drawable.bottom_navigation_home};
