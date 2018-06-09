@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.daniel.homehelp.R;
@@ -22,8 +22,9 @@ import butterknife.ButterKnife;
 
 public class BangunanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    Context context;
-    RecyclerViewOnClick recyclerViewOnClick;
+    private Context context;
+    private RecyclerViewOnClick recyclerViewOnClick;
+    private boolean isFavorite = false;
 
     public BangunanAdapter(Context context, RecyclerViewOnClick recyclerViewOnClick) {
         this.context = context;
@@ -38,15 +39,15 @@ public class BangunanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         ImageView imgService;
         @BindView(R.id.tv_service_name)
         TextView tvServiceName;
-        @BindView(R.id.rl_item_bangunan)
-        RelativeLayout rlItemBangunan;
+        @BindView(R.id.ll_item_bangunan)
+        LinearLayout llItemBangunan;
 
         String[] serviceName = {"Atap", "Lantai", "Pintu", "Saluran Air"};
 
-        int[] introBgImageFavorite = {R.drawable.bottom_navigation_home, R.drawable.bottom_navigation_home,
-                R.drawable.bottom_navigation_home, R.drawable.bottom_navigation_home};
-        int[] bgImageService = {R.drawable.bottom_navigation_home, R.drawable.bottom_navigation_home,
-                R.drawable.bottom_navigation_home, R.drawable.bottom_navigation_home};
+        int[] introBgImageFavorite = {R.drawable.ic_unfavorite, R.drawable.ic_unfavorite,
+                R.drawable.ic_unfavorite, R.drawable.ic_unfavorite};
+        int[] bgImageService = {R.drawable.ic_bangunan_atap, R.drawable.ic_bangunan_lantai,
+                R.drawable.ic_bangunan_pintu, R.drawable.ic_bangunan_saluran_air};
 
         public BangunanListViewHolder(View itemView) {
             super(itemView);
@@ -58,10 +59,23 @@ public class BangunanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             imgService.setBackgroundResource(bgImageService[position]);
             tvServiceName.setText(serviceName[position]);
 
-            rlItemBangunan.setOnClickListener(new View.OnClickListener() {
+            llItemBangunan.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     recyclerViewOnClick.itemOnClick(view, position);
+                }
+            });
+
+            imgFavorite.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (!isFavorite) {
+                        imgFavorite.setImageResource(R.drawable.ic_favorite);
+                        isFavorite = true;
+                    } else {
+                        imgFavorite.setImageResource(R.drawable.ic_unfavorite);
+                        isFavorite = false;
+                    }
                 }
             });
         }
