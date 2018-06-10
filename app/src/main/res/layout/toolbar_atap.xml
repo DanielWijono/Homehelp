@@ -12,6 +12,9 @@
         android:background="@color/colorAccent"
         app:theme="@style/ToolbarColoredBackArrowWhite"
         app:popupTheme="@style/AppTheme"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
         android:id="@+id/toolbar">
 
         <LinearLayout
@@ -58,7 +61,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/padding_margin_4dp"
                 android:layout_marginBottom="@dimen/padding_margin_16dp"
-                android:layout_marginRight="@dimen/padding_margin_2dp"
+                android:layout_marginRight="30dp"
+                android:layout_gravity="left"
                 android:src="@drawable/ic_step_one"
                 android:id="@+id/img_toolbar"/>
         </LinearLayout>
