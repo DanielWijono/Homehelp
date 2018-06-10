@@ -62,7 +62,7 @@ public class AtapActivityStep3 extends AppCompatActivity {
     @BindView(R.id.et_problem_desc)
     EditText etProblemDesc;
 
-    String workType, notes, date, problemDesc;
+    String workType, notes, date, problemDesc, location;
     AtapKerusakanAdapter atapKerusakanAdapter;
     List<String> listKerusakanFromAdapter = new ArrayList<>();
     @BindView(R.id.img_toolbar)
@@ -106,6 +106,7 @@ public class AtapActivityStep3 extends AppCompatActivity {
             workType = bundle.getString("WORK_TYPE");
             notes = bundle.getString("NOTES");
             date = bundle.getString("DATE");
+            location = bundle.getString("LOCATION");
         }
     }
 
@@ -135,6 +136,7 @@ public class AtapActivityStep3 extends AppCompatActivity {
                 intent.putExtra("WORK_TYPE", workType);
                 intent.putExtra("NOTES", notes);
                 intent.putExtra("DATE", date);
+                intent.putExtra("LOCATION", location);
                 intent.putExtra("TOTAL_WORKER", tvTukangSum.getText().toString());
                 intent.putExtra("PROBLEM_DESC", problemDesc);
                 intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromAdapter);

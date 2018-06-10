@@ -164,6 +164,7 @@ public class AtapActivityStep2 extends AppCompatActivity {
                 Intent intent = new Intent(this, AtapActivityStep3.class);
                 intent.putExtra("WORK_TYPE", workType);
                 intent.putExtra("NOTES", notes);
+                intent.putExtra("LOCATION", location);
                 intent.putExtra("DATE", tvDateBegin.getText().toString());
                 startActivity(intent);
                 break;

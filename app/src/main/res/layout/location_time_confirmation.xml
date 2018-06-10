@@ -48,7 +48,8 @@
                 android:layout_height="match_parent"
                 android:text="Jalan Syahdan"
                 android:textColor="@color/color_black"
-                android:gravity="center_vertical"/>
+                android:gravity="center_vertical"
+                android:id="@+id/tv_location"/>
         </LinearLayout>
 
         <LinearLayout
@@ -68,7 +69,8 @@
                 android:layout_height="match_parent"
                 android:text="Jalan Syahdan"
                 android:textColor="@color/color_black"
-                android:gravity="center_vertical"/>
+                android:gravity="center_vertical"
+                android:id="@+id/tv_notes"/>
         </LinearLayout>
 
         <TextView

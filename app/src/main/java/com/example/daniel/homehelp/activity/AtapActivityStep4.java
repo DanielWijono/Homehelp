@@ -3,13 +3,10 @@ package com.example.daniel.homehelp.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -21,7 +18,6 @@ import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.Utils;
 import com.shuhart.stepview.StepView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -66,8 +62,12 @@ public class AtapActivityStep4 extends AppCompatActivity {
     ImageView imgToolbar;
     @BindView(R.id.ll_title_kerusakan)
     LinearLayout llTitleKerusakan;
+    @BindView(R.id.tv_location)
+    TextView tvLocation;
+    @BindView(R.id.tv_notes)
+    TextView tvNotes;
 
-    String workType, notes, date, listKerusakan, totalWorker, problemDesc;
+    String workType, notes, date, listKerusakan, totalWorker, problemDesc, location;
     List<String> listKerusakanFromStep3;
 
     @Override
@@ -79,6 +79,7 @@ public class AtapActivityStep4 extends AppCompatActivity {
         getBundle();
         setUpView();
         setViewBagianKerusakan();
+        imgToolbar.setImageResource(R.drawable.ic_step_four);
     }
 
     private void setViewBagianKerusakan() {
@@ -102,14 +103,17 @@ public class AtapActivityStep4 extends AppCompatActivity {
             date = bundle.getString("DATE");
             listKerusakan = bundle.getString("LIST_KERUSAKAN");
             totalWorker = bundle.getString("TOTAL_WORKER");
+            location = bundle.getString("LOCATION");
             problemDesc = bundle.getString("PROBLEM_DESC");
             listKerusakanFromStep3 = bundle.getStringArrayList("LIST_KERUSAKAN");
-            System.out.println("list kerusakan from step 3 : "+listKerusakanFromStep3);
+            System.out.println("list kerusakan from step 3 : " + listKerusakanFromStep3);
         }
     }
 
     private void setUpView() {
         tvWorkType.setText(workType);
+        tvLocation.setText(location);
+        tvNotes.setText(notes);
         tvDamageTitle.setText(listKerusakan);
         tvDateBegin.setText(date);
         tvProblemDesc.setText(problemDesc);

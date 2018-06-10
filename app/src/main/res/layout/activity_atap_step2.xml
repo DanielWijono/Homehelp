@@ -69,6 +69,7 @@
                         android:textSize="16dp"
                         android:background="@color/color_transparent"
                         android:layout_gravity="center"
+                        android:singleLine="true"
                         android:id="@+id/et_location"/>
                 </LinearLayout>
 
@@ -95,6 +96,7 @@
                         android:textSize="16dp"
                         android:background="@color/color_transparent"
                         android:layout_gravity="center"
+                        android:singleLine="true"
                         android:id="@+id/et_notes"/>
                 </LinearLayout>
 
