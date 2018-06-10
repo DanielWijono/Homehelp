@@ -14,9 +14,9 @@
         android:layout_gravity="center">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@color/color_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_find_worker"
             android:layout_gravity="center"/>
 
         <TextView
@@ -24,30 +24,23 @@
             android:layout_height="wrap_content"
             android:text="Mencari Pekerja..."
             android:textColor="@color/color_black"
-            android:textStyle="bold"
-            android:textSize="30dp"
-            android:gravity="center"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Order id anda #09120245"
-            android:textColor="@color/color_black"
+            android:textSize="24dp"
+            android:layout_marginTop="@dimen/padding_margin_16dp"
             android:gravity="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Silahkan menunggu\n Kami sedang mencari pekerja anda"
+            android:text="Silahkan menunggu sebentar ya,\n kami sedang mencari pekerja anda"
             android:textColor="@color/color_black"
             android:gravity="center"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="80dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_gravity="center"
@@ -71,23 +64,24 @@
                 android:id="@+id/tv_sign_up"/>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Batalkan"
                 android:textStyle="bold"
                 android:textColor="@color/color_grey_700"
+                android:background="@drawable/signup_border"
                 app:fontFamily="@font/proxima_nova_medium"
                 android:letterSpacing="0.025"
                 android:lineSpacingExtra="6dp"
                 android:gravity="center"
-                android:padding="@dimen/padding_margin_8dp"
+                android:paddingTop="@dimen/padding_margin_8dp"
+                android:paddingBottom="@dimen/padding_margin_8dp"
+                android:paddingLeft="@dimen/padding_margin_32dp"
+                android:paddingRight="@dimen/padding_margin_32dp"
                 android:layout_weight="0.5"
                 android:layout_marginLeft="10dp"
                 android:id="@+id/tv_sign_in"/>
 
         </LinearLayout>
-
-
     </LinearLayout>
-
 </LinearLayout>

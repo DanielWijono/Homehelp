@@ -21,6 +21,7 @@ public class FindingWorkerActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 startActivity(new Intent(FindingWorkerActivity.this, ChooseWorkerActivity.class));
+                finish();
             }
         }, 3000);
     }
