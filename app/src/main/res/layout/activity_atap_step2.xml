@@ -21,8 +21,9 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/introduction_four"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_image_step_two"
+                android:layout_marginBottom="@dimen/padding_margin_4dp"
                 android:id="@+id/img_atap"/>
 
             <LinearLayout
@@ -41,7 +42,8 @@
                     android:text="Lokasi"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -50,9 +52,9 @@
                     android:id="@+id/ll_address">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/baseline_dehaze_black_18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_location"
                         android:layout_marginRight="10dp"
                         android:layout_gravity="center"/>
                     
@@ -72,9 +74,9 @@
                     android:id="@+id/ll_notes">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/baseline_dehaze_black_18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_notes"
                         android:layout_marginRight="10dp"
                         android:layout_gravity="center"/>
 
@@ -104,7 +106,8 @@
                     android:text="Waktu"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"
-                    android:textSize="20dp"/>
+                    android:textSize="20dp"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -113,23 +116,23 @@
                     android:id="@+id/ll_date">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/baseline_dehaze_black_18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_date"
                         android:layout_gravity="center"
                         android:layout_marginRight="10dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Mulai"
-                        android:layout_weight="0.6"
+                        android:text="Tanggal"
+                        android:layout_weight="0.5"
                         android:layout_gravity="center"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.4"
+                        android:layout_weight="0.5"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
                         android:background="@drawable/signup_border"
@@ -160,9 +163,9 @@
                     android:id="@+id/ll_hour">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/baseline_dehaze_black_18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_time"
                         android:layout_gravity="center"
                         android:layout_marginRight="10dp"/>
 
@@ -170,13 +173,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Waktu"
-                        android:layout_weight="0.6"
+                        android:layout_weight="0.5"
                         android:layout_gravity="center"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.4"
+                        android:layout_weight="0.5"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
                         android:background="@drawable/signup_border"

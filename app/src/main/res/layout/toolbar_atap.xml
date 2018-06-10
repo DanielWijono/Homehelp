@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="@color/color_white"
-        app:theme="@style/ToolbarColoredBackArrow"
+        android:background="@color/colorAccent"
+        app:theme="@style/ToolbarColoredBackArrowWhite"
         app:popupTheme="@style/AppTheme"
         android:id="@+id/toolbar">
 
@@ -22,12 +22,12 @@
             <TextView
                 android:textSize="20dp"
                 android:id="@+id/tv_title_toolbar"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_white"
                 android:text="Pemesanan"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"/>
+                android:layout_gravity="center"
+                android:layout_marginTop="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
             <com.shuhart.stepview.StepView
                 android:id="@+id/step_view"
                 android:layout_width="match_parent"
@@ -50,7 +50,17 @@
                 app:sv_doneStepMarkColor="@color/colorAccent"
                 app:sv_stepNumberTextSize="12sp"
                 app:sv_animationType="Line"
-                app:sv_typeface="@font/proxima_nova_medium"/>
+                app:sv_typeface="@font/proxima_nova_medium"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_margin_4dp"
+                android:layout_marginBottom="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_2dp"
+                android:src="@drawable/ic_step_one"
+                android:id="@+id/img_toolbar"/>
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 </android.support.design.widget.AppBarLayout>

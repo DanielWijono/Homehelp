@@ -17,9 +17,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.daniel.homehelp.MyApplication;
-import com.example.daniel.homehelp.adapter.AtapJobAdapter;
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.Utils;
+import com.example.daniel.homehelp.adapter.AtapJobAdapter;
 import com.shuhart.stepview.StepView;
 
 import java.util.ArrayList;
@@ -56,6 +56,19 @@ public class AtapActivity extends AppCompatActivity {
     TextView tvBorongan;
     @BindView(R.id.next_button)
     TextView nextButton;
+    @BindView(R.id.img_toolbar)
+    ImageView imgToolbar;
+    @BindView(R.id.tv_terms_condition_one)
+    TextView tvTermsConditionOne;
+    @BindView(R.id.tv_terms_condition_two)
+    TextView tvTermsConditionTwo;
+    @BindView(R.id.tv_terms_condition_three)
+    TextView tvTermsConditionThree;
+    @BindView(R.id.tv_terms_condition_four)
+    TextView tvTermsConditionFour;
+    @BindView(R.id.tv_terms_condition_five)
+    TextView tvTermsConditionFive;
+
 
     AtapJobAdapter atapJobAdapter;
     String workType;
@@ -75,6 +88,11 @@ public class AtapActivity extends AppCompatActivity {
         MyApplication.getInstance().setIsHarian(true);
         MyApplication.getInstance().setIsBorongan(false);
         workType = "harian";
+        tvTermsConditionOne.setText(getResources().getString(R.string.terms_conditon_harian_one));
+        tvTermsConditionTwo.setText(getResources().getString(R.string.terms_conditon_harian_two));
+        tvTermsConditionThree.setText(getResources().getString(R.string.terms_conditon_harian_three));
+        tvTermsConditionFour.setText(getResources().getString(R.string.terms_conditon_harian_four));
+        tvTermsConditionFive.setText(getResources().getString(R.string.terms_conditon_harian_five));
     }
 
     private void initStepView() {
@@ -124,6 +142,11 @@ public class AtapActivity extends AppCompatActivity {
                 MyApplication.getInstance().setIsBorongan(false);
                 workType = "harian";
                 atapRecyclerView.setAdapter(atapJobAdapter);
+                tvTermsConditionOne.setText(getResources().getString(R.string.terms_conditon_harian_one));
+                tvTermsConditionTwo.setText(getResources().getString(R.string.terms_conditon_harian_two));
+                tvTermsConditionThree.setText(getResources().getString(R.string.terms_conditon_harian_three));
+                tvTermsConditionFour.setText(getResources().getString(R.string.terms_conditon_harian_four));
+                tvTermsConditionFive.setText(getResources().getString(R.string.terms_conditon_harian_five));
                 break;
             case R.id.tv_borongan:
                 tvBorongan.setBackgroundResource(R.drawable.signup_button);
@@ -135,10 +158,15 @@ public class AtapActivity extends AppCompatActivity {
                 MyApplication.getInstance().setIsBorongan(true);
                 workType = "borongan";
                 atapRecyclerView.setAdapter(atapJobAdapter);
+                tvTermsConditionOne.setText(getResources().getString(R.string.terms_condition_borongan_one));
+                tvTermsConditionTwo.setText(getResources().getString(R.string.terms_condition_borongan_two));
+                tvTermsConditionThree.setText(getResources().getString(R.string.terms_condition_borongan_three));
+                tvTermsConditionFour.setText(getResources().getString(R.string.terms_condition_borongan_four));
+                tvTermsConditionFive.setText(getResources().getString(R.string.terms_condition_borongan_five));
                 break;
             case R.id.next_button:
                 Intent intent = new Intent(this, AtapActivityStep2.class);
-                intent.putExtra("WORK_TYPE",workType);
+                intent.putExtra("WORK_TYPE", workType);
                 startActivity(intent);
                 break;
         }

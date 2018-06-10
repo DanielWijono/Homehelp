@@ -15,4 +15,33 @@
         <item>@string/become_worker</item>
         <item>@string/sign_out</item>
     </string-array>
+
+    <string-array name="terms_condition_harian">
+        <item>@string/terms_conditon_harian_one</item>
+        <item>@string/terms_conditon_harian_two</item>
+        <item>@string/terms_conditon_harian_three</item>
+        <item>@string/terms_conditon_harian_four</item>
+        <item>@string/terms_conditon_harian_five</item>
+    </string-array>
+
+    <string-array name="terms_condition_borongan">
+        <item>@string/terms_condition_borongan_one</item>
+        <item>@string/terms_condition_borongan_two</item>
+        <item>@string/terms_condition_borongan_three</item>
+        <item>@string/terms_condition_borongan_four</item>
+        <item>@string/terms_condition_borongan_five</item>
+    </string-array>
+
+    <string name="terms_conditon_harian_one">1. Jam kerja dari jam 8 pagi sampai 5 sore </string>
+    <string name="terms_conditon_harian_two">2. Bilamana pekerjaan belum selesai,  \n\t\t\u0020silahkan lakukan pemesanan lagi </string>
+    <string name="terms_conditon_harian_three">3. Biaya harian per pekerja adalah \n\t\t Rp. 200.000/ Tukang </string>
+    <string name="terms_conditon_harian_four">4. Anda hanya dapat memesan maksimal \n\t\t dua pekerja per order </string>
+    <string name="terms_conditon_harian_five">5. Biaya adalah jasa, tidak termasuk material. \n\t\t Tukang menyediakan alat standar. Anda \n\t\t berhak memilih jika ingin menggunakan \n\t\t alat dari tukang atau alat pribadi anda</string>
+
+    <string name="terms_condition_borongan_one">1. Setiap pekerjaan borongan didahului tahap\n\t\t Survey untuk mendapatkan rincian biaya</string>
+    <string name="terms_condition_borongan_two">2. Deskripsikan kebutuhan secara jelas saat\n\t\t Survey agar rincian perhitungan yang tepat</string>
+    <string name="terms_condition_borongan_three">3. Pastikan harga penawaran yang diajukan\n\t\t sesuai dengan kesepakatan dengan pekerja</string>
+    <string name="terms_condition_borongan_four">4. Anda berhak menerima atau menolak\n\t\t penawaran harga yang sudah diajukan</string>
+    <string name="terms_condition_borongan_five">5. Tarif jasa survey Rp. 50.000 (akan\n\t\tdikurangi biaya borongan)</string>
+
 </resources>

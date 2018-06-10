@@ -1,79 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/padding_margin_16dp"
+    android:layout_marginRight="@dimen/padding_margin_16dp"
+    android:layout_marginBottom="50dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/signup_border"
-        android:layout_margin="16dp">
+        android:layout_marginBottom="@dimen/padding_margin_16dp"
+        android:layout_marginTop="@dimen/padding_margin_16dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mohon Diperhatikan"
+            android:text="Syarat dan Ketentuan"
+            android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="@color/colorAccent"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/bottom_navigation_home"
-            android:layout_gravity="center"/>
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="@dimen/padding_margin_16dp"
+            android:layout_marginLeft="@dimen/padding_margin_8dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Informasi"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"/>
+            android:text="@string/terms_conditon_harian_one"
+            android:layout_marginBottom="@dimen/padding_margin_8dp"
+            android:layout_marginLeft="@dimen/padding_margin_20dp"
+            android:id="@+id/tv_terms_condition_one"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1."
-            android:gravity="center"/>
+            android:text="@string/terms_conditon_harian_two"
+            android:layout_marginBottom="@dimen/padding_margin_8dp"
+            android:layout_marginLeft="@dimen/padding_margin_20dp"
+            android:id="@+id/tv_terms_condition_two"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2."
-            android:gravity="center"/>
+            android:text="@string/terms_conditon_harian_three"
+            android:layout_marginBottom="@dimen/padding_margin_8dp"
+            android:layout_marginLeft="@dimen/padding_margin_20dp"
+            android:id="@+id/tv_terms_condition_three"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3."
-            android:gravity="center"/>
+            android:text="@string/terms_conditon_harian_four"
+            android:layout_marginBottom="@dimen/padding_margin_8dp"
+            android:layout_marginLeft="@dimen/padding_margin_20dp"
+            android:id="@+id/tv_terms_condition_four"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="4."
-            android:gravity="center"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="5."
-            android:gravity="center"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="6."
-            android:gravity="center"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="7."
-            android:gravity="center"
-            android:layout_marginBottom="16dp"/>
+            android:text="@string/terms_conditon_harian_five"
+            android:layout_marginBottom="@dimen/padding_margin_8dp"
+            android:layout_marginLeft="@dimen/padding_margin_20dp"
+            android:id="@+id/tv_terms_condition_five"/>
 
     </LinearLayout>
 

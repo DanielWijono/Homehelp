@@ -76,6 +76,8 @@ public class AtapActivityStep2 extends AppCompatActivity {
     TextView tvDateBegin;
     @BindView(R.id.et_notes)
     EditText etNotes;
+    @BindView(R.id.img_toolbar)
+    ImageView imgToolbar;
 
     private DatePickerDialog dateBeginDialog;
     private Calendar dateCalendar;
@@ -113,6 +115,7 @@ public class AtapActivityStep2 extends AppCompatActivity {
         DateTimeUtils.setInDateFormalFormat(dateCalendar, tvDateBegin);
         getBundle();
         etNotes.addTextChangedListener(textWatcher);
+        imgToolbar.setImageResource(R.drawable.ic_step_three);
     }
 
     private void getBundle() {
@@ -182,8 +185,8 @@ public class AtapActivityStep2 extends AppCompatActivity {
                 break;
             case R.id.next_button:
                 Intent intent = new Intent(this, AtapActivityStep3.class);
-                intent.putExtra("WORK_TYPE",workType);
-                intent.putExtra("NOTES",notes);
+                intent.putExtra("WORK_TYPE", workType);
+                intent.putExtra("NOTES", notes);
                 intent.putExtra("DATE", tvDateBegin.getText().toString());
                 startActivity(intent);
                 break;
