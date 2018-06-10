@@ -2,6 +2,7 @@ package com.example.daniel.homehelp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
@@ -24,6 +25,7 @@ import com.example.daniel.homehelp.adapter.AtapKerusakanAdapter;
 import com.shuhart.stepview.StepView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -62,6 +64,11 @@ public class AtapActivityStep3 extends AppCompatActivity {
 
     String workType, notes, date, problemDesc;
     AtapKerusakanAdapter atapKerusakanAdapter;
+    List<String> listKerusakanFromAdapter = new ArrayList<>();
+    @BindView(R.id.img_toolbar)
+    ImageView imgToolbar;
+    @BindView(R.id.ll_notes)
+    LinearLayout llNotes;
 
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
@@ -86,12 +93,12 @@ public class AtapActivityStep3 extends AppCompatActivity {
         setContentView(R.layout.activity_atap_step3);
         ButterKnife.bind(this);
         initRecyclerView();
-        initStepView();
         Utils.setupAppToolbarForActivity(this, toolbar, "Pemesanan");
         getBundle();
         etProblemDesc.addTextChangedListener(textWatcher);
+        imgToolbar.setImageResource(R.drawable.ic_step_three);
     }
-    
+
     private void getBundle() {
         Bundle bundle = getIntent().getExtras();
 
@@ -108,34 +115,6 @@ public class AtapActivityStep3 extends AppCompatActivity {
         serviceAtapRecyclerView.setAdapter(atapKerusakanAdapter);
     }
 
-    private void initStepView() {
-        stepView.getState()
-                .selectedTextColor(ContextCompat.getColor(this, R.color.colorAccent))
-                .animationType(StepView.ANIMATION_CIRCLE)
-                .selectedCircleColor(ContextCompat.getColor(this, R.color.colorAccent))
-                .selectedCircleRadius(getResources().getDimensionPixelSize(R.dimen.padding_margin_8dp))
-                .selectedStepNumberColor(ContextCompat.getColor(this, R.color.color_white))
-                // You should specify only stepsNumber or steps array of strings.
-                // In case you specify both steps array is chosen.
-                .steps(new ArrayList<String>() {{
-                    add("TIPE");
-                    add("PLAN");
-                    add("MASALAH");
-                    add("PESAN");
-                }})
-                // You should specify only steps number or steps array of strings.
-                // In case you specify both steps array is chosen.
-                .stepsNumber(4)
-                .stepPadding(getResources().getDimensionPixelSize(R.dimen.padding_margin_1dp))
-                .animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime))
-                .stepLineWidth(getResources().getDimensionPixelSize(R.dimen.padding_margin_1dp))
-                .textSize(getResources().getDimensionPixelSize(R.dimen.normal_font_size))
-                .stepNumberTextSize(getResources().getDimensionPixelSize(R.dimen.normal_medium_font_size))
-                .typeface(ResourcesCompat.getFont(this, R.font.proxima_nova_medium))
-                // other state methods are equal to the corresponding xml attributes
-                .commit();
-    }
-
     @OnClick({R.id.tv_substract, R.id.tv_plus, R.id.next_button})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -150,15 +129,15 @@ public class AtapActivityStep3 extends AppCompatActivity {
                 }
                 break;
             case R.id.next_button:
-                String replaceOpenBracket = String.valueOf(AtapKerusakanAdapter.listKerusakan).replace("[", "");
-                String finalReplace = replaceOpenBracket.replace("]", "");
+                listKerusakanFromAdapter = AtapKerusakanAdapter.listKerusakan;
+
                 Intent intent = new Intent(this, AtapActivityStep4.class);
                 intent.putExtra("WORK_TYPE", workType);
                 intent.putExtra("NOTES", notes);
                 intent.putExtra("DATE", date);
                 intent.putExtra("TOTAL_WORKER", tvTukangSum.getText().toString());
-                intent.putExtra("PROBLEM_DESC",problemDesc);
-                intent.putExtra("LIST_KERUSAKAN", finalReplace);
+                intent.putExtra("PROBLEM_DESC", problemDesc);
+                intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromAdapter);
                 startActivity(intent);
                 break;
         }

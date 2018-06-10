@@ -120,7 +120,7 @@ public class AtapActivityStep2 extends AppCompatActivity {
         getBundle();
         etNotes.addTextChangedListener(textWatcher);
         etLocation.addTextChangedListener(textWatcher);
-        imgToolbar.setImageResource(R.drawable.ic_step_three);
+        imgToolbar.setImageResource(R.drawable.ic_step_two);
     }
 
     private void getBundle() {

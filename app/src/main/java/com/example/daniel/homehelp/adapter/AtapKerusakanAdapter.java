@@ -1,7 +1,9 @@
 package com.example.daniel.homehelp.adapter;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,10 +47,13 @@ public class AtapKerusakanAdapter extends RecyclerView.Adapter<RecyclerView.View
         RelativeLayout rlTitle;
         @BindView(R.id.tv_desc_kerusakan)
         TextView tvDescKerusakan;
+        @BindView(R.id.rl_kerusakan_atap)
+        RelativeLayout rlKerusakanAtap;
 
         String[] kerusakanTitle = {"Rangka Atap", "Kuda-kuda", "Struktur baja konvensional"};
-        String[] kerusakanDescription = {"Mencakup atap, lantai, pintu jendela dan saluran air", "Mencakup AC dan instalasi listrik",
-                "Untuk perawatan rumah bebas hama"};
+        String[] kerusakanDescription = {"Sebagai penahan beban dari bahan penutup atap, umumnya berupa\n" +
+                "susunan kayu atau baja ringan", "Penyangga utama struktur, berupa batang untuk memberi bentuk atap",
+                "Bagian dari struktur atap yang menggunakan baja"};
 
         public AtapKerusakanListViewHolder(View itemView) {
             super(itemView);
@@ -61,10 +66,12 @@ public class AtapKerusakanAdapter extends RecyclerView.Adapter<RecyclerView.View
                 public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                     if (isChecked) {
                         listKerusakan.add(kerusakanTitle[position]);
-                        System.out.println("list kerusakan after add : "+listKerusakan);
+                        rlKerusakanAtap.setBackgroundResource(R.color.color_green_background_kerusakan);
+                        System.out.println("list kerusakan after add : " + listKerusakan);
                     } else {
                         listKerusakan.remove(kerusakanTitle[position]);
-                        System.out.println("list kerusakan after remove : "+listKerusakan);
+                        rlKerusakanAtap.setBackgroundResource(R.color.color_white);
+                        System.out.println("list kerusakan after remove : " + listKerusakan);
                     }
                 }
             });
@@ -80,8 +87,15 @@ public class AtapKerusakanAdapter extends RecyclerView.Adapter<RecyclerView.View
                 public void onClick(View view) {
                     if (tvDescKerusakan.getVisibility() == View.GONE) {
                         tvDescKerusakan.setVisibility(View.VISIBLE);
+                        imgDropDownUp.setImageResource(R.drawable.ic_drop_down_yellow);
+                        imgDropDownUp.setColorFilter(ContextCompat.getColor(context, R.color.color_black), PorterDuff.Mode.SRC_IN);
+                        imgDropDownUp.setAlpha(0.5f);
+                        imgDropDownUp.setScaleY(-1f);
                     } else {
                         tvDescKerusakan.setVisibility(View.GONE);
+                        imgDropDownUp.setImageResource(R.drawable.ic_drop_down_yellow);
+                        imgDropDownUp.setColorFilter(ContextCompat.getColor(context, R.color.color_black), PorterDuff.Mode.SRC_IN);
+                        imgDropDownUp.setAlpha(0.5f);
                     }
                 }
             });

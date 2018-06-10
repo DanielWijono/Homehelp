@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="@dimen/padding_margin_16dp"
     android:background="@drawable/signup_border">
 
@@ -13,57 +13,46 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="8dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tipe : Harian"
+                android:text="MASALAH"
+                android:textStyle="bold"
                 android:textColor="@color/color_black"
-                android:layout_weight="0.5"
-                android:id="@+id/tv_work_type"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Rp 200.000"
-                android:textColor="@color/color_black"
-                android:gravity="right"
                 android:layout_weight="0.5"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/padding_margin_6dp"
+                android:src="@drawable/ic_ubah"/>
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bagian Kerusakan"
+            android:textColor="@color/color_black"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/padding_margin_8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/padding_margin_16dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bagian Kerusakan"
-                android:textColor="@color/color_black"
-                android:layout_weight="0.5"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Ubah"
-                android:textColor="@color/color_black"
-                android:layout_weight="0.5"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/padding_margin_16dp">
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/padding_margin_16dp"
+            android:id="@+id/ll_title_kerusakan">
 
             <ImageView
                 android:layout_width="@dimen/padding_margin_30dp"
                 android:layout_height="@dimen/padding_margin_30dp"
                 android:src="@color/color_black"
-                android:layout_marginRight="@dimen/padding_margin_8dp"/>
+                android:layout_marginRight="@dimen/padding_margin_8dp"
+                android:visibility="gone"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -71,6 +60,7 @@
                 android:text="Ubah"
                 android:textColor="@color/color_black"
                 android:gravity="center_vertical"
+                android:visibility="gone"
                 android:id="@+id/tv_damage_title"/>
         </LinearLayout>
 
@@ -78,33 +68,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_margin_8dp"
+            android:layout_marginLeft="@dimen/padding_margin_8dp"
             android:text="Uraian Masalah"
             android:textStyle="bold"
             android:textColor="@color/color_black"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_margin_8dp"
-            android:text="Atap saya bocor blablabla"
-            android:textStyle="italic"
-            android:id="@+id/tv_problem_desc"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/padding_margin_8dp"
+            android:layout_marginLeft="@dimen/padding_margin_8dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_dehaze_black_18dp"
+                android:layout_marginRight="@dimen/padding_margin_8dp"
                 android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lampiran : 2 gambar"
+                android:text="2 gambar"
                 android:textColor="@color/color_black"
                 android:layout_marginLeft="@dimen/padding_margin_8dp"/>
 
@@ -114,10 +100,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_margin_8dp"
-            android:text="Jumlah tukang : 1"
-            android:textStyle="bold"
-            android:textColor="@color/colorAccent"
-            android:id="@+id/tv_worker_sum"/>
+            android:layout_marginLeft="@dimen/padding_margin_32dp"
+            android:text="Atap saya bocor blablabla"
+            android:textStyle="italic"
+            android:id="@+id/tv_problem_desc"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/padding_margin_8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jumlah Pekerja : 1"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical"
+                android:id="@+id/tv_worker_sum"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rp 200.000"
+                android:gravity="right"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -129,19 +138,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/padding_margin_16dp">
+            android:layout_marginTop="@dimen/padding_margin_16dp"
+            android:layout_marginLeft="@dimen/padding_margin_8dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Total"
+                android:textSize="@dimen/padding_margin_16dp"
                 android:textColor="@color/color_black"
                 android:textStyle="bold"
                 android:layout_weight="0.5"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="200.000"
+                android:text="Rp 200.000"
+                android:textSize="@dimen/padding_margin_16dp"
                 android:textColor="@color/color_black"
                 android:textStyle="bold"
                 android:gravity="right"
@@ -155,8 +167,9 @@
             android:text="Gunakan kode promo"
             android:textColor="@color/colorAccent"
             android:textStyle="bold"
-            android:layout_marginTop="@dimen/padding_margin_8dp"/>
-
+            android:layout_marginLeft="@dimen/padding_margin_8dp"
+            android:layout_marginTop="@dimen/padding_margin_8dp"
+            android:layout_marginBottom="@dimen/padding_margin_8dp"/>
 
     </LinearLayout>
 </LinearLayout>

@@ -50,6 +50,8 @@
     <color name="color_green_A400">#00E676</color>
     <color name="color_green_A700">#00C853</color>
 
+    <color name="color_green_background_kerusakan">#e9f7f5</color>
+
     <!--RATING BAR-->
 
     <!--LAYOUT ADD VEHICLE -->

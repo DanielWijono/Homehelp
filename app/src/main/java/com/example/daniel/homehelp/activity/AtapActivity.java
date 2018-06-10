@@ -85,7 +85,7 @@ public class AtapActivity extends AppCompatActivity {
         atapRecyclerView.setNestedScrollingEnabled(false);
         MyApplication.getInstance().setIsHarian(true);
         MyApplication.getInstance().setIsBorongan(false);
-        workType = "harian";
+        workType = "Harian";
         setTermConditionHarian();
     }
 
@@ -106,7 +106,7 @@ public class AtapActivity extends AppCompatActivity {
                 tvBorongan.setTextColor(getResources().getColor(R.color.color_black));
                 MyApplication.getInstance().setIsHarian(true);
                 MyApplication.getInstance().setIsBorongan(false);
-                workType = "harian";
+                workType = "Harian";
                 atapRecyclerView.setAdapter(atapJobAdapter);
                 setTermConditionHarian();
                 break;
@@ -118,7 +118,7 @@ public class AtapActivity extends AppCompatActivity {
                 tvHarian.setTextColor(getResources().getColor(R.color.color_black));
                 MyApplication.getInstance().setIsHarian(false);
                 MyApplication.getInstance().setIsBorongan(true);
-                workType = "borongan";
+                workType = "Borongan";
                 atapRecyclerView.setAdapter(atapJobAdapter);
                 setTermsConditionBorongan();
                 break;

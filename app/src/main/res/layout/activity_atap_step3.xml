@@ -22,7 +22,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/introduction_four"
+                android:src="@drawable/ic_image_step_three"
                 android:id="@+id/img_atap"/>
 
             <View
@@ -57,7 +57,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/signup_border"
-                android:layout_margin="16dp">
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:layout_marginBottom="@dimen/padding_margin_16dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -71,12 +73,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginBottom="48dp"
+                    android:layout_marginLeft="@dimen/padding_margin_8dp"
                     android:id="@+id/ll_notes">
 
                     <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/baseline_dehaze_black_18dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_notes"
                         android:layout_marginRight="10dp"
                         android:layout_gravity="center"/>
 
@@ -84,6 +87,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Tuliskan masalah hunian anda"
+                        android:textSize="14dp"
                         android:layout_gravity="center"
                         android:background="@color/color_transparent"
                         android:id="@+id/et_problem_desc"/>
@@ -94,12 +98,14 @@
                     android:layout_height="wrap_content"
                     android:text="GAMBAR (OPSIONAL)"
                     android:textColor="@color/color_black"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:layout_marginLeft="@dimen/padding_margin_8dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/padding_margin_8dp">
 
                     <ImageView
                         android:layout_width="80dp"

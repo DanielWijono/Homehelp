@@ -19,17 +19,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lokasi"
+                android:text="LOKASI"
                 android:textColor="@color/color_black"
                 android:layout_weight="0.5"/>
 
-            <TextView
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ubah"
-                android:textColor="@color/color_black"
-                android:gravity="right"
-                android:layout_weight="0.5"/>
+                android:layout_gravity="center"
+                android:padding="@dimen/padding_margin_6dp"
+                android:src="@drawable/ic_ubah"/>
         </LinearLayout>
 
         <LinearLayout
@@ -39,9 +38,9 @@
             android:layout_margin="8dp">
 
             <ImageView
-                android:layout_width="@dimen/padding_margin_30dp"
-                android:layout_height="@dimen/padding_margin_30dp"
-                android:src="@color/color_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_location"
                 android:layout_marginRight="8dp"/>
 
             <TextView
@@ -59,9 +58,9 @@
             android:layout_margin="8dp">
 
             <ImageView
-                android:layout_width="@dimen/padding_margin_30dp"
-                android:layout_height="@dimen/padding_margin_30dp"
-                android:src="@color/color_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_notes"
                 android:layout_marginRight="8dp"/>
 
             <TextView
@@ -85,9 +84,10 @@
             android:layout_margin="8dp">
 
             <ImageView
-                android:layout_width="@dimen/padding_margin_30dp"
-                android:layout_height="@dimen/padding_margin_30dp"
-                android:src="@color/color_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_date"
+                android:layout_gravity="center"
                 android:layout_marginRight="@dimen/padding_margin_8dp"/>
 
             <TextView
@@ -103,8 +103,8 @@
                 android:layout_height="wrap_content"
                 android:text="21 may 2018"
                 android:textColor="@color/color_black"
-                android:gravity="center_vertical"
-                android:background="@drawable/signup_border"
+                android:gravity="right"
+                android:layout_marginRight="8dp"
                 android:layout_weight="0.5"
                 android:id="@+id/tv_date_begin"/>
 
@@ -114,12 +114,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_gravity="center"
             android:layout_margin="8dp">
 
             <ImageView
-                android:layout_width="@dimen/padding_margin_30dp"
-                android:layout_height="@dimen/padding_margin_30dp"
-                android:src="@color/color_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_time"
+                android:layout_gravity="center"
                 android:layout_marginRight="@dimen/padding_margin_8dp"/>
 
             <TextView
@@ -135,8 +137,8 @@
                 android:layout_height="wrap_content"
                 android:text="13:55"
                 android:textColor="@color/color_black"
-                android:gravity="center_vertical"
-                android:background="@drawable/signup_border"
+                android:gravity="right"
+                android:layout_marginRight="8dp"
                 android:layout_weight="0.5"/>
 
         </LinearLayout>

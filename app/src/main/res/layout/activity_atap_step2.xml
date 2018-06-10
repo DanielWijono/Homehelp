@@ -160,7 +160,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:layout_gravity="center"
-                            android:src="@drawable/baseline_dehaze_black_18dp"/>
+                            android:src="@drawable/ic_drop_down_green"/>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -200,13 +200,13 @@
                             android:layout_height="wrap_content"
                             android:text="13:55"
                             android:layout_gravity="center"
-                            android:layout_weight="0.2"/>
+                            android:layout_weight="0.2" />
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.8"
                             android:layout_gravity="center"
-                            android:src="@drawable/baseline_dehaze_black_18dp"/>
+                            android:src="@drawable/ic_drop_down_yellow"/>
 
                     </LinearLayout>
                 </LinearLayout>

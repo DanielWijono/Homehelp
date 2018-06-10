@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -21,6 +22,7 @@ import com.example.daniel.homehelp.Utils;
 import com.shuhart.stepview.StepView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -60,19 +62,35 @@ public class AtapActivityStep4 extends AppCompatActivity {
     TextView tvDateBegin;
     @BindView(R.id.tv_worker_sum)
     TextView tvWorkerSum;
+    @BindView(R.id.img_toolbar)
+    ImageView imgToolbar;
+    @BindView(R.id.ll_title_kerusakan)
+    LinearLayout llTitleKerusakan;
 
     String workType, notes, date, listKerusakan, totalWorker, problemDesc;
-
+    List<String> listKerusakanFromStep3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atap_step4);
         ButterKnife.bind(this);
-        initStepView();
         Utils.setupAppToolbarForActivity(this, toolbar, "Pemesanan");
         getBundle();
         setUpView();
+        setViewBagianKerusakan();
+    }
+
+    private void setViewBagianKerusakan() {
+        for (int i = 0; i < listKerusakanFromStep3.size(); i++) {
+            View view = getLayoutInflater().inflate(R.layout.item_kerusakan_step4, null);
+            TextView tvItemKerusakan = view.findViewById(R.id.tv_item_kerusakan);
+            ImageView imgItemKerusakan = view.findViewById(R.id.image_item_kerusakan);
+
+            tvItemKerusakan.setText(listKerusakanFromStep3.get(i));
+            imgItemKerusakan.setImageResource(R.drawable.ic_checked);
+            llTitleKerusakan.addView(view);
+        }
     }
 
     private void getBundle() {
@@ -85,43 +103,17 @@ public class AtapActivityStep4 extends AppCompatActivity {
             listKerusakan = bundle.getString("LIST_KERUSAKAN");
             totalWorker = bundle.getString("TOTAL_WORKER");
             problemDesc = bundle.getString("PROBLEM_DESC");
+            listKerusakanFromStep3 = bundle.getStringArrayList("LIST_KERUSAKAN");
+            System.out.println("list kerusakan from step 3 : "+listKerusakanFromStep3);
         }
     }
 
     private void setUpView() {
-        tvWorkType.setText("Tipe : "+workType);
+        tvWorkType.setText(workType);
         tvDamageTitle.setText(listKerusakan);
         tvDateBegin.setText(date);
         tvProblemDesc.setText(problemDesc);
-        tvWorkerSum.setText("Jumlah tukang : "+totalWorker);
-    }
-
-    private void initStepView() {
-        stepView.getState()
-                .selectedTextColor(ContextCompat.getColor(this, R.color.colorAccent))
-                .animationType(StepView.ANIMATION_CIRCLE)
-                .selectedCircleColor(ContextCompat.getColor(this, R.color.colorAccent))
-                .selectedCircleRadius(getResources().getDimensionPixelSize(R.dimen.padding_margin_8dp))
-                .selectedStepNumberColor(ContextCompat.getColor(this, R.color.color_white))
-                // You should specify only stepsNumber or steps array of strings.
-                // In case you specify both steps array is chosen.
-                .steps(new ArrayList<String>() {{
-                    add("TIPE");
-                    add("PLAN");
-                    add("MASALAH");
-                    add("PESAN");
-                }})
-                // You should specify only steps number or steps array of strings.
-                // In case you specify both steps array is chosen.
-                .stepsNumber(4)
-                .stepPadding(getResources().getDimensionPixelSize(R.dimen.padding_margin_1dp))
-                .animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime))
-                .stepLineWidth(getResources().getDimensionPixelSize(R.dimen.padding_margin_1dp))
-                .textSize(getResources().getDimensionPixelSize(R.dimen.normal_font_size))
-                .stepNumberTextSize(getResources().getDimensionPixelSize(R.dimen.normal_medium_font_size))
-                .typeface(ResourcesCompat.getFont(this, R.font.proxima_nova_medium))
-                // other state methods are equal to the corresponding xml attributes
-                .commit();
+        tvWorkerSum.setText("Jumlah Pekerja : " + totalWorker);
     }
 
     private void confirmationDialog() {
