@@ -47,8 +47,6 @@ public class AtapActivityStep3 extends AppCompatActivity {
     RecyclerView serviceAtapRecyclerView;
     @BindView(R.id.scroll_view)
     ScrollView scrollView;
-
-    AtapKerusakanAdapter atapKerusakanAdapter;
     @BindView(R.id.tv_substract)
     TextView tvSubstract;
     @BindView(R.id.tv_tukang_sum)
@@ -63,6 +61,7 @@ public class AtapActivityStep3 extends AppCompatActivity {
     EditText etProblemDesc;
 
     String workType, notes, date, problemDesc;
+    AtapKerusakanAdapter atapKerusakanAdapter;
 
     private TextWatcher textWatcher = new TextWatcher() {
         @Override

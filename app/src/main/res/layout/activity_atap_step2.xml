@@ -49,6 +49,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true"
+                    android:layout_marginLeft="@dimen/padding_margin_8dp"
+                    android:layout_marginRight="@dimen/padding_margin_8dp"
                     android:id="@+id/ll_address">
 
                     <ImageView
@@ -57,12 +61,15 @@
                         android:src="@drawable/ic_location"
                         android:layout_marginRight="10dp"
                         android:layout_gravity="center"/>
-                    
-                    <TextView
+
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="jalan pejompongan III A"
-                        android:layout_gravity="center"/>
+                        android:hint="Tambah alamat"
+                        android:textSize="16dp"
+                        android:background="@color/color_transparent"
+                        android:layout_gravity="center"
+                        android:id="@+id/et_location"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -71,6 +78,7 @@
                     android:orientation="horizontal"
                     android:descendantFocusability="beforeDescendants"
                     android:focusableInTouchMode="true"
+                    android:layout_margin="@dimen/padding_margin_8dp"
                     android:id="@+id/ll_notes">
 
                     <ImageView
@@ -83,7 +91,9 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="notes"
+                        android:hint="Keterangan"
+                        android:textSize="16dp"
+                        android:background="@color/color_transparent"
                         android:layout_gravity="center"
                         android:id="@+id/et_notes"/>
                 </LinearLayout>

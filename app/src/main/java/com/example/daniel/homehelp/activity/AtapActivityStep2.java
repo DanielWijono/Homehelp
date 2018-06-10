@@ -78,10 +78,12 @@ public class AtapActivityStep2 extends AppCompatActivity {
     EditText etNotes;
     @BindView(R.id.img_toolbar)
     ImageView imgToolbar;
+    @BindView(R.id.et_location)
+    EditText etLocation;
 
     private DatePickerDialog dateBeginDialog;
     private Calendar dateCalendar;
-    private String workType, notes;
+    private String workType, notes, location;
     @SuppressLint("RestrictedApi")
     Context context = new ContextThemeWrapper(this, R.style.MyDatePickerDialogTheme);
 
@@ -99,6 +101,7 @@ public class AtapActivityStep2 extends AppCompatActivity {
         @Override
         public void afterTextChanged(Editable editable) {
             notes = etNotes.getText().toString();
+            location = etLocation.getText().toString();
         }
     };
 
@@ -108,13 +111,15 @@ public class AtapActivityStep2 extends AppCompatActivity {
         setContentView(R.layout.activity_atap_step2);
         ButterKnife.bind(this);
         Utils.setupAppToolbarForActivity(this, toolbar, "Pemesanan");
-        initStepView();
+        scrollView.setFocusableInTouchMode(true);
+        scrollView.setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
         dateCalendar = Calendar.getInstance();
         initCalendar();
         dateBeginDialog.getDatePicker().setTag(tvDateBegin.getId());
         DateTimeUtils.setInDateFormalFormat(dateCalendar, tvDateBegin);
         getBundle();
         etNotes.addTextChangedListener(textWatcher);
+        etLocation.addTextChangedListener(textWatcher);
         imgToolbar.setImageResource(R.drawable.ic_step_three);
     }
 
@@ -134,34 +139,6 @@ public class AtapActivityStep2 extends AppCompatActivity {
             dateBeginDialog = new DatePickerDialog(this, AlertDialog.THEME_HOLO_LIGHT, myDateListener, dateCalendar.get(Calendar.YEAR), dateCalendar.get(Calendar.MONTH), dateCalendar.get(Calendar.DAY_OF_MONTH));
         }
         dateBeginDialog.getDatePicker().setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
-    }
-
-    private void initStepView() {
-        stepView.getState()
-                .selectedTextColor(ContextCompat.getColor(this, R.color.colorAccent))
-                .animationType(StepView.ANIMATION_CIRCLE)
-                .selectedCircleColor(ContextCompat.getColor(this, R.color.colorAccent))
-                .selectedCircleRadius(getResources().getDimensionPixelSize(R.dimen.padding_margin_8dp))
-                .selectedStepNumberColor(ContextCompat.getColor(this, R.color.color_white))
-                // You should specify only stepsNumber or steps array of strings.
-                // In case you specify both steps array is chosen.
-                .steps(new ArrayList<String>() {{
-                    add("TIPE");
-                    add("PLAN");
-                    add("MASALAH");
-                    add("PESAN");
-                }})
-                // You should specify only steps number or steps array of strings.
-                // In case you specify both steps array is chosen.
-                .stepsNumber(4)
-                .stepPadding(getResources().getDimensionPixelSize(R.dimen.padding_margin_1dp))
-                .animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime))
-                .stepLineWidth(getResources().getDimensionPixelSize(R.dimen.padding_margin_1dp))
-                .textSize(getResources().getDimensionPixelSize(R.dimen.normal_font_size))
-                .stepNumberTextSize(getResources().getDimensionPixelSize(R.dimen.normal_medium_font_size))
-                .typeface(ResourcesCompat.getFont(this, R.font.proxima_nova_medium))
-                // other state methods are equal to the corresponding xml attributes
-                .commit();
     }
 
     private DatePickerDialog.OnDateSetListener myDateListener = new DatePickerDialog.OnDateSetListener() {

@@ -69,7 +69,6 @@ public class AtapActivity extends AppCompatActivity {
     @BindView(R.id.tv_terms_condition_five)
     TextView tvTermsConditionFive;
 
-
     AtapJobAdapter atapJobAdapter;
     String workType;
 
@@ -80,7 +79,6 @@ public class AtapActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Utils.setupAppToolbarForActivity(this, toolbar, "Pemesanan");
-        initStepView();
         initRecyclerView();
         scrollView.setFocusableInTouchMode(true);
         scrollView.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
@@ -88,39 +86,7 @@ public class AtapActivity extends AppCompatActivity {
         MyApplication.getInstance().setIsHarian(true);
         MyApplication.getInstance().setIsBorongan(false);
         workType = "harian";
-        tvTermsConditionOne.setText(getResources().getString(R.string.terms_conditon_harian_one));
-        tvTermsConditionTwo.setText(getResources().getString(R.string.terms_conditon_harian_two));
-        tvTermsConditionThree.setText(getResources().getString(R.string.terms_conditon_harian_three));
-        tvTermsConditionFour.setText(getResources().getString(R.string.terms_conditon_harian_four));
-        tvTermsConditionFive.setText(getResources().getString(R.string.terms_conditon_harian_five));
-    }
-
-    private void initStepView() {
-        stepView.getState()
-                .selectedTextColor(ContextCompat.getColor(this, R.color.colorAccent))
-                .animationType(StepView.ANIMATION_CIRCLE)
-                .selectedCircleColor(ContextCompat.getColor(this, R.color.colorAccent))
-                .selectedCircleRadius(getResources().getDimensionPixelSize(R.dimen.padding_margin_8dp))
-                .selectedStepNumberColor(ContextCompat.getColor(this, R.color.color_white))
-                // You should specify only stepsNumber or steps array of strings.
-                // In case you specify both steps array is chosen.
-                .steps(new ArrayList<String>() {{
-                    add("TIPE");
-                    add("PLAN");
-                    add("MASALAH");
-                    add("PESAN");
-                }})
-                // You should specify only steps number or steps array of strings.
-                // In case you specify both steps array is chosen.
-                .stepsNumber(4)
-                .stepPadding(getResources().getDimensionPixelSize(R.dimen.padding_margin_1dp))
-                .animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime))
-                .stepLineWidth(getResources().getDimensionPixelSize(R.dimen.padding_margin_1dp))
-                .textSize(getResources().getDimensionPixelSize(R.dimen.normal_font_size))
-                .stepNumberTextSize(getResources().getDimensionPixelSize(R.dimen.normal_medium_font_size))
-                .typeface(ResourcesCompat.getFont(this, R.font.proxima_nova_medium))
-                // other state methods are equal to the corresponding xml attributes
-                .commit();
+        setTermConditionHarian();
     }
 
     private void initRecyclerView() {
@@ -142,11 +108,7 @@ public class AtapActivity extends AppCompatActivity {
                 MyApplication.getInstance().setIsBorongan(false);
                 workType = "harian";
                 atapRecyclerView.setAdapter(atapJobAdapter);
-                tvTermsConditionOne.setText(getResources().getString(R.string.terms_conditon_harian_one));
-                tvTermsConditionTwo.setText(getResources().getString(R.string.terms_conditon_harian_two));
-                tvTermsConditionThree.setText(getResources().getString(R.string.terms_conditon_harian_three));
-                tvTermsConditionFour.setText(getResources().getString(R.string.terms_conditon_harian_four));
-                tvTermsConditionFive.setText(getResources().getString(R.string.terms_conditon_harian_five));
+                setTermConditionHarian();
                 break;
             case R.id.tv_borongan:
                 tvBorongan.setBackgroundResource(R.drawable.signup_button);
@@ -158,11 +120,7 @@ public class AtapActivity extends AppCompatActivity {
                 MyApplication.getInstance().setIsBorongan(true);
                 workType = "borongan";
                 atapRecyclerView.setAdapter(atapJobAdapter);
-                tvTermsConditionOne.setText(getResources().getString(R.string.terms_condition_borongan_one));
-                tvTermsConditionTwo.setText(getResources().getString(R.string.terms_condition_borongan_two));
-                tvTermsConditionThree.setText(getResources().getString(R.string.terms_condition_borongan_three));
-                tvTermsConditionFour.setText(getResources().getString(R.string.terms_condition_borongan_four));
-                tvTermsConditionFive.setText(getResources().getString(R.string.terms_condition_borongan_five));
+                setTermsConditionBorongan();
                 break;
             case R.id.next_button:
                 Intent intent = new Intent(this, AtapActivityStep2.class);
@@ -170,5 +128,21 @@ public class AtapActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
         }
+    }
+
+    private void setTermConditionHarian() {
+        tvTermsConditionOne.setText(getResources().getString(R.string.terms_conditon_harian_one));
+        tvTermsConditionTwo.setText(getResources().getString(R.string.terms_conditon_harian_two));
+        tvTermsConditionThree.setText(getResources().getString(R.string.terms_conditon_harian_three));
+        tvTermsConditionFour.setText(getResources().getString(R.string.terms_conditon_harian_four));
+        tvTermsConditionFive.setText(getResources().getString(R.string.terms_conditon_harian_five));
+    }
+
+    private void setTermsConditionBorongan() {
+        tvTermsConditionOne.setText(getResources().getString(R.string.terms_condition_borongan_one));
+        tvTermsConditionTwo.setText(getResources().getString(R.string.terms_condition_borongan_two));
+        tvTermsConditionThree.setText(getResources().getString(R.string.terms_condition_borongan_three));
+        tvTermsConditionFour.setText(getResources().getString(R.string.terms_condition_borongan_four));
+        tvTermsConditionFive.setText(getResources().getString(R.string.terms_condition_borongan_five));
     }
 }
