@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorAccent"
+        android:theme="@style/ToolbarColoredBackArrowWhite"
+        android:id="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/tv_title_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="LALALALA"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/padding_margin_24dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_bell"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:visibility="visible"
+            android:tint="@color/color_white"
+            android:id="@+id/btn_delete"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@color/color_black"
+        android:layout_below="@+id/toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/signup_border_background_white"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="@dimen/padding_margin_16dp"
+        android:layout_marginRight="@dimen/padding_margin_16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yuk, cobain perbaikan ac gratis"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/padding_margin_24dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mei 12, 2018 12:33 PM"
+            android:layout_marginTop="@dimen/padding_margin_8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hari panas, ac di rumah rusak ? Tidak perlu pusing,
+yuk coba perbaikan ac gratis !"
+            android:layout_marginTop="@dimen/padding_margin_16dp"
+            android:layout_marginBottom="@dimen/padding_margin_16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gunakan kode promo : HOTDAYPROMO"
+            android:layout_marginBottom="@dimen/padding_margin_8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="*Promo berlaku hingga 10 September 2018"
+            android:textStyle="italic"
+            android:layout_marginBottom="@dimen/padding_margin_32dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pesan Sekarang"
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:layout_marginBottom="@dimen/padding_margin_24dp"
+            android:background="@drawable/next_button"/>
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

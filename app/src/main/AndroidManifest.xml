@@ -10,11 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.IntroductionActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SplashActivity"
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.IntroductionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,26 +25,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SignUpActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.DashBoardActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.BangunanActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.AtapActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.AtapActivityStep2"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.AtapActivityStep3"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.AtapActivityStep4"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.FindingWorkerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.ChooseWorkerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.TrackingWorkerActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DashBoardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BangunanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AtapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AtapActivityStep2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AtapActivityStep3"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AtapActivityStep4"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FindingWorkerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChooseWorkerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TrackingWorkerActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.NotificationActivity" />
+        <activity android:name=".activity.NotificationDetailActivity"></activity>
     </application>
 
 </manifest>
