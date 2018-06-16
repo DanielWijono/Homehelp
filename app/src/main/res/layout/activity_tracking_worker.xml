@@ -39,22 +39,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Selasa 20 April, Jam 10.00"
-                android:layout_weight="0.3"/>
+                android:layout_weight="0.3"
+                android:id="@+id/tv_date_time"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rincian"
                 android:layout_weight="0.7"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/introduction_two"
-            android:layout_below="@+id/ll_info"/>
+            android:src="@drawable/ic_tracking_map"
+            android:layout_below="@+id/ll_info"
+            android:id="@+id/img_track_map"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,14 +65,19 @@
             android:orientation="vertical"
             android:background="@drawable/signup_border_background_white"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="@dimen/padding_margin_16dp"
-            android:layout_marginRight="@dimen/padding_margin_16dp">
+            android:padding="@dimen/padding_margin_16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_stars"
+                android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Informasi"
-                android:textSize="24dp"
+                android:textSize="20dp"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold"/>
 
@@ -77,12 +85,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginBottom="@dimen/padding_margin_20dp"
+                android:layout_marginBottom="@dimen/padding_margin_10dp"
                 android:layout_marginTop="@dimen/padding_margin_16dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:src="@drawable/ic_kelistrikan"
                     android:layout_gravity="center"/>
 
@@ -90,94 +98,62 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_weight="0.5"
-                    android:layout_marginLeft="@dimen/padding_margin_16dp">
+                    android:layout_marginLeft="@dimen/padding_margin_16dp"
+                    android:layout_gravity="center">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Jeffry Agus"/>
+                        android:text="Jeffry Agus"
+                        android:textColor="@color/color_black"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_become_worker"
+                        android:src="@drawable/ic_stars"
                         android:paddingTop="@dimen/padding_margin_8dp"
                         android:paddingBottom="@dimen/padding_margin_8dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PEKERJA OTW"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="0.5"
-                    android:layout_marginLeft="@dimen/padding_margin_16dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:text="Pekerja OTW"
+                        android:textStyle="italic"
                         android:layout_gravity="center"
-                        android:id="@+id/ll_chat">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_bell"
-                            android:layout_gravity="center"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Chat"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="@dimen/padding_margin_6dp"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="@dimen/padding_margin_8dp"
-                        android:id="@+id/ll_telephone">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_bell"
-                            android:layout_gravity="center"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Telepon"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="@dimen/padding_margin_6dp"/>
-
+                        android:layout_marginLeft="@dimen/padding_margin_16dp"/>
                     </LinearLayout>
 
                 </LinearLayout>
 
             </LinearLayout>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Batalkan"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:background="@drawable/signup_border_background_white"
-                android:layout_marginLeft="70dp"
-                android:layout_marginRight="30dp"
-                android:id="@+id/tv_cancel"/>
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_chat"
+                    android:layout_marginRight="@dimen/padding_margin_8dp"
+                    android:layout_weight="0.5"
+                    android:id="@+id/ll_chat"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_call_phone"
+                    android:layout_marginLeft="@dimen/padding_margin_8dp"
+                    android:layout_weight="0.5"
+                    android:id="@+id/ll_call_phone"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

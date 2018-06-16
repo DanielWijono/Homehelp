@@ -56,7 +56,8 @@
             android:name=".activity.TrackingWorkerActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.NotificationActivity" />
-        <activity android:name=".activity.NotificationDetailActivity"></activity>
+        <activity android:name=".activity.NotificationDetailActivity" />
+        <activity android:name=".activity.TrackingWorkerStep2Activity"></activity>
     </application>
 
 </manifest>

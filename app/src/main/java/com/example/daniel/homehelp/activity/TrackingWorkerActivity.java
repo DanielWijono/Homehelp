@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.Utils;
@@ -23,11 +25,13 @@ public class TrackingWorkerActivity extends AppCompatActivity {
     @BindView(R.id.tv_title_toolbar)
     TextView tvTitleToolbar;
     @BindView(R.id.ll_chat)
-    LinearLayout llChat;
-    @BindView(R.id.ll_telephone)
-    LinearLayout llTelephone;
-    @BindView(R.id.tv_cancel)
-    TextView tvCancel;
+    ImageView llChat;
+    @BindView(R.id.ll_call_phone)
+    ImageView llCallPhone;
+    @BindView(R.id.tv_date_time)
+    TextView tvDateTime;
+    @BindView(R.id.img_track_map)
+    ImageView imgTrackMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +41,17 @@ public class TrackingWorkerActivity extends AppCompatActivity {
         Utils.setupAppToolbarForActivity(this, toolbar, "Tracking Pekerja");
     }
 
-    @OnClick({R.id.ll_chat, R.id.ll_telephone, R.id.tv_cancel})
+    @OnClick({R.id.ll_chat, R.id.ll_call_phone, R.id.img_track_map})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_chat:
+                Toast.makeText(this, "chat clicked", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.ll_telephone:
+            case R.id.ll_call_phone:
+                Toast.makeText(this, "phone clicked", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.tv_cancel:
+            case R.id.img_track_map:
+                Toast.makeText(this, "image track", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

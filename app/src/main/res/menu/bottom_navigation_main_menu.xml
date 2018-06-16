@@ -17,7 +17,7 @@
         android:id="@+id/action_inbox"
         android:enabled="true"
         android:icon="@drawable/bottom_navigation_inbox"
-        android:title="Inbox"
+        android:title="Chat"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_favorite"
