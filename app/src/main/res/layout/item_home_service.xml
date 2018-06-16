@@ -56,15 +56,21 @@
             android:background="@color/color_transparent"
             android:id="@+id/ll_home_service">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:id="@+id/image_service" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="200dp"
+                android:layout_marginRight="100dp"
                 android:layout_marginTop="@dimen/padding_margin_16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="0dp"
                 android:id="@+id/ll_home_title_desc_service">
 
                 <TextView
@@ -83,12 +89,6 @@
                     android:id="@+id/service_description"/>
 
             </LinearLayout>
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_alignParentRight="true"
-                android:id="@+id/image_service" />
 
         </RelativeLayout>
 

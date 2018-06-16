@@ -3,7 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/padding_margin_16dp"
-    android:background="@drawable/signup_border">
+    android:background="@drawable/signup_border_background_white"
+    android:layout_below="@+id/ll_time_location"
+    android:id="@+id/ll_problem_price_desc">
 
     <LinearLayout
         android:layout_width="match_parent"

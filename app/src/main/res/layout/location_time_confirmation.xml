@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/signup_border"
-    android:layout_margin="@dimen/padding_margin_16dp">
+    android:background="@drawable/signup_border_background_white"
+    android:layout_margin="@dimen/padding_margin_16dp"
+    android:layout_below="@+id/ll_order_confirmation"
+    android:id="@+id/ll_time_location">
 
     <LinearLayout
         android:layout_width="match_parent"
