@@ -58,8 +58,11 @@ public class NotificationAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         String[] notificationTitle = {"Hot Day Promo", "Lantai", "Menunggu konfirmasi survey", "Pekerja ditemukan untuk anda"};
         String[] notificationDesc = {"Promo layanan musim hujan", "Silahkan pilih tanggal anda survey", "Silahkan menunggu pekerja anda datang"};
 
-        int[] imageNotification = {R.drawable.ic_favorite, R.drawable.ic_favorite,
-                R.drawable.ic_favorite, R.drawable.ic_favorite};
+        int[] imageNotification = {R.drawable.ic_notif_not_read, R.drawable.ic_notif_not_read,
+                R.drawable.ic_notif_not_read, R.drawable.ic_notif_not_read};
+
+        int[] imageNotificationRead = {R.drawable.ic_notif_read, R.drawable.ic_notif_read,
+                R.drawable.ic_notif_read, R.drawable.ic_notif_read};
 
         public NotificationListViewHolder(View itemView) {
             super(itemView);
@@ -74,7 +77,10 @@ public class NotificationAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             llNotifList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    recyclerViewOnClick.itemOnClick(view, position);
+                    if (position == 0) {
+                        imgNotification.setImageResource(imageNotificationRead[position]);
+                        recyclerViewOnClick.itemOnClick(view, position);
+                    }
                 }
             });
         }

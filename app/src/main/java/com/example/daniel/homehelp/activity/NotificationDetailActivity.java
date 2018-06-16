@@ -28,7 +28,7 @@ public class NotificationDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification_detail);
         ButterKnife.bind(this);
-        Utils.setupAppToolbarForActivity(this, toolbar, "LALALALALAAAAAA");
+        Utils.setupAppToolbarForActivity(this, toolbar, "Hot Day Promo");
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +36,4 @@ public class NotificationDetailActivity extends AppCompatActivity {
             }
         });
     }
-    
-    
 }
