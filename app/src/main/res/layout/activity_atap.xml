@@ -14,13 +14,13 @@
         android:id="@+id/scroll_view"
         android:layout_below="@+id/app_bar_layout_atap">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:src="@drawable/ic_image_step_one"
                 android:id="@+id/img_atap"/>
@@ -31,8 +31,8 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginTop="@dimen/padding_margin_16dp"
-                android:background="@drawable/signup_border"
+                android:layout_marginTop="120dp"
+                android:background="@drawable/signup_border_background_white"
                 android:id="@+id/ll_job_type">
 
                 <TextView
@@ -86,13 +86,14 @@
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
                     android:id="@+id/atap_recycler_view"
-                    android:scrollbars="none"></android.support.v7.widget.RecyclerView>
+                    android:scrollbars="none"
+                    android:visibility="visible"></android.support.v7.widget.RecyclerView>
 
             </LinearLayout>
 
             <include layout="@layout/layout_order_notes"></include>
 
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
     <View
