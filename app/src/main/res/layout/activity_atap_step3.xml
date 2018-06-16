@@ -14,7 +14,7 @@
         android:id="@+id/scroll_view"
         android:layout_below="@+id/app_bar_layout_atap">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -27,14 +27,20 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/color_black"></View>
+                android:layout_height="0.1dp"
+                android:background="@color/color_grey_500"
+                android:layout_below="@+id/img_atap"></View>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_margin="16dp">
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:layout_marginBottom="@dimen/padding_margin_16dp"
+                android:layout_marginTop="120dp"
+                android:background="@drawable/signup_border_background_white"
+                android:id="@+id/ll_kerusakan_section">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -56,10 +62,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/signup_border"
+                android:background="@drawable/signup_border_background_white"
                 android:layout_marginLeft="@dimen/padding_margin_16dp"
                 android:layout_marginRight="@dimen/padding_margin_16dp"
-                android:layout_marginBottom="@dimen/padding_margin_16dp">
+                android:layout_marginBottom="@dimen/padding_margin_16dp"
+                android:layout_below="@+id/ll_kerusakan_section"
+                android:id="@+id/ll_problem_desc">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -125,11 +133,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="@drawable/signup_border"
+                android:background="@drawable/signup_border_background_white"
                 android:padding="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="70dp">
+                android:layout_marginBottom="70dp"
+                android:layout_below="@+id/ll_problem_desc">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -174,7 +183,7 @@
 
             </LinearLayout>
 
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 
     <View
