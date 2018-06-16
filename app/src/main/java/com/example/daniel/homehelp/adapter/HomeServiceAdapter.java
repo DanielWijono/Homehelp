@@ -90,6 +90,7 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
                 imgParentLeftBottom.setBackgroundResource(R.drawable.ic_rope_bottom);
                 imgParentRightBottom.setBackgroundResource(R.drawable.ic_rope_bottom);
+                imageService.setBackgroundResource(R.drawable.ic_bangunan);
             }
             if (position == 1) {
                 imgParentLeftBottom.setVisibility(View.VISIBLE);
@@ -101,6 +102,7 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 imgParentRightBottom.setBackgroundResource(R.drawable.ic_rope_bottom);
                 imgParentLeftTop.setBackgroundResource(R.drawable.ic_rope_top);
                 imgParentRightTop.setBackgroundResource(R.drawable.ic_rope_top);
+                imageService.setBackgroundResource(R.drawable.ic_kelistrikan);
             }
             if (position == 2) {
                 imgParentLeftBottom.setVisibility(View.GONE);
@@ -110,6 +112,7 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
                 imgParentLeftTop.setBackgroundResource(R.drawable.ic_rope_top);
                 imgParentRightTop.setBackgroundResource(R.drawable.ic_rope_top);
+                imageService.setBackgroundResource(R.drawable.ic_hama);
             }
         }
     }
