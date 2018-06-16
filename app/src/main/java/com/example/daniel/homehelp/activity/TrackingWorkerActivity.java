@@ -1,5 +1,6 @@
 package com.example.daniel.homehelp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -51,7 +52,7 @@ public class TrackingWorkerActivity extends AppCompatActivity {
                 Toast.makeText(this, "phone clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.img_track_map:
-                Toast.makeText(this, "image track", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, TrackingWorkerStep2Activity.class));
                 break;
         }
     }
