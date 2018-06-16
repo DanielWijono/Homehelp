@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/color_white"
     tools:context=".activity.ChooseWorkerActivity">
@@ -38,25 +39,30 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="@dimen/padding_margin_16dp"
-            android:background="@drawable/signup_border_background_white">
+            android:background="@drawable/signup_border_background_white"
+            android:id="@+id/ll_worker_one">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_bell"
+                android:src="@drawable/ic_not_choose"
                 android:layout_marginRight="@dimen/padding_margin_16dp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:id="@+id/img_check_worker_one"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_kelistrikan"/>
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:civ_border_width="@dimen/padding_margin_1dp"
+                app:civ_border_color="@color/color_grey_500"
+                android:src="@drawable/ic_worker_face_one"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginLeft="@dimen/padding_margin_16dp">
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_gravity="center">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -66,12 +72,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="PEKERJA ATAP"/>
+                    android:text="PEKERJA ATAP"
+                    android:layout_marginTop="@dimen/padding_margin_8dp"
+                    android:layout_marginBottom="@dimen/padding_margin_8dp"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/homehelp_logo"/>
+                    android:src="@drawable/ic_stars"/>
 
             </LinearLayout>
 
@@ -82,40 +90,47 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="@dimen/padding_margin_16dp"
-            android:background="@drawable/signup_border_background_white">
+            android:background="@drawable/signup_border_background_white"
+            android:id="@+id/ll_worker_two">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_bell"
+                android:src="@drawable/ic_not_choose"
                 android:layout_marginRight="@dimen/padding_margin_16dp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:id="@+id/img_check_worker_two"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_kelistrikan"/>
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_worker_face_two"
+                app:civ_border_width="@dimen/padding_margin_1dp"
+                app:civ_border_color="@color/color_grey_500"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginLeft="@dimen/padding_margin_16dp">
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_gravity="center">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Jeffry Agus"/>
+                    android:text="Yoshi Sudarso"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="PEKERJA ATAP"/>
+                    android:text="PEKERJA ATAP"
+                    android:layout_marginTop="@dimen/padding_margin_8dp"
+                    android:layout_marginBottom="@dimen/padding_margin_8dp"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/homehelp_logo"/>
+                    android:src="@drawable/ic_stars"/>
 
             </LinearLayout>
 
@@ -134,6 +149,5 @@
             android:id="@+id/tv_order_button"/>
 
     </LinearLayout>
-
 
 </LinearLayout>
