@@ -57,7 +57,9 @@
             android:screenOrientation="portrait" />
         <activity android:name=".activity.NotificationActivity" />
         <activity android:name=".activity.NotificationDetailActivity" />
-        <activity android:name=".activity.TrackingWorkerStep2Activity"></activity>
+        <activity android:name=".activity.TrackingWorkerStep2Activity" />
+        <activity android:name=".activity.TrackingWorkerExpandedActivity" />
+        <activity android:name=".activity.RatingActivity"></activity>
     </application>
 
 </manifest>

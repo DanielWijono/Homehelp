@@ -33,6 +33,8 @@ public class TrackingWorkerActivity extends AppCompatActivity {
     TextView tvDateTime;
     @BindView(R.id.img_track_map)
     ImageView imgTrackMap;
+    @BindView(R.id.img_expand_layout)
+    ImageView imgExpandLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,7 @@ public class TrackingWorkerActivity extends AppCompatActivity {
         Utils.setupAppToolbarForActivity(this, toolbar, "Tracking Pekerja");
     }
 
-    @OnClick({R.id.ll_chat, R.id.ll_call_phone, R.id.img_track_map})
+    @OnClick({R.id.ll_chat, R.id.ll_call_phone, R.id.img_track_map, R.id.img_expand_layout})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_chat:
@@ -53,6 +55,10 @@ public class TrackingWorkerActivity extends AppCompatActivity {
                 break;
             case R.id.img_track_map:
                 startActivity(new Intent(this, TrackingWorkerStep2Activity.class));
+                break;
+            case R.id.img_expand_layout:
+                startActivity(new Intent(this, TrackingWorkerExpandedActivity.class));
+                overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
                 break;
         }
     }

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    tools:context=".activity.TrackingWorkerExpandedActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:theme="@style/ToolbarColoredBackArrowWhite"
+        android:id="@+id/toolbar">
+
+        <TextView
+            android:textSize="20dp"
+            android:textColor="@color/color_white"
+            android:id="@+id/tv_title_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/signup_border_background_white"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/padding_margin_16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Informasi"
+            android:textSize="20dp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/padding_margin_10dp"
+            android:layout_marginTop="@dimen/padding_margin_16dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_kelistrikan"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jeffry Agus"
+                    android:textColor="@color/color_black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_stars"
+                        android:paddingTop="@dimen/padding_margin_8dp"
+                        android:paddingBottom="@dimen/padding_margin_8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pekerja OTW"
+                        android:textStyle="italic"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/padding_margin_16dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_chat"
+                android:layout_marginRight="@dimen/padding_margin_8dp"
+                android:layout_weight="0.5"
+                android:id="@+id/ll_chat"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_call_phone"
+                android:layout_marginLeft="@dimen/padding_margin_8dp"
+                android:layout_weight="0.5"
+                android:id="@+id/ll_call_phone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/padding_margin_20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LOKASI"
+                android:textColor="@color/color_black"
+                android:layout_marginLeft="@dimen/padding_margin_8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_location"
+                    android:layout_marginRight="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Jalan Syahdan"
+                    android:textColor="@color/color_black"
+                    android:gravity="center_vertical"
+                    android:id="@+id/tv_location"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_notes"
+                    android:layout_marginRight="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Jalan Syahdan"
+                    android:textColor="@color/color_black"
+                    android:gravity="center_vertical"
+                    android:id="@+id/tv_notes"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/padding_margin_8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tipe : harian"
+                    android:textColor="@color/color_black"
+                    android:layout_weight="0.5"
+                    android:id="@+id/tv_tipe"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rp 200.000"
+                    android:textColor="@color/color_black"
+                    android:layout_weight="0.5"
+                    android:gravity="right"
+                    android:id="@+id/tv_price"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Batalkan"
+                android:textColor="#BF3C39"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/padding_margin_32dp"
+                android:paddingLeft="60dp"
+                android:paddingRight="60dp"
+                android:background="@drawable/signup_border_background_white"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

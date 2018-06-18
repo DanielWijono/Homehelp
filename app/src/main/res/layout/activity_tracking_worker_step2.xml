@@ -136,7 +136,8 @@
                 android:layout_marginTop="@dimen/padding_margin_8dp"
                 android:layout_marginLeft="55dp"
                 android:layout_marginRight="30dp"
-                android:background="@drawable/signup_border_background_white"/>
+                android:background="@drawable/signup_border_background_white"
+                android:id="@+id/tv_done_button"/>
 
         </LinearLayout>
 
