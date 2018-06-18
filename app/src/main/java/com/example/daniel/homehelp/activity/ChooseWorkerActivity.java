@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import com.example.daniel.homehelp.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -29,12 +32,23 @@ public class ChooseWorkerActivity extends AppCompatActivity {
     LinearLayout llWorkerTwo;
 
     boolean isOneClicked, isTwoClicked;
+    List<String> listKerusakanFromStep3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_worker);
         ButterKnife.bind(this);
+        getBundle();
+    }
+
+    private void getBundle() {
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle != null) {
+            listKerusakanFromStep3 = bundle.getStringArrayList("LIST_KERUSAKAN");
+            System.out.println("list kerusakan choose worker : " + listKerusakanFromStep3);
+        }
     }
 
     @OnClick({R.id.ll_worker_one, R.id.ll_worker_two, R.id.tv_order_button})
@@ -54,7 +68,9 @@ public class ChooseWorkerActivity extends AppCompatActivity {
                 break;
             case R.id.tv_order_button:
                 if (isOneClicked || isTwoClicked ) {
-                    startActivity(new Intent(ChooseWorkerActivity.this, TrackingWorkerActivity.class));
+                    Intent intent = new Intent(ChooseWorkerActivity.this, TrackingWorkerActivity.class);
+                    intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromStep3);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(this, "Mohon pilih salah satu pekerja", Toast.LENGTH_SHORT).show();
                 }

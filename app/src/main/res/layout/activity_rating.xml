@@ -57,6 +57,7 @@
                 android:layout_marginLeft="@dimen/padding_margin_16dp"
                 android:layout_marginRight="@dimen/padding_margin_16dp"
                 android:gravity="center"
+                android:visibility="visible"
                 android:id="@+id/ll_rating">
 
                 <TextView
@@ -135,39 +136,58 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Ringkasan Order"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="24dp"
                     android:gravity="center"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Order No. #09120245"/>
+                    android:text="Order No. #09120245"
+                    android:textColor="@color/color_black"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/padding_margin_32dp"
+                    android:layout_marginBottom="@dimen/padding_margin_32dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Tipe : Harian"
+                        android:textColor="@color/color_black"
                         android:layout_weight="0.5"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Rp 200.000"
+                        android:textColor="@color/color_black"
                         android:layout_weight="0.5"/>
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bagian Kerusakan"/>
+                    android:text="Bagian Kerusakan"
+                    android:textColor="@color/color_black"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="@dimen/padding_margin_8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="@dimen/padding_margin_8dp"
+                    android:id="@+id/ll_kerusakan_desc"></LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
-                    android:background="@color/color_grey_500"></View>
+                    android:background="@color/color_grey_500"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"></View>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -210,12 +230,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Metode Pembayaran"
+                    android:textColor="@color/color_black"
                     android:layout_marginBottom="@dimen/padding_margin_16dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="\u2022 Tunai"/>
+                    android:text="\u2022 Tunai"
+                    android:textColor="@color/color_black"/>
 
             </LinearLayout>
 
@@ -230,7 +252,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_credit_card"/>
+                    android:src="@drawable/ic_credit_card"
+                    android:layout_marginRight="@dimen/padding_margin_16dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -247,7 +270,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Untuk pemesanan berikutnya, gunakan kode promo: HOMEASIK"/>
+                        android:text="Untuk pemesanan berikutnya, gunakan kode promo: HOMEASIK"
+                        android:textColor="@color/color_black"/>
 
                 </LinearLayout>
 

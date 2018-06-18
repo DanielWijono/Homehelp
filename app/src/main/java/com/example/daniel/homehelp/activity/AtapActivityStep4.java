@@ -18,6 +18,7 @@ import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.Utils;
 import com.shuhart.stepview.StepView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -141,7 +142,9 @@ public class AtapActivityStep4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ad.dismiss();
-                startActivity(new Intent(AtapActivityStep4.this, FindingWorkerActivity.class));
+                Intent intent = new Intent(AtapActivityStep4.this, FindingWorkerActivity.class);
+                intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromStep3);
+                startActivity(intent);
             }
         });
     }
