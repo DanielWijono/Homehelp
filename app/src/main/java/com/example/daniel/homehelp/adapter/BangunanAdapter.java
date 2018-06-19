@@ -55,8 +55,8 @@ public class BangunanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
 
         public void setView(final int position) {
-            imgFavorite.setBackgroundResource(introBgImageFavorite[position]);
-            imgService.setBackgroundResource(bgImageService[position]);
+            imgFavorite.setImageResource(introBgImageFavorite[position]);
+            imgService.setImageResource(bgImageService[position]);
             tvServiceName.setText(serviceName[position]);
 
             llItemBangunan.setOnClickListener(new View.OnClickListener() {
