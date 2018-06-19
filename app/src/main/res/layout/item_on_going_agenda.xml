@@ -16,172 +16,120 @@
             android:padding="@dimen/padding_margin_12dp"
             android:background="@drawable/top_on_going_border">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_date"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pekerjaan Atap"
-                android:textColor="@color/color_white"
+                android:text="Senin, 5 Mei 2018"
+                android:textColor="@color/color_black"
                 android:layout_gravity="left"
-                android:layout_weight="0.5"
+                android:layout_weight="0.4"
                 android:layout_marginLeft="@dimen/padding_margin_8dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bell"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Order No. #09120245"
-                android:textColor="@color/color_white"
-                android:gravity="right"
-                android:layout_weight="0.5"
+                android:text="10.00"
+                android:textColor="@color/color_black"
+                android:gravity="left"
+                android:layout_weight="0.6"
+                android:layout_marginLeft="@dimen/padding_margin_8dp"
                 android:layout_marginRight="@dimen/padding_margin_8dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bell"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:layout_marginTop="@dimen/padding_margin_16dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bell"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/padding_margin_16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Layanan"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pekerjaan Atap"
+                        android:textColor="@color/colorAccent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/color_grey_500"
+                android:layout_margin="@dimen/padding_margin_16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="0.4"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp">
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:layout_marginBottom="@dimen/padding_margin_16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Status"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pekerja On the way"
+                        android:textColor="@color/color_black"
+                        android:layout_weight="0.7"
+                        android:layout_gravity="center"/>
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_bell"
-                        android:layout_marginRight="@dimen/padding_margin_6dp"/>
+                        android:layout_weight="0.3"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Status"
-                        android:textStyle="bold"
-                        android:textColor="@color/color_black"
-                        android:layout_gravity="center"/>
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pekerja OTW"
-                    android:textStyle="bold|italic"
-                    android:textColor="@color/colorAccent"
-                    android:layout_marginLeft="30dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="16dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_bell"
-                        android:layout_marginRight="@dimen/padding_margin_6dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Pekerja"
-                        android:textStyle="bold"
-                        android:textColor="@color/color_black"
-                        android:layout_gravity="center"/>
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jeffery Agus"
-                    android:textStyle="bold|italic"
-                    android:textColor="@color/colorAccent"
-                    android:layout_marginLeft="30dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="0.6"
-                android:layout_marginBottom="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:padding="@dimen/padding_margin_8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_bell"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Track"
-                        android:layout_marginLeft="28dp"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.1dp"
-                    android:background="@color/color_grey_500"></View>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:padding="@dimen/padding_margin_8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_bell"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Chat"
-                        android:layout_marginLeft="@dimen/padding_margin_32dp"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.1dp"
-                    android:background="@color/color_grey_500"></View>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:padding="@dimen/padding_margin_8dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_bell"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Batalkan"
-                        android:layout_marginLeft="14dp"/>
-                </LinearLayout>
             </LinearLayout>
 
         </LinearLayout>
