@@ -39,7 +39,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/ic_image_step_one"
+                android:src="@drawable/ic_rating_image_top"
                 android:id="@+id/img_atap"/>
 
             <View
@@ -102,13 +102,45 @@
                     android:text="Berikan Rating Anda"
                     android:textColor="@color/colorAccent"
                     android:gravity="center"
-                    android:layout_marginTop="@dimen/padding_margin_20dp"/>
+                    android:layout_marginTop="@dimen/padding_margin_20dp"
+                    android:id="@+id/tv_give_your_rating"/>
 
                 <RatingBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/padding_margin_16dp"
                     android:id="@+id/rating_bar"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Berikan Review Anda"
+                    android:textColor="@color/colorAccent"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:id="@+id/tv_give_your_comment"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:background="@color/color_grey_100"
+                    android:layout_marginTop="@dimen/padding_margin_8dp"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/padding_margin_16dp"
+                    android:layout_marginLeft="@dimen/padding_margin_32dp"
+                    android:layout_marginRight="@dimen/padding_margin_32dp"
+                    android:id="@+id/ll_comment_rating">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_transparent"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -118,7 +150,8 @@
                     android:paddingLeft="40dp"
                     android:paddingRight="40dp"
                     android:layout_marginTop="30dp"
-                    android:background="@drawable/next_button"/>
+                    android:background="@drawable/next_button"
+                    android:id="@+id/tv_submit_rating"/>
 
             </LinearLayout>
 
@@ -212,8 +245,6 @@
 
                 </LinearLayout>
 
-
-
             </LinearLayout>
 
             <LinearLayout
@@ -252,7 +283,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_credit_card"
+                    android:src="@drawable/ic_price_discount"
                     android:layout_marginRight="@dimen/padding_margin_16dp"/>
 
                 <LinearLayout

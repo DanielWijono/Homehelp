@@ -11,11 +11,13 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.Utils;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class RatingActivity extends AppCompatActivity {
 
@@ -37,8 +39,17 @@ public class RatingActivity extends AppCompatActivity {
     ScrollView scrollView;
     @BindView(R.id.ll_kerusakan_desc)
     LinearLayout llKerusakanDesc;
+    @BindView(R.id.tv_submit_rating)
+    TextView tvSubmitRating;
+    @BindView(R.id.ll_comment_rating)
+    LinearLayout llCommentRating;
+    @BindView(R.id.tv_give_your_rating)
+    TextView tvGiveYourRating;
+    @BindView(R.id.tv_give_your_comment)
+    TextView tvGiveYourComment;
 
     List<String> listKerusakanFromStep3;
+    int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +78,19 @@ public class RatingActivity extends AppCompatActivity {
             tvItemKerusakan.setText(listKerusakanFromStep3.get(i));
             imgItemKerusakan.setImageResource(R.drawable.ic_checked);
             llKerusakanDesc.addView(view);
+        }
+    }
+
+    @OnClick(R.id.tv_submit_rating)
+    public void onViewClicked() {
+        if (i == 0) {
+            tvGiveYourRating.setVisibility(View.GONE);
+            ratingBar.setVisibility(View.GONE);
+            llCommentRating.setVisibility(View.VISIBLE);
+            tvGiveYourComment.setVisibility(View.VISIBLE);
+            i++;
+        } else {
+            Utils.intentWithClearTask(this, DashBoardActivity.class);
         }
     }
 }
