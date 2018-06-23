@@ -59,7 +59,8 @@
         <activity android:name=".activity.NotificationDetailActivity" />
         <activity android:name=".activity.TrackingWorkerStep2Activity" />
         <activity android:name=".activity.TrackingWorkerExpandedActivity" />
-        <activity android:name=".activity.RatingActivity"></activity>
+        <activity android:name=".activity.RatingActivity" />
+        <activity android:name=".activity.StatusOrderAgendaActivity"></activity>
     </application>
 
 </manifest>

@@ -8,13 +8,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <View
-            android:layout_width="0.1dp"
-            android:layout_height="300dp"
-            android:background="@color/color_black"
+        <!--<View-->
+            <!--android:layout_width="0.1dp"-->
+            <!--android:layout_height="300dp"-->
+            <!--android:background="@color/color_black"-->
+            <!--android:layout_marginRight="@dimen/padding_margin_16dp"-->
+            <!--android:layout_marginLeft="@dimen/padding_margin_8dp"-->
+            <!--android:layout_marginTop="@dimen/padding_margin_8dp"></View>-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_line_agenda"
             android:layout_marginRight="@dimen/padding_margin_16dp"
             android:layout_marginLeft="@dimen/padding_margin_8dp"
-            android:layout_marginTop="@dimen/padding_margin_8dp"></View>
+            android:layout_marginTop="@dimen/padding_margin_8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,6 +39,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:src="@drawable/ic_date"/>
 
                 <TextView
@@ -46,7 +54,8 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_bell"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_time_agenda"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -61,7 +70,9 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_bell"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_three_dots_down"
+                    android:id="@+id/img_three_dots_item"/>
 
             </LinearLayout>
 
@@ -81,7 +92,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_bell"
+                        android:src="@drawable/ic_agenda_pekerjaan_atap"
                         android:layout_gravity="center"/>
 
                     <LinearLayout
@@ -116,7 +127,8 @@
                     android:orientation="vertical"
                     android:layout_marginLeft="@dimen/padding_margin_16dp"
                     android:layout_marginRight="@dimen/padding_margin_16dp"
-                    android:layout_marginBottom="@dimen/padding_margin_16dp">
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"
+                    android:id="@+id/ll_status_item">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -138,7 +150,8 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_bell"
+                            android:src="@drawable/ic_status_agenda"
+                            android:layout_gravity="center"
                             android:layout_weight="0.3"/>
 
                     </LinearLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_white"
+    tools:context=".activity.StatusOrderAgendaActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:theme="@style/ToolbarColoredBackArrowWhite"
+        android:layout_gravity="center"
+        android:id="@+id/toolbar">
+
+        <TextView
+            android:textSize="20dp"
+            android:textColor="@color/color_white"
+            android:id="@+id/tv_title_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll_view"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_rating_image_top"
+                android:id="@+id/img_status_order_agenda"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/color_grey_500"
+                android:layout_below="@+id/img_status_order_agenda"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/signup_border_background_white"
+                android:layout_marginTop="120dp"
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:gravity="center"
+                android:id="@+id/ll_order_agenda">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Order #09120245"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/padding_margin_16dp"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/padding_margin_8dp">
+
+                    <include layout="@layout/order_date_time_agenda"></include>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_line_agenda"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"/>
+
+                    <include layout="@layout/order_status_agenda_desc"></include>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chat Pekerja"
+                    android:textColor="@color/color_black"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/padding_margin_16dp"
+                    android:background="@drawable/signup_border_background_white"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rincian Pesanan"
+                    android:textColor="@color/color_white"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/padding_margin_16dp"
+                    android:layout_marginRight="@dimen/padding_margin_16dp"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"
+                    android:background="@drawable/signup_button"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
