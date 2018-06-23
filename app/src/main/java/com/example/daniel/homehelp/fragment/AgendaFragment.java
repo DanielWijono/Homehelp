@@ -7,9 +7,13 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.activity.DashBoardActivity;
@@ -17,6 +21,7 @@ import com.example.daniel.homehelp.adapter.TabLayoutViewPagerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Daniel on 5/13/2018.
@@ -28,6 +33,10 @@ public class AgendaFragment extends Fragment {
     TabLayout agendaTabLayout;
     @BindView(R.id.agenda_view_pager)
     ViewPager agendaViewPager;
+    @BindView(R.id.logo_header)
+    ImageView logoHeader;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     private View rootView;
     private DashBoardActivity mActivity;
@@ -81,5 +90,36 @@ public class AgendaFragment extends Fragment {
         agendaViewPager.setAdapter(adapter);
         agendaViewPager.setCurrentItem(position);
         agendaTabLayout.setupWithViewPager(agendaViewPager);
+    }
+
+    private void popUpDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
+        builder.setCancelable(true);
+        View dialoglayout = getLayoutInflater().inflate(R.layout.agenda_dialog, null, false);
+        builder.setView(dialoglayout);
+        final AlertDialog ad = builder.show();
+
+        TextView tvKembali = dialoglayout.findViewById(R.id.tv_kembali);
+        TextView tvReminder = dialoglayout.findViewById(R.id.tv_reminder);
+
+        tvKembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+            }
+        });
+
+        tvReminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+            }
+        });
+
+    }
+
+    @OnClick(R.id.logo_header)
+    public void onViewClicked() {
+        popUpDialog();
     }
 }

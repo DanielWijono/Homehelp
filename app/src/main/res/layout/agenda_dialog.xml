@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TITLEE"
+        android:layout_margin="@dimen/padding_margin_16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DESC"
+        android:layout_marginLeft="@dimen/padding_margin_16dp"
+        android:layout_marginBottom="@dimen/padding_margin_16dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_margin_16dp"
+        android:layout_marginBottom="@dimen/padding_margin_16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kembali"
+            android:textColor="@color/colorAccent"
+            android:layout_toLeftOf="@+id/tv_reminder"
+            android:layout_marginRight="@dimen/padding_margin_16dp"
+            android:padding="@dimen/padding_margin_16dp"
+            android:id="@+id/tv_kembali"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buat Reminder"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/padding_margin_16dp"
+            android:padding="@dimen/padding_margin_16dp"
+            android:id="@+id/tv_reminder"/>
+
+    </RelativeLayout>
+</LinearLayout>
+

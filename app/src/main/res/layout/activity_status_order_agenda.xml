@@ -91,7 +91,10 @@
                     android:text="Chat Pekerja"
                     android:textColor="@color/color_black"
                     android:gravity="center"
-                    android:layout_margin="@dimen/padding_margin_16dp"
+                    android:layout_marginLeft="@dimen/padding_margin_16dp"
+                    android:layout_marginRight="@dimen/padding_margin_16dp"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"
+                    android:layout_marginTop="50dp"
                     android:background="@drawable/signup_border_background_white"/>
 
                 <TextView
