@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_white">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bottom_navigation_inbox_active"
+        android:layout_centerInParent="true"
+        android:id="@+id/img_agenda_finish"/>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="FINISH"
-        android:textSize="80dp"/>
+        android:layout_height="wrap_content"
+        android:text="Belum ada pekerjaan"
+        android:textColor="@color/color_black"
+        android:layout_below="@+id/img_agenda_finish"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/padding_margin_20dp"
+        android:id="@+id/tv_agenda_finish_desc"/>
 
-</LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Silahkan lakukan pesanan terlebih dahulu ya"
+        android:textColor="@color/color_black"
+        android:layout_below="@+id/tv_agenda_finish_desc"
+        android:layout_marginTop="@dimen/padding_margin_8dp"
+        android:gravity="center"/>
+
+</RelativeLayout>
