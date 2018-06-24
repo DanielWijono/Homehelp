@@ -1,6 +1,7 @@
 package com.example.daniel.homehelp.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.activity.DashBoardActivity;
+import com.example.daniel.homehelp.activity.ReminderActivity;
 import com.example.daniel.homehelp.adapter.TabLayoutViewPagerAdapter;
 
 import butterknife.BindView;
@@ -113,6 +115,7 @@ public class AgendaFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ad.dismiss();
+                startActivity(new Intent(mActivity, ReminderActivity.class));
             }
         });
 

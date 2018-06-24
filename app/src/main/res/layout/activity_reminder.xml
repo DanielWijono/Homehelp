@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".activity.ReminderActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:theme="@style/ToolbarColoredBackArrowWhite"
+        android:layout_gravity="center"
+        android:id="@+id/toolbar">
+
+        <TextView
+            android:textSize="20dp"
+            android:textColor="@color/color_white"
+            android:id="@+id/tv_title_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll_view"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_rating_image_top"
+                android:id="@+id/img_reminder"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/color_grey_500"
+                android:layout_below="@+id/img_reminder"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/signup_border_background_white"
+                android:layout_marginTop="120dp"
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:gravity="center"
+                android:id="@+id/ll_reminder">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Buat Reminder"
+                    android:textColor="@color/colorAccent"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sebagai fitur alarm untuk membantu perencanaan Anda memesan layanan."/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/signup_border_background_white"
+                android:layout_below="@+id/ll_reminder"
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:layout_marginTop="@dimen/padding_margin_16dp"
+                android:id="@+id/ll_service_reminder">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pilih Layanan"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingBottom="16dp"
+                    android:layout_margin="16dp"
+                    android:id="@+id/bangunan_recycler_view"
+                    android:scrollbars="none"></android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/signup_border_background_white"
+                android:layout_below="@+id/ll_service_reminder"
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:layout_marginTop="@dimen/padding_margin_16dp"
+                android:id="@+id/ll_reminder_notes">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Note"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_notes"
+                        android:layout_gravity="center"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_transparent"
+                        android:layout_marginLeft="@dimen/padding_margin_16dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/signup_border_background_white"
+                android:layout_below="@+id/ll_reminder_notes"
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:layout_marginTop="@dimen/padding_margin_16dp"
+                android:id="@+id/ll_reminder_location">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LOKASI"
+                    android:textColor="@color/color_black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_location"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Jalan Syahdan"
+                        android:textColor="@color/color_black"
+                        android:gravity="center_vertical"
+                        android:id="@+id/tv_location"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_notes"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Jalan Syahdan"
+                        android:textColor="@color/color_black"
+                        android:gravity="center_vertical"
+                        android:id="@+id/tv_notes"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/padding_margin_16dp"
+                android:background="@drawable/signup_border_background_white"
+                android:id="@+id/ll_reminder_time"
+                android:layout_below="@+id/ll_reminder_location">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Waktu"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginBottom="@dimen/padding_margin_16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/ll_date">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_date"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:background="@drawable/signup_border"
+                    android:id="@+id/ll_date_picker">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="19 June 2018"
+                        android:layout_gravity="center"
+                        android:id="@+id/tv_date_begin"
+                        android:layout_weight="0.2"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_drop_down_green"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:id="@+id/ll_hour">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_time"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:background="@drawable/signup_border"
+                    android:id="@+id/ll_time_picker">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="13:55"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.2" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_drop_down_yellow"/>
+
+                </LinearLayout>
+            </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/ll_reminder_time">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simpan"
+                android:textColor="@color/color_black"
+                android:background="@drawable/next_button"
+                android:padding="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:layout_marginBottom="@dimen/padding_margin_16dp"
+                android:layout_gravity="right"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

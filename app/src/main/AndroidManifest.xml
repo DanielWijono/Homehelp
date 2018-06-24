@@ -60,7 +60,8 @@
         <activity android:name=".activity.TrackingWorkerStep2Activity" />
         <activity android:name=".activity.TrackingWorkerExpandedActivity" />
         <activity android:name=".activity.RatingActivity" />
-        <activity android:name=".activity.StatusOrderAgendaActivity"></activity>
+        <activity android:name=".activity.StatusOrderAgendaActivity" />
+        <activity android:name=".activity.ReminderActivity"></activity>
     </application>
 
 </manifest>
