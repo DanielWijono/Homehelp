@@ -44,6 +44,8 @@ public class AgendaFragment extends Fragment {
     private DashBoardActivity mActivity;
     OnGoingAgendaFragment onGoingAgendaFragment = new OnGoingAgendaFragment();
     FinishAgendaFragment finishAgendaFragment = new FinishAgendaFragment();
+    String reminderBundle;
+    Fragment onGoingAgendaFragments = OnGoingAgendaFragment.newInstance();
 
     @Override
     public void onAttach(Context context) {
@@ -85,8 +87,16 @@ public class AgendaFragment extends Fragment {
     }
 
     private void setupViewPager(int position) {
+        if (getArguments() != null) {
+            reminderBundle = getArguments().getString("REMINDER");
+            if (reminderBundle != null) {
+                Bundle bundle = new Bundle();
+                bundle.putString("REMINDER", reminderBundle);
+                onGoingAgendaFragments.setArguments(bundle);
+            }
+        }
         TabLayoutViewPagerAdapter adapter = new TabLayoutViewPagerAdapter(getFragmentManager());
-        adapter.addFragment(onGoingAgendaFragment, "Berlangsung");
+        adapter.addFragment(onGoingAgendaFragments, "Berlangsung");
         adapter.addFragment(finishAgendaFragment, "Selesai");
 
         agendaViewPager.setAdapter(adapter);
@@ -118,7 +128,6 @@ public class AgendaFragment extends Fragment {
                 startActivity(new Intent(mActivity, ReminderActivity.class));
             }
         });
-
     }
 
     @OnClick(R.id.logo_header)

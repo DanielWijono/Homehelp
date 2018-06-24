@@ -60,16 +60,36 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
 
     Fragment fragment;
     DrawerLayoutAdapter drawerLayoutAdapter;
+    String bundleReminder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
         ButterKnife.bind(this);
-        initFragment();
+        //initFragment();
         initDrawerLayout();
         BottomNavigationViewHelper.disableShiftMode(bottomNavigation);
         bottomNavigation.setOnNavigationItemSelectedListener(DashBoardActivity.this);
+        getBundle();
+        if (bundleReminder != null) {
+            Bundle bundle = new Bundle();
+            bundle.putString("REMINDER",bundleReminder);
+            fragment = AgendaFragment.newInstance();
+            fragment.setArguments(bundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+            toolbar.setVisibility(View.GONE);
+            bottomNavigation.setSelectedItemId(R.id.action_agenda);
+        } else {
+            initFragment();
+        }
+    }
+
+    private void getBundle() {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            bundleReminder = extras.getString("REMINDER");
+        }
     }
 
     @SuppressLint("ClickableViewAccessibility")

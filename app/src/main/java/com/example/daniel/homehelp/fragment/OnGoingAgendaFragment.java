@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.activity.DashBoardActivity;
@@ -26,9 +28,12 @@ public class OnGoingAgendaFragment extends Fragment {
     ImageView imgThreeDotsItem;
     @BindView(R.id.ll_status_item)
     LinearLayout llStatusItem;
+    @BindView(R.id.tv_reminder)
+    TextView tvReminder;
 
     private View rootView;
     private DashBoardActivity mActivity;
+    String reminderBundle;
 
     @Override
     public void onAttach(Context context) {
@@ -49,11 +54,26 @@ public class OnGoingAgendaFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    public static OnGoingAgendaFragment newInstance() {
+        Bundle args = new Bundle();
+
+        OnGoingAgendaFragment fragment = new OnGoingAgendaFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.on_going_agenda, container, false);
         ButterKnife.bind(this, rootView);
+
+        if (getArguments() != null) {
+            reminderBundle = getArguments().getString("REMINDER");
+            if (reminderBundle != null) {
+                tvReminder.setVisibility(View.VISIBLE);
+            }
+        }
 
         return rootView;
     }

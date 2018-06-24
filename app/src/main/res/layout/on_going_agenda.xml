@@ -21,6 +21,17 @@
 
         <include layout="@layout/item_on_going_agenda"></include>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_margin_16dp"
+            android:text="Reminder"
+            android:textSize="30dp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:id="@+id/tv_reminder"/>
+
     </LinearLayout>
 
 </LinearLayout>
