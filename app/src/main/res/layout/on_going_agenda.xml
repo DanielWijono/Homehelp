@@ -4,34 +4,52 @@
     android:layout_height="match_parent"
     android:background="@color/color_white">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="16dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Pesanan"
-            android:textSize="20dp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            android:layout_marginBottom="20dp"/>
-
-        <include layout="@layout/item_on_going_agenda"></include>
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_margin_16dp"
-            android:text="Reminder"
-            android:textSize="30dp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            android:visibility="gone"
-            android:id="@+id/tv_reminder"/>
+            android:orientation="vertical"
+            android:layout_margin="16dp">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Pesanan"
+                android:textSize="20dp"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"/>
+
+            <include layout="@layout/item_on_going_agenda"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/padding_margin_16dp"
+                android:layout_marginBottom="@dimen/padding_margin_32dp"
+                android:visibility="gone"
+                android:id="@+id/ll_on_going_reminder">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"
+                    android:text="Reminder"
+                    android:textSize="30dp"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:id="@+id/tv_reminder"/>
+
+                <include layout="@layout/item_on_going_reminder_agenda"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

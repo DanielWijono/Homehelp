@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.activity.DashBoardActivity;
@@ -30,6 +29,8 @@ public class OnGoingAgendaFragment extends Fragment {
     LinearLayout llStatusItem;
     @BindView(R.id.tv_reminder)
     TextView tvReminder;
+    @BindView(R.id.ll_on_going_reminder)
+    LinearLayout llOnGoingReminder;
 
     private View rootView;
     private DashBoardActivity mActivity;
@@ -71,7 +72,7 @@ public class OnGoingAgendaFragment extends Fragment {
         if (getArguments() != null) {
             reminderBundle = getArguments().getString("REMINDER");
             if (reminderBundle != null) {
-                tvReminder.setVisibility(View.VISIBLE);
+                llOnGoingReminder.setVisibility(View.VISIBLE);
             }
         }
 
