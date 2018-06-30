@@ -1,6 +1,7 @@
 package com.example.daniel.homehelp.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,10 +9,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.example.daniel.homehelp.activity.DashBoardActivity;
 import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.activity.DashBoardActivity;
+import com.example.daniel.homehelp.activity.InboxDetailActivity;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -20,6 +25,10 @@ import butterknife.ButterKnife;
 
 public class InboxFragment extends Fragment {
 
+    @BindView(R.id.tv_time_inbox)
+    TextView tvTimeInbox;
+    @BindView(R.id.ll_chat)
+    LinearLayout llChat;
     private View rootView;
     private DashBoardActivity mActivity;
 
@@ -57,5 +66,19 @@ public class InboxFragment extends Fragment {
         ButterKnife.bind(this, rootView);
 
         return rootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        llChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mActivity, InboxDetailActivity.class);
+                intent.putExtra("name","Jeffry Agus");
+                startActivity(intent);
+            }
+        });
     }
 }

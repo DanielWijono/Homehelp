@@ -61,7 +61,8 @@
         <activity android:name=".activity.TrackingWorkerExpandedActivity" />
         <activity android:name=".activity.RatingActivity" />
         <activity android:name=".activity.StatusOrderAgendaActivity" />
-        <activity android:name=".activity.ReminderActivity"></activity>
+        <activity android:name=".activity.ReminderActivity" />
+        <activity android:name=".activity.InboxDetailActivity"></activity>
     </application>
 
 </manifest>

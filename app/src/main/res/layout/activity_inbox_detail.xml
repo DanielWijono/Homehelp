@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".activity.InboxDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:layout_marginTop="@dimen/padding_margin_16dp"
+                android:id="@+id/ll_chat_from_worker">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_worker_face_one"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Halo Bu Adeline"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/padding_margin_16dp"
+                    android:background="@drawable/bangunan_border"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="09.01"
+                android:gravity="right"
+                android:layout_marginRight="@dimen/padding_margin_16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/padding_margin_16dp"
+                android:id="@+id/ll_chat_from_typing"></LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/padding_margin_16dp"
+        android:background="@drawable/signup_border_background_white"
+        android:id="@+id/ll_send_chat">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_image_attachment"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_transparent"
+            android:hint="Type Something"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/padding_margin_16dp"
+            android:layout_marginRight="@dimen/padding_margin_16dp"
+            android:layout_weight="0.5"
+            android:id="@+id/et_chat_type"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_image_attachment"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:id="@+id/img_send_chat"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
