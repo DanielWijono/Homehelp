@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:text="Senin, 5 Mei 2018"
                     android:textColor="@color/color_black"
-                    android:layout_gravity="left"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="0.4"
                     android:layout_marginLeft="@dimen/padding_margin_8dp"/>
 
@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:text="10.00"
                     android:textColor="@color/color_black"
-                    android:gravity="left"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="0.6"
                     android:layout_marginLeft="@dimen/padding_margin_8dp"
                     android:layout_marginRight="@dimen/padding_margin_8dp"/>
@@ -72,6 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_three_dots_down"
+                    android:padding="@dimen/padding_margin_6dp"
                     android:id="@+id/img_three_dots_item"/>
 
             </LinearLayout>

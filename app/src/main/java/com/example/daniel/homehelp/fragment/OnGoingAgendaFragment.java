@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.activity.DashBoardActivity;
+import com.example.daniel.homehelp.activity.ReminderActivity;
 import com.example.daniel.homehelp.activity.StatusOrderAgendaActivity;
 
 import butterknife.BindView;
@@ -79,11 +81,39 @@ public class OnGoingAgendaFragment extends Fragment {
         return rootView;
     }
 
+    private void popUpDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
+        builder.setCancelable(true);
+        View dialoglayout = getLayoutInflater().inflate(R.layout.agenda_dialog, null, false);
+        builder.setView(dialoglayout);
+        final AlertDialog ad = builder.show();
+
+        TextView tvKembali = dialoglayout.findViewById(R.id.tv_kembali);
+        TextView tvReminder = dialoglayout.findViewById(R.id.tv_reminder);
+
+        tvReminder.setText("Batalkan Pesanan");
+
+        tvKembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+            }
+        });
+
+        tvReminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+                startActivity(new Intent(mActivity, ReminderActivity.class));
+            }
+        });
+    }
+
     @OnClick({R.id.img_three_dots_item, R.id.ll_status_item})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.img_three_dots_item:
-                //popup dialog
+                popUpDialog();
                 break;
             case R.id.ll_status_item:
                 Intent intent = new Intent(mActivity, StatusOrderAgendaActivity.class);
