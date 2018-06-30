@@ -28,6 +28,7 @@ import com.example.daniel.homehelp.activity.BangunanActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 import me.relex.circleindicator.CircleIndicator;
 
 /**
@@ -39,7 +40,7 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick {
 //    @BindView(R.id.search_view)
 //    SearchView searchView;
     @BindView(R.id.home_view_pager)
-    ViewPager homeViewPager;
+    AutoScrollViewPager homeViewPager;
     @BindView(R.id.home_indicator)
     CircleIndicator homeIndicator;
     @BindView(R.id.service_home_recycler_view)
@@ -104,6 +105,8 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick {
     }
 
     private void setupViewPager() {
+        homeViewPager.startAutoScroll();
+        homeViewPager.setInterval(2500);
         homeViewPager.setAdapter(new HomeAdapter(mActivity, mActivity));
         homeIndicator.setViewPager(homeViewPager);
         homeViewPager.addOnPageChangeListener(mActivity);
@@ -134,5 +137,11 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick {
         } else if (position == 2) {
             Toast.makeText(mActivity, "position 2", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        homeViewPager.stopAutoScroll();
     }
 }

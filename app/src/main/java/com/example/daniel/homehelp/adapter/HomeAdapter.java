@@ -32,8 +32,7 @@ public class HomeAdapter extends RecyclingPagerAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.content_home, null);
         }
 
-        int [] introBgImage = {R.drawable.introduction_one, R.drawable.introduction_two,
-                R.drawable.introduction_three, R.drawable.introduction_four};
+        int [] introBgImage = {R.drawable.ic_carousel_home_one, R.drawable.introduction_two};
 
         ImageView homeImageView = ButterKnife.findById(convertView, R.id.image_view);
         homeImageView.setBackgroundResource(introBgImage[position]);
@@ -43,6 +42,6 @@ public class HomeAdapter extends RecyclingPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 2;
     }
 }

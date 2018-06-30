@@ -56,7 +56,6 @@
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:visibility="visible"
-                    android:tint="@color/color_white"
                     android:id="@+id/btn_bell"/>
 
             </android.support.v7.widget.Toolbar>

@@ -1,44 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardUseCompatPadding="true"
-        android:background="@drawable/signup_border"
-        android:id="@+id/home_tips_card_view">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:orientation="vertical"
+        android:background="@drawable/border_tips_background_white"
+        android:layout_margin="@dimen/padding_margin_16dp">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/padding_margin_8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
             android:id="@+id/tips_image"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hama"
             android:gravity="center"
+            android:layout_marginLeft="@dimen/padding_margin_8dp"
+            android:layout_marginRight="@dimen/padding_margin_8dp"
             android:id="@+id/tips_title"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bagian rumah yang rentandfgfdgdgfgdgfdgdgdgddfgdfg"
-            android:textColor="@color/colorAccent"
+            android:text="Hama desc"
             android:gravity="center"
-            android:layout_margin="@dimen/padding_margin_16dp"
+            android:layout_marginLeft="@dimen/padding_margin_8dp"
+            android:layout_marginRight="@dimen/padding_margin_8dp"
             android:id="@+id/tips_desc"/>
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
+
+    </LinearLayout>
 
 </LinearLayout>

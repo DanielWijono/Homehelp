@@ -35,12 +35,10 @@ public class HomeTipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         TextView tipsTitle;
         @BindView(R.id.tips_desc)
         TextView tipsDesc;
-        @BindView(R.id.home_tips_card_view)
-        CardView homeTipsCardView;
 
-        String[] introTitle = {"Bangunan", "Kelistrikan"};
-        String[] introDescription = {"Mencakup atap, lantai, pintu\n jendela dan saluran air", "Mencakup AC dan \ninstalasi listrik"};
-        int[] introBgImage = {R.drawable.ic_tips_one, R.drawable.ic_tips_two};
+        String[] introTitle = {"Hama", "Versus"};
+        String[] introDescription = {"Bagian Rumah yang\n Rentan Rayap", "Mending Merawat \natau Membeli"};
+        int[] introBgImage = {R.drawable.ic_tips_hama, R.drawable.ic_tips_versus};
 
         public HomeTipsListViewHolder(View itemView) {
             super(itemView);
@@ -51,7 +49,6 @@ public class HomeTipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             tipsTitle.setText(introTitle[position]);
             tipsDesc.setText(introDescription[position]);
             tipsImage.setBackgroundResource(introBgImage[position]);
-            homeTipsCardView.setCardElevation(2);
         }
     }
 
