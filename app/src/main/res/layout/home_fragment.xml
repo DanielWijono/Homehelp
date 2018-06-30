@@ -57,7 +57,8 @@
                     android:layout_height="wrap_content"
                     android:text="Apa yang ingin diperbaiki hari ini ?"
                     android:textSize="23dp"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
                     android:lineSpacingExtra="28px"
                     app:fontFamily="@font/proxima_nova_medium"
                     android:id="@+id/tv_first_title"/>
@@ -90,7 +91,7 @@
                     android:text="Tips Rumah"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    android:textColor="@color/color_black"/>
+                    android:textColor="@color/colorAccent"/>
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView

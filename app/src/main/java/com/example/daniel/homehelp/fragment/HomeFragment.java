@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -97,7 +98,7 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick {
         scrollView.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
         serviceHomeRecyclerView.setNestedScrollingEnabled(false);
         tipsHomeRecyclerView.setNestedScrollingEnabled(false);
-        tvFirstTitle.setText("Apa yang ingin \ndiperbaiki hari ini ?");
+        tvFirstTitle.setText("Menu Layanan");
 
         return rootView;
     }
@@ -109,8 +110,8 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick {
     }
 
     private void initServiceRecyclerView() {
-        LinearLayoutManager layoutManager = new LinearLayoutManager(mActivity);
-        serviceHomeRecyclerView.setLayoutManager(layoutManager);
+        //LinearLayoutManager layoutManager = new LinearLayoutManager(mActivity);
+        serviceHomeRecyclerView.setLayoutManager(new GridLayoutManager(mActivity,2));
 
         homeServiceAdapter = new HomeServiceAdapter(mActivity, recyclerViewOnClick);
         serviceHomeRecyclerView.setAdapter(homeServiceAdapter);
