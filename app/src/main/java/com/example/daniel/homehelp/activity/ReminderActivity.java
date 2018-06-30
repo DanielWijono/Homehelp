@@ -4,6 +4,7 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -57,8 +58,7 @@ public class ReminderActivity extends AppCompatActivity implements RecyclerViewO
     }
 
     private void initRecyclerView() {
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        serviceHomeRecyclerView.setLayoutManager(layoutManager);
+        serviceHomeRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
         homeServiceAdapter = new HomeServiceAdapter(this, recyclerViewOnClick);
         serviceHomeRecyclerView.setAdapter(homeServiceAdapter);

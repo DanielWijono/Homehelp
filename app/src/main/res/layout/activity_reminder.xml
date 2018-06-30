@@ -91,8 +91,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
-                    android:paddingBottom="16dp"
-                    android:layout_margin="16dp"
+                    android:paddingBottom="8dp"
+                    android:layout_margin="8dp"
                     android:id="@+id/bangunan_recycler_view"
                     android:scrollbars="none"></android.support.v7.widget.RecyclerView>
 
