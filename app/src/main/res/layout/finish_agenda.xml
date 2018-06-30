@@ -7,8 +7,9 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/bottom_navigation_inbox_active"
-        android:layout_centerInParent="true"
+        android:src="@drawable/ic_agenda_empty"
+        android:layout_above="@+id/tv_agenda_finish_desc"
+        android:layout_centerHorizontal="true"
         android:id="@+id/img_agenda_finish"/>
 
     <TextView
@@ -16,9 +17,9 @@
         android:layout_height="wrap_content"
         android:text="Belum ada pekerjaan"
         android:textColor="@color/color_black"
-        android:layout_below="@+id/img_agenda_finish"
         android:gravity="center"
         android:layout_marginTop="@dimen/padding_margin_20dp"
+        android:layout_centerInParent="true"
         android:id="@+id/tv_agenda_finish_desc"/>
 
     <TextView
