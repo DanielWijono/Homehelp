@@ -58,6 +58,7 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             llHome.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    //llHomeR.drawable.ic_reminder_bangunan_clicked);
                     mRecyclerViewOnClick.itemOnClick(view, position);
                 }
             });

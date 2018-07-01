@@ -86,6 +86,7 @@ public class AtapActivityStep2 extends AppCompatActivity {
     private String workType, notes, location;
     @SuppressLint("RestrictedApi")
     Context context = new ContextThemeWrapper(this, R.style.MyDatePickerDialogTheme);
+    private int mYear, mMonth, mDay;
 
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
@@ -157,8 +158,23 @@ public class AtapActivityStep2 extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_date_picker:
-                dateBeginDialog.getDatePicker().updateDate(dateCalendar.get(Calendar.YEAR), dateCalendar.get(Calendar.MONTH), dateCalendar.get(Calendar.DAY_OF_MONTH));
-                dateBeginDialog.show();
+                final Calendar c = Calendar.getInstance();
+                mYear = c.get(Calendar.YEAR);
+                mMonth = c.get(Calendar.MONTH);
+                mDay = c.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(this, R.style.MyDatePickerDialogThemes,
+                        new DatePickerDialog.OnDateSetListener() {
+
+                            @Override
+                            public void onDateSet(DatePicker view, int year,
+                                                  int monthOfYear, int dayOfMonth) {
+                                String month = DateTimeUtils.setMonthNumberToWords(monthOfYear+1);
+                                tvDateBegin.setText(dayOfMonth + " " + month + " " + year);
+                            }
+                        }, mYear, mMonth, mDay);
+                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+                datePickerDialog.show();
                 break;
             case R.id.next_button:
                 Intent intent = new Intent(this, AtapActivityStep3.class);

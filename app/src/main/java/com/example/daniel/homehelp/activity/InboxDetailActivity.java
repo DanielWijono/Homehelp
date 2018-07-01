@@ -59,13 +59,15 @@ public class InboxDetailActivity extends AppCompatActivity {
 
     @OnClick(R.id.img_send_chat)
     public void onViewClicked() {
-        View view = getLayoutInflater().inflate(R.layout.item_chat_from_typing, null);
-        TextView textType = view.findViewById(R.id.tv_from_typing);
-        TextView textTime = view.findViewById(R.id.tv_time_typing);
+        if (chatType.length() > 0) {
+            View view = getLayoutInflater().inflate(R.layout.item_chat_from_typing, null);
+            TextView textType = view.findViewById(R.id.tv_from_typing);
+            TextView textTime = view.findViewById(R.id.tv_time_typing);
 
-        textType.setText(chatType);
+            textType.setText(chatType);
 
-        llChatFromTyping.addView(view);
-        etChatType.setText("");
+            llChatFromTyping.addView(view);
+            etChatType.setText("");
+        }
     }
 }

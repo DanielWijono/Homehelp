@@ -304,4 +304,48 @@ public class DateTimeUtils {
 
         return sTime;
     }
+
+    public static String setMonthNumberToWords(int monthNumber) {
+        String monthWord = "";
+
+        switch (monthNumber) {
+            case 1:
+                monthWord = "January";
+                break;
+            case 2:
+                monthWord = "February";
+                break;
+            case 3:
+                monthWord = "March";
+                break;
+            case 4:
+                monthWord = "April";
+                break;
+            case 5:
+                monthWord = "May";
+                break;
+            case 6:
+                monthWord = "June";
+                break;
+            case 7:
+                monthWord = "July";
+                break;
+            case 8:
+                monthWord = "August";
+                break;
+            case 9:
+                monthWord = "September";
+                break;
+            case 10:
+                monthWord = "October";
+                break;
+            case 11:
+                monthWord = "November";
+                break;
+            case 12:
+                monthWord = "December";
+                break;
+        }
+        return monthWord;
+    }
 }

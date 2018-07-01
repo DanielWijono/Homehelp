@@ -37,7 +37,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/ic_rating_image_top"
+                android:src="@drawable/ic_reminder_top_image"
                 android:id="@+id/img_reminder"/>
 
             <View
@@ -61,6 +61,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Buat Reminder"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
 
                 <TextView
@@ -84,6 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pilih Layanan"
+                    android:textSize="20dp"
                     android:textStyle="bold"
                     android:textColor="@color/colorAccent"/>
 
@@ -113,8 +116,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Note"
+                    android:textSize="20dp"
                     android:textStyle="bold"
-                    android:textColor="@color/colorAccent"/>
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginBottom="@dimen/padding_margin_8dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -131,6 +136,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/color_transparent"
+                        android:hint="Keterangan"
                         android:layout_marginLeft="@dimen/padding_margin_16dp"/>
 
                 </LinearLayout>
@@ -151,8 +157,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="LOKASI"
-                    android:textColor="@color/color_black"/>
+                    android:text="Lokasi"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginBottom="@dimen/padding_margin_8dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -166,13 +175,12 @@
                         android:src="@drawable/ic_location"
                         android:layout_marginRight="8dp"/>
 
-                    <TextView
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Jalan Syahdan"
-                        android:textColor="@color/color_black"
-                        android:gravity="center_vertical"
-                        android:id="@+id/tv_location"/>
+                        android:hint="Tambah Alamat"
+                        android:background="@color/color_transparent"
+                        android:gravity="center_vertical"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -187,13 +195,12 @@
                         android:src="@drawable/ic_notes"
                         android:layout_marginRight="8dp"/>
 
-                    <TextView
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Jalan Syahdan"
-                        android:textColor="@color/color_black"
-                        android:gravity="center_vertical"
-                        android:id="@+id/tv_notes"/>
+                        android:hint="Keterangan"
+                        android:background="@color/color_transparent"
+                        android:gravity="center_vertical"/>
                 </LinearLayout>
 
             </LinearLayout>

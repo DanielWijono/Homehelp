@@ -22,4 +22,18 @@
         <item name="android:datePickerStyle">@style/Theme.AppCompat.Light.Dialog</item>
     </style>
 
+    <style name="MyDatePickerDialogThemes" parent="Theme.AppCompat.Light.Dialog">
+        <!-- this is new -->
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    </style>
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/colorAccent</item>
+    </style>
+
+    <!-- Theme.AppCompat.Light is not a dialog theme -->
+    <style name="DialogTheme" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
 </resources>
