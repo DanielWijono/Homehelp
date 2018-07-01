@@ -51,9 +51,6 @@ public class ReminderActivity extends AppCompatActivity implements RecyclerViewO
     TextView tvTime;
     @BindView(R.id.tv_save_reminder)
     TextView tvSaveReminder;
-
-    HomeServiceAdapter homeServiceAdapter;
-    RecyclerViewOnClick recyclerViewOnClick = this;
     @BindView(R.id.tv_title_toolbar)
     TextView tvTitleToolbar;
     @BindView(R.id.img_reminder)
@@ -74,9 +71,12 @@ public class ReminderActivity extends AppCompatActivity implements RecyclerViewO
     LinearLayout llHour;
     @BindView(R.id.ll_reminder_time)
     LinearLayout llReminderTime;
+
     private DatePickerDialog dateBeginDialog;
     private Calendar dateCalendar;
     private int mYear, mMonth, mDay;
+    HomeServiceAdapter homeServiceAdapter;
+    RecyclerViewOnClick recyclerViewOnClick = this;
     @SuppressLint("RestrictedApi")
     Context context = new ContextThemeWrapper(this, R.style.MyDatePickerDialogTheme);
 
@@ -182,7 +182,7 @@ public class ReminderActivity extends AppCompatActivity implements RecyclerViewO
         TextView tvSeeAgenda = dialoglayout.findViewById(R.id.tv_see_agenda_reminder);
         ImageView imageReminder = dialoglayout.findViewById(R.id.img_reminder_success_dialog);
 
-        imageReminder.setImageResource(R.drawable.ic_bangunan);
+        imageReminder.setImageResource(R.drawable.ic_reminder_success);
         tvReminder.setText("Reminder \nBerhasil Dibuat!");
 
         tvSeeAgenda.setOnClickListener(new View.OnClickListener() {

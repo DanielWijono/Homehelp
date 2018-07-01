@@ -2,7 +2,6 @@ package com.example.daniel.homehelp.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,27 +11,20 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.daniel.homehelp.R;
-import com.example.daniel.homehelp.RecyclerViewOnClick;
 import com.example.daniel.homehelp.RecyclerViewOnClickTipsHome;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by Daniel on 5/13/2018.
- */
-
-public class HomeTipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class HomeTipsAdapterDetail extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context context;
-    RecyclerViewOnClickTipsHome recyclerViewOnClickTipsHome;
 
-    public HomeTipsAdapter(Context context, RecyclerViewOnClickTipsHome recyclerViewOnClickTipsHome) {
+    public HomeTipsAdapterDetail(Context context) {
         this.context = context;
-        this.recyclerViewOnClickTipsHome = recyclerViewOnClickTipsHome;
     }
 
-    public class HomeTipsListViewHolder extends RecyclerView.ViewHolder {
+    public class HomeTipsListDetailViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.tips_image)
         ImageView tipsImage;
@@ -43,11 +35,11 @@ public class HomeTipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         @BindView(R.id.ll_home_tips)
         LinearLayout llHomeTips;
 
-        String[] introTitle = {"Hama", "Versus"};
-        String[] introDescription = {"Bagian Rumah yang\n Rentan Rayap", "Mending Merawat \natau Membeli"};
-        int[] introBgImage = {R.drawable.ic_tips_hama, R.drawable.ic_tips_versus};
+        String[] introTitle = {"Inspirasi", "Versus"};
+        String[] introDescription = {"Dekorasi Nyaman \n Ruang Keluarga", "Mending Merawat \natau Membeli"};
+        int[] introBgImage = {R.drawable.ic_tips_detail_article_one, R.drawable.ic_tips_detail_article_two};
 
-        public HomeTipsListViewHolder(View itemView) {
+        public HomeTipsListDetailViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
@@ -56,27 +48,20 @@ public class HomeTipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             tipsTitle.setText(introTitle[position]);
             tipsDesc.setText(introDescription[position]);
             tipsImage.setBackgroundResource(introBgImage[position]);
-
-            llHomeTips.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    recyclerViewOnClickTipsHome.itemOnClickTipsHome(view, position);
-                }
-            });
         }
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View rootView = LayoutInflater.from(context).inflate(R.layout.item_home_tips, null);
-        return new HomeTipsListViewHolder(rootView);
+        View rootView = LayoutInflater.from(context).inflate(R.layout.item_home_tips_detail, null);
+        return new HomeTipsAdapterDetail.HomeTipsListDetailViewHolder(rootView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        HomeTipsListViewHolder homeTipsListViewHolder = (HomeTipsListViewHolder) holder;
-        homeTipsListViewHolder.setView(position);
+        HomeTipsAdapterDetail.HomeTipsListDetailViewHolder homeTipsListDetailViewHolder = (HomeTipsListDetailViewHolder) holder;
+        homeTipsListDetailViewHolder.setView(position);
     }
 
     @Override

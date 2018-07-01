@@ -1,9 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_white"
     tools:context=".activity.HomeTipsDetailActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:theme="@style/ToolbarColoredBackArrowWhite"
+        android:id="@+id/toolbar">
+
+        <TextView
+            android:textSize="20dp"
+            android:textColor="@color/color_white"
+            android:id="@+id/tv_title_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll_view"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="161dp"
+                android:src="@drawable/ic_tips_detail_top"
+                android:layout_marginBottom="@dimen/padding_margin_4dp"
+                android:id="@+id/img_atap"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="120dp"
+                android:background="@drawable/signup_border_background_white"
+                android:id="@+id/ll_home_tips_detail">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bagian Rumah yang Rentan Rayap"
+                    android:textColor="@color/color_black"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="IDEAonline - Oleh Maulina Kadiranti"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mei 12, 2018 12:33PM"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_black"
+                    android:text="lala"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:id="@+id/tv_tips_one"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_black"
+                    android:text="lala"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:id="@+id/tv_tips_two"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_black"
+                    android:text="lala"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:id="@+id/tv_tips_three"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kategori"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/padding_margin_16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kayu"
+                        android:textColor="@color/color_black"
+                        android:layout_marginRight="@dimen/padding_margin_16dp"
+                        android:background="@drawable/signup_border_background_white"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TipsHomehelp"
+                        android:textColor="@color/color_black"
+                        android:layout_marginRight="@dimen/padding_margin_16dp"
+                        android:background="@drawable/signup_border_background_white"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rumah"
+                        android:textColor="@color/color_black"
+                        android:background="@drawable/signup_border_background_white"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bagikan"
+                    android:textColor="@color/color_black"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/padding_margin_8dp"
+                        android:src="@drawable/ic_facebook"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/padding_margin_8dp"
+                        android:src="@drawable/ic_instagram"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/padding_margin_8dp"
+                        android:src="@drawable/ic_twitter"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/padding_margin_8dp"
+                        android:src="@drawable/ic_whatsapp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cek juga artikel lainnya"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:id="@+id/tv_check_article"
+                android:layout_below="@+id/ll_home_tips_detail"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:layout_margin="@dimen/padding_margin_16dp"
+                android:background="@color/color_transparent"
+                android:layout_below="@+id/tv_check_article"
+                android:id="@+id/tips_home_recycler_view"
+                android:scrollbars="none"></android.support.v7.widget.RecyclerView>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

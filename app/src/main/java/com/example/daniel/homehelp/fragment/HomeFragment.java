@@ -18,7 +18,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.daniel.homehelp.RecyclerViewOnClickTipsHome;
 import com.example.daniel.homehelp.activity.DashBoardActivity;
+import com.example.daniel.homehelp.activity.HomeTipsDetailActivity;
 import com.example.daniel.homehelp.adapter.HomeAdapter;
 import com.example.daniel.homehelp.adapter.HomeServiceAdapter;
 import com.example.daniel.homehelp.adapter.HomeTipsAdapter;
@@ -35,7 +37,7 @@ import me.relex.circleindicator.CircleIndicator;
  * Created by Daniel on 5/13/2018.
  */
 
-public class HomeFragment extends Fragment implements RecyclerViewOnClick {
+public class HomeFragment extends Fragment implements RecyclerViewOnClick, RecyclerViewOnClickTipsHome {
 
 //    @BindView(R.id.search_view)
 //    SearchView searchView;
@@ -55,6 +57,7 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick {
     private View rootView;
     private DashBoardActivity mActivity;
     private RecyclerViewOnClick recyclerViewOnClick = this;
+    private RecyclerViewOnClickTipsHome recyclerViewOnClickTipsHome = this;
     HomeServiceAdapter homeServiceAdapter;
     HomeTipsAdapter homeTipsAdapter;
 
@@ -124,7 +127,7 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick {
         LinearLayoutManager layoutManager = new LinearLayoutManager(mActivity, LinearLayoutManager.HORIZONTAL, false);
         tipsHomeRecyclerView.setLayoutManager(layoutManager);
 
-        homeTipsAdapter = new HomeTipsAdapter(mActivity);
+        homeTipsAdapter = new HomeTipsAdapter(mActivity,recyclerViewOnClickTipsHome);
         tipsHomeRecyclerView.setAdapter(homeTipsAdapter);
     }
 
@@ -136,6 +139,13 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick {
             Toast.makeText(mActivity, "position 1", Toast.LENGTH_SHORT).show();
         } else if (position == 2) {
             Toast.makeText(mActivity, "position 2", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void itemOnClickTipsHome(View view, int position) {
+        if (position == 0) {
+            startActivity(new Intent(mActivity, HomeTipsDetailActivity.class));
         }
     }
 
