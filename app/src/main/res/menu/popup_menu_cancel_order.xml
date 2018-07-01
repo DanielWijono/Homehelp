@@ -5,8 +5,4 @@
         android:id="@+id/item_cancel_order"
         android:title="Batalkan Pesanan" />
 
-    <item
-        android:id="@+id/item_kembali"
-        android:title="Kembali"/>
-
 </menu>

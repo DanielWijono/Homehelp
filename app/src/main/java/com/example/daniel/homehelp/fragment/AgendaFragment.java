@@ -10,20 +10,29 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.activity.DashBoardActivity;
 import com.example.daniel.homehelp.activity.ReminderActivity;
 import com.example.daniel.homehelp.adapter.TabLayoutViewPagerAdapter;
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.DialogPlusBuilder;
+import com.orhanobut.dialogplus.OnClickListener;
+import com.orhanobut.dialogplus.OnItemClickListener;
+import com.orhanobut.dialogplus.ViewHolder;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.example.daniel.homehelp.R.id.tv_agenda_one;
 
 /**
  * Created by Daniel on 5/13/2018.
@@ -104,34 +113,31 @@ public class AgendaFragment extends Fragment {
         agendaTabLayout.setupWithViewPager(agendaViewPager);
     }
 
-    private void popUpDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
-        builder.setCancelable(true);
-        View dialoglayout = getLayoutInflater().inflate(R.layout.agenda_dialog, null, false);
-        builder.setView(dialoglayout);
-        final AlertDialog ad = builder.show();
-
-        TextView tvKembali = dialoglayout.findViewById(R.id.tv_kembali);
-        TextView tvReminder = dialoglayout.findViewById(R.id.tv_reminder);
-
-        tvKembali.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ad.dismiss();
-            }
-        });
-
-        tvReminder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ad.dismiss();
-                startActivity(new Intent(mActivity, ReminderActivity.class));
-            }
-        });
+    private void popupDialogOnTop() {
+        DialogPlus dialog = DialogPlus.newDialog(mActivity)
+                .setContentHolder(new ViewHolder(R.layout.agenda_top_dialog))
+                .setGravity(Gravity.BOTTOM)
+                .setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(DialogPlus dialog, View view) {
+                        switch(view.getId()) {
+                            case R.id.tv_agenda_one:
+                                dialog.dismiss();
+                                startActivity(new Intent(mActivity, ReminderActivity.class));
+                                break;
+                            case R.id.tv_agenda_two:
+                                dialog.dismiss();
+                                break;
+                        }
+                    }
+                })
+                .setCancelable(true)
+                .create();
+        dialog.show();
     }
 
     @OnClick(R.id.logo_header)
     public void onViewClicked() {
-        popUpDialog();
+        popupDialogOnTop();
     }
 }

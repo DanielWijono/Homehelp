@@ -30,6 +30,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginTop="@dimen/padding_margin_16dp">
+
+                <include layout="@layout/item_on_going_agenda_two"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginTop="@dimen/padding_margin_16dp"
                 android:layout_marginBottom="@dimen/padding_margin_32dp"
                 android:visibility="gone"
