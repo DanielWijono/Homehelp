@@ -80,7 +80,6 @@ public class SignUpActivity extends AppCompatActivity {
 
     @OnClick(R.id.tv_sign_up)
     public void onViewClicked() {
-        startActivity(new Intent(this, DashBoardActivity.class));
-        finish();
+        startActivity(new Intent(this, VerificationCodeActivity.class));
     }
 }

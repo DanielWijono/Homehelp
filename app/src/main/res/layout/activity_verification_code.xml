@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".activity.VerificationCodeActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        android:theme="@style/ToolbarColoredBackArrow"
+        android:id="@+id/toolbar">
+
+        <TextView
+            android:textSize="20dp"
+            android:textColor="@color/color_white"
+            android:id="@+id/tv_title_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_reminder_top_image"
+        android:layout_above="@+id/tv_verification_code_title"
+        android:id="@+id/img_verification_code"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Isi Kode Verifikasi"
+        android:textColor="@color/color_black"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/padding_margin_16dp"
+        android:id="@+id/tv_verification_code_title"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kami sudah kirimkan kode melalui SMS ke nomor "
+        android:layout_below="@id/tv_verification_code_title"
+        android:gravity="center"
+        android:id="@+id/tv_verification_code_desc"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Nomor"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/padding_margin_16dp"
+        android:layout_marginBottom="@dimen/padding_margin_32dp"
+        android:layout_below="@+id/tv_verification_code_desc"
+        android:id="@+id/tv_edit_number"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@+id/tv_edit_number"
+        android:id="@+id/ll_et_codes">
+
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:maxLength="1"
+            android:gravity="center"
+            android:inputType="number"
+            android:id="@+id/et_code_one"/>
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:maxLength="1"
+            android:gravity="center"
+            android:inputType="number"
+            android:id="@+id/et_code_two"/>
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:maxLength="1"
+            android:gravity="center"
+            android:inputType="number"
+            android:id="@+id/et_code_three"/>
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:maxLength="1"
+            android:gravity="center"
+            android:inputType="number"
+            android:id="@+id/et_code_four"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tidak terima sms ?"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/padding_margin_56dp"
+        android:gravity="center"
+        android:id="@+id/tv_send_sms_again"/>
+
+</RelativeLayout>
