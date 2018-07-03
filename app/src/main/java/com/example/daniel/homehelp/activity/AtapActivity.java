@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.daniel.homehelp.MyApplication;
 import com.example.daniel.homehelp.R;
@@ -144,5 +146,46 @@ public class AtapActivity extends AppCompatActivity {
         tvTermsConditionThree.setText(getResources().getString(R.string.terms_condition_borongan_three));
         tvTermsConditionFour.setText(getResources().getString(R.string.terms_condition_borongan_four));
         tvTermsConditionFive.setText(getResources().getString(R.string.terms_condition_borongan_five));
+    }
+
+    private void showDialogBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        View dialoglayout = getLayoutInflater().inflate(R.layout.cancel_order_dialog, null, false);
+        builder.setView(dialoglayout);
+        final AlertDialog ad = builder.show();
+
+        TextView tvCancel = dialoglayout.findViewById(R.id.tv_cancel_order);
+        TextView tvKembali = dialoglayout.findViewById(R.id.tv_cancel_order_back);
+        TextView tvCancelTitle = dialoglayout.findViewById(R.id.tv_title_agenda_dialog);
+        TextView tvCancelDesc = dialoglayout.findViewById(R.id.tv_cancel_desc);
+        ImageView imageView = dialoglayout.findViewById(R.id.img_agenda_dialog);
+
+        tvCancelTitle.setVisibility(View.GONE);
+        tvCancelDesc.setText("Apakah anda yakin ingin \nmeninggalkan halaman ini ?");
+        imageView.setImageResource(R.drawable.ic_cancel_agenda);
+
+        tvKembali.setText("Batalkan");
+        tvKembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+            }
+        });
+
+        tvCancel.setText("Ya");
+        tvCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+                finish();
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        showDialogBackPressed();
     }
 }
