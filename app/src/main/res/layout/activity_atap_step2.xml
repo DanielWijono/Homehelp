@@ -68,16 +68,16 @@
                         android:src="@drawable/ic_location"
                         android:layout_marginRight="10dp"
                         android:layout_gravity="center"/>
-
-                    <EditText
+                    
+                    <AutoCompleteTextView
+                        android:id="@+id/autocomplete_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Tambah alamat"
                         android:textSize="16dp"
-                        android:background="@color/color_transparent"
-                        android:layout_gravity="center"
+                        android:imeOptions="actionNext"
                         android:singleLine="true"
-                        android:id="@+id/et_location"/>
+                        android:background="@color/color_transparent"
+                        android:hint="Tambah alamat"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -210,7 +210,8 @@
                             android:layout_height="wrap_content"
                             android:text="13:55"
                             android:layout_gravity="center"
-                            android:layout_weight="0.2" />
+                            android:layout_weight="0.2"
+                            android:id="@+id/tv_time"/>
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

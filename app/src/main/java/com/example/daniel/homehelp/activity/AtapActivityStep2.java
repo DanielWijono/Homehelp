@@ -3,13 +3,12 @@ package com.example.daniel.homehelp.activity;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.Toolbar;
@@ -17,12 +16,16 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.example.daniel.homehelp.DateTimeUtils;
 import com.example.daniel.homehelp.R;
@@ -31,6 +34,7 @@ import com.shuhart.stepview.StepView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -78,8 +82,10 @@ public class AtapActivityStep2 extends AppCompatActivity {
     EditText etNotes;
     @BindView(R.id.img_toolbar)
     ImageView imgToolbar;
-    @BindView(R.id.et_location)
-    EditText etLocation;
+    @BindView(R.id.tv_time)
+    TextView tvTime;
+    @BindView(R.id.autocomplete_address)
+    AutoCompleteTextView autocompleteAddress;
 
     private DatePickerDialog dateBeginDialog;
     private Calendar dateCalendar;
@@ -87,6 +93,7 @@ public class AtapActivityStep2 extends AppCompatActivity {
     @SuppressLint("RestrictedApi")
     Context context = new ContextThemeWrapper(this, R.style.MyDatePickerDialogTheme);
     private int mYear, mMonth, mDay;
+    private List<String> addressList = new ArrayList<>();
 
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
@@ -102,7 +109,7 @@ public class AtapActivityStep2 extends AppCompatActivity {
         @Override
         public void afterTextChanged(Editable editable) {
             notes = etNotes.getText().toString();
-            location = etLocation.getText().toString();
+            location = autocompleteAddress.getText().toString();
         }
     };
 
@@ -120,8 +127,9 @@ public class AtapActivityStep2 extends AppCompatActivity {
         DateTimeUtils.setInDateFormalFormat(dateCalendar, tvDateBegin);
         getBundle();
         etNotes.addTextChangedListener(textWatcher);
-        etLocation.addTextChangedListener(textWatcher);
+        autocompleteAddress.addTextChangedListener(textWatcher);
         imgToolbar.setImageResource(R.drawable.ic_step_two);
+        setupAutoCompleteTextView();
     }
 
     private void getBundle() {
@@ -154,7 +162,17 @@ public class AtapActivityStep2 extends AppCompatActivity {
         }
     };
 
-    @OnClick({R.id.ll_date_picker, R.id.next_button})
+    private void setupAutoCompleteTextView() {
+        addressList.add("Jalan Kh Syahdan Barat no.5");
+        addressList.add("Jalan Kh Syahdan Timur no.6");
+        addressList.add("Jalan Kh Syahdan Pusat no.7");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_dropdown_item_1line, addressList);
+        autocompleteAddress.setAdapter(adapter);
+    }
+
+    @OnClick({R.id.ll_date_picker, R.id.next_button, R.id.ll_time_picker})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_date_picker:
@@ -169,7 +187,7 @@ public class AtapActivityStep2 extends AppCompatActivity {
                             @Override
                             public void onDateSet(DatePicker view, int year,
                                                   int monthOfYear, int dayOfMonth) {
-                                String month = DateTimeUtils.setMonthNumberToWords(monthOfYear+1);
+                                String month = DateTimeUtils.setMonthNumberToWords(monthOfYear + 1);
                                 tvDateBegin.setText(dayOfMonth + " " + month + " " + year);
                             }
                         }, mYear, mMonth, mDay);
@@ -183,6 +201,21 @@ public class AtapActivityStep2 extends AppCompatActivity {
                 intent.putExtra("LOCATION", location);
                 intent.putExtra("DATE", tvDateBegin.getText().toString());
                 startActivity(intent);
+                break;
+            case R.id.ll_time_picker:
+                Calendar mcurrentTime = Calendar.getInstance();
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = mcurrentTime.get(Calendar.MINUTE);
+                TimePickerDialog mTimePicker;
+
+                mTimePicker = new TimePickerDialog(AtapActivityStep2.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        tvTime.setText(String.format("%02d", selectedHour) + ":" + String.format("%02d", selectedMinute));
+                    }
+                }, hour, minute, true);//Yes 24 hour time
+                mTimePicker.setTitle("Select Time");
+                mTimePicker.show();
                 break;
         }
     }
