@@ -3,8 +3,11 @@ package com.example.daniel.homehelp.activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -73,5 +76,46 @@ public class TrackingWorkerStep2Activity extends AppCompatActivity {
         Intent intent = new Intent(this, RatingActivity.class);
         intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromStep3);
         startActivity(intent);
+    }
+
+    private void showDialogBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        View dialoglayout = getLayoutInflater().inflate(R.layout.cancel_order_dialog, null, false);
+        builder.setView(dialoglayout);
+        final AlertDialog ad = builder.show();
+
+        TextView tvCancel = dialoglayout.findViewById(R.id.tv_cancel_order);
+        TextView tvKembali = dialoglayout.findViewById(R.id.tv_cancel_order_back);
+        TextView tvCancelTitle = dialoglayout.findViewById(R.id.tv_title_agenda_dialog);
+        TextView tvCancelDesc = dialoglayout.findViewById(R.id.tv_cancel_desc);
+        ImageView imageView = dialoglayout.findViewById(R.id.img_agenda_dialog);
+
+        tvCancelTitle.setVisibility(View.GONE);
+        tvCancelDesc.setText("Apakah anda yakin ingin \nmeninggalkan halaman ini ?");
+        imageView.setImageResource(R.drawable.ic_cancel_agenda);
+
+        tvKembali.setText("Batalkan");
+        tvKembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+            }
+        });
+
+        tvCancel.setText("Ya");
+        tvCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+                finish();
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        showDialogBackPressed();
     }
 }
