@@ -119,13 +119,13 @@ public class ReminderActivity extends AppCompatActivity implements RecyclerViewO
     private void initRecyclerView() {
         serviceHomeRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
-        homeServiceAdapter = new HomeServiceAdapter(this, recyclerViewOnClick);
+        homeServiceAdapter = new HomeServiceAdapter(this, recyclerViewOnClick, "reminder");
         serviceHomeRecyclerView.setAdapter(homeServiceAdapter);
     }
 
     @Override
     public void itemOnClick(View view, int position) {
-        Toast.makeText(this, "postion reminder service : " + position, Toast.LENGTH_SHORT).show();
+
     }
 
     @OnClick({R.id.ll_date_picker, R.id.ll_time_picker, R.id.tv_save_reminder})

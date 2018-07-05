@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -25,10 +26,12 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     Context context;
 
     private RecyclerViewOnClick mRecyclerViewOnClick;
+    private String activityName;
 
-    public HomeServiceAdapter(Context context, RecyclerViewOnClick mRecyclerViewOnClick) {
+    public HomeServiceAdapter(Context context, RecyclerViewOnClick mRecyclerViewOnClick, String activityName) {
         this.context = context;
         this.mRecyclerViewOnClick = mRecyclerViewOnClick;
+        this.activityName = activityName;
     }
 
     public class HomeServiceListViewHolder extends RecyclerView.ViewHolder {
@@ -39,6 +42,8 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         TextView tvServiceName;
         @BindView(R.id.img_service)
         ImageView imgService;
+        @BindView(R.id.frame_layout_service)
+        FrameLayout frameLayout;
 
         String[] introTitle = {"Bangunan", "Kelistrikan", "Hama", "Kebun"};
         String[] introDescription = {"Mencakup atap, lantai, pintu jendela dan saluran air", "Mencakup AC dan instalasi listrik",
@@ -58,8 +63,12 @@ public class HomeServiceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             llHome.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //llHomeR.drawable.ic_reminder_bangunan_clicked);
                     mRecyclerViewOnClick.itemOnClick(view, position);
+                    if (activityName.equalsIgnoreCase("reminder")) {
+                        frameLayout.setVisibility(View.VISIBLE);
+                    } else {
+                        frameLayout.setVisibility(View.GONE);
+                    }
                 }
             });
         }

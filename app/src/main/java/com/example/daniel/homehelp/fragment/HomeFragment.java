@@ -116,10 +116,9 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick, Recyc
     }
 
     private void initServiceRecyclerView() {
-        //LinearLayoutManager layoutManager = new LinearLayoutManager(mActivity);
         serviceHomeRecyclerView.setLayoutManager(new GridLayoutManager(mActivity,2));
 
-        homeServiceAdapter = new HomeServiceAdapter(mActivity, recyclerViewOnClick);
+        homeServiceAdapter = new HomeServiceAdapter(mActivity, recyclerViewOnClick, "home");
         serviceHomeRecyclerView.setAdapter(homeServiceAdapter);
     }
 

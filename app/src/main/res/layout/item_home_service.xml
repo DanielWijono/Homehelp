@@ -4,25 +4,29 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:orientation="vertical"
-        android:background="@drawable/signup_border_background_white"
-        android:layout_margin="@dimen/padding_margin_16dp">
+        android:layout_margin="@dimen/padding_margin_16dp"
+        android:background="@color/color_green_400"
+        android:visibility="gone"
+        android:id="@+id/frame_layout_service">
 
-        <TextView
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="djdjdjjd"/>
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_bell"/>
 
-    </LinearLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:orientation="vertical"
-        android:background="@drawable/signup_border_background_white"
+        android:background="@drawable/border_background_transparent"
         android:layout_margin="@dimen/padding_margin_16dp"
         android:id="@+id/ll_home">
 
