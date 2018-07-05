@@ -50,10 +50,10 @@ public class AtapKerusakanAdapter extends RecyclerView.Adapter<RecyclerView.View
         @BindView(R.id.rl_kerusakan_atap)
         RelativeLayout rlKerusakanAtap;
 
-        String[] kerusakanTitle = {"Rangka Atap", "Kuda-kuda", "Struktur baja konvensional"};
+        String[] kerusakanTitle = {"Rangka Atap", "Kuda-kuda", "Struktur baja konvensional", "Jurai Dalam", "Jurai Luar", "Lisplang", "Nok", "Semua", "Lain - Lain"};
         String[] kerusakanDescription = {"Sebagai penahan beban dari bahan penutup atap, umumnya berupa\n" +
                 "susunan kayu atau baja ringan", "Penyangga utama struktur, berupa batang untuk memberi bentuk atap",
-                "Bagian dari struktur atap yang menggunakan baja"};
+                "Bagian dari struktur atap yang menggunakan baja", "testing", "testing", "testing", "testing", "testing", "testing",};
 
         public AtapKerusakanListViewHolder(View itemView) {
             super(itemView);
@@ -129,6 +129,6 @@ public class AtapKerusakanAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 9;
     }
 }
