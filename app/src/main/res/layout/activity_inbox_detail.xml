@@ -32,9 +32,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Halo Bu Adeline"
+                    android:text="Halo Bu Adeline. Perkenalkan saya Jeffrey, pekerja yang akan memperbaiki atap ya"
+                    android:textColor="@color/color_black"
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/padding_margin_16dp"
+                    android:padding="8dp"
                     android:background="@drawable/bangunan_border"/>
 
             </LinearLayout>
