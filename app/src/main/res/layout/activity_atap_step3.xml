@@ -119,12 +119,22 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginRight="10dp"
-                        android:src="@drawable/introduction_four"/>
+                        android:src="@drawable/introduction_four"
+                        android:id="@+id/image_capture_one"/>
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/introduction_one"/>
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/introduction_one"
+                        android:id="@+id/image_capture_two"/>
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/introduction_four"
+                        android:id="@+id/image_capture_three"/>
 
                 </LinearLayout>
             </LinearLayout>

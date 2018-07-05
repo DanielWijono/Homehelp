@@ -1,11 +1,17 @@
 package com.example.daniel.homehelp.activity;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Parcelable;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,12 +24,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.Utils;
 import com.example.daniel.homehelp.adapter.AtapKerusakanAdapter;
 import com.shuhart.stepview.StepView;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,14 +73,20 @@ public class AtapActivityStep3 extends AppCompatActivity {
     LinearLayout llFooter;
     @BindView(R.id.et_problem_desc)
     EditText etProblemDesc;
-
-    String workType, notes, date, problemDesc, location;
-    AtapKerusakanAdapter atapKerusakanAdapter;
-    List<String> listKerusakanFromAdapter = new ArrayList<>();
     @BindView(R.id.img_toolbar)
     ImageView imgToolbar;
     @BindView(R.id.ll_notes)
     LinearLayout llNotes;
+    @BindView(R.id.image_capture_one)
+    ImageView imageCaptureOne;
+    @BindView(R.id.image_capture_two)
+    ImageView imageCaptureTwo;
+    @BindView(R.id.image_capture_three)
+    ImageView imageCaptureThree;
+
+    String workType, notes, date, problemDesc, location;
+    AtapKerusakanAdapter atapKerusakanAdapter;
+    List<String> listKerusakanFromAdapter = new ArrayList<>();
 
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
@@ -87,6 +105,10 @@ public class AtapActivityStep3 extends AppCompatActivity {
         }
     };
 
+    int REQUEST_CAMERA = 123;
+    int REQUEST_CAMERA_TWO = 345;
+    int REQUEST_CAMERA_THREE = 456;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +119,11 @@ public class AtapActivityStep3 extends AppCompatActivity {
         getBundle();
         etProblemDesc.addTextChangedListener(textWatcher);
         imgToolbar.setImageResource(R.drawable.ic_step_three);
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);
+            Toast.makeText(this, "asking permission", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void getBundle() {
@@ -116,7 +143,108 @@ public class AtapActivityStep3 extends AppCompatActivity {
         serviceAtapRecyclerView.setAdapter(atapKerusakanAdapter);
     }
 
-    @OnClick({R.id.tv_substract, R.id.tv_plus, R.id.next_button})
+    private void cameraIntent() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, REQUEST_CAMERA);
+    }
+
+    private void cameraIntentTwo() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, REQUEST_CAMERA_TWO);
+    }
+
+    private void cameraIntentThree() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, REQUEST_CAMERA_THREE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == REQUEST_CAMERA) {
+                onCaptureImageResult(data);
+            } else if (requestCode == REQUEST_CAMERA_TWO) {
+                onCaptureImageResultTwo(data);
+            } else if (requestCode == REQUEST_CAMERA_THREE) {
+                onCaptureImageResultThree(data);
+            }
+        }
+    }
+
+    private void onCaptureImageResult(Intent data) {
+        Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
+        File destination = new File(Environment.getExternalStorageDirectory(),
+                System.currentTimeMillis() + ".jpg");
+        FileOutputStream fo;
+        try {
+            destination.createNewFile();
+            fo = new FileOutputStream(destination);
+            fo.write(bytes.toByteArray());
+            fo.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        imageCaptureOne.setImageBitmap(thumbnail);
+    }
+
+    private void onCaptureImageResultTwo(Intent data) {
+        Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
+        File destination = new File(Environment.getExternalStorageDirectory(),
+                System.currentTimeMillis() + ".jpg");
+        FileOutputStream fo;
+        try {
+            destination.createNewFile();
+            fo = new FileOutputStream(destination);
+            fo.write(bytes.toByteArray());
+            fo.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        imageCaptureTwo.setImageBitmap(thumbnail);
+    }
+
+    private void onCaptureImageResultThree(Intent data) {
+        Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
+        File destination = new File(Environment.getExternalStorageDirectory(),
+                System.currentTimeMillis() + ".jpg");
+        FileOutputStream fo;
+        try {
+            destination.createNewFile();
+            fo = new FileOutputStream(destination);
+            fo.write(bytes.toByteArray());
+            fo.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        imageCaptureThree.setImageBitmap(thumbnail);
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 0) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED
+                    && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "permission granted", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    @OnClick({R.id.tv_substract, R.id.tv_plus, R.id.next_button, R.id.image_capture_one, R.id.image_capture_two, R.id.image_capture_three})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_substract:
@@ -141,6 +269,15 @@ public class AtapActivityStep3 extends AppCompatActivity {
                 intent.putExtra("PROBLEM_DESC", problemDesc);
                 intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromAdapter);
                 startActivity(intent);
+                break;
+            case R.id.image_capture_one:
+                cameraIntent();
+                break;
+            case R.id.image_capture_two:
+                cameraIntentTwo();
+                break;
+            case R.id.image_capture_three:
+                cameraIntentThree();
                 break;
         }
     }

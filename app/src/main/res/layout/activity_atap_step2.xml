@@ -68,7 +68,7 @@
                         android:src="@drawable/ic_location"
                         android:layout_marginRight="10dp"
                         android:layout_gravity="center"/>
-                    
+
                     <AutoCompleteTextView
                         android:id="@+id/autocomplete_address"
                         android:layout_width="match_parent"
