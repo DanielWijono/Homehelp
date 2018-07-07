@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:text="+62"
                 android:textSize="16dp"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_black_65"
                 app:fontFamily="@font/proxima_nova_medium"
                 android:focusable="false"
                 android:clickable="false"

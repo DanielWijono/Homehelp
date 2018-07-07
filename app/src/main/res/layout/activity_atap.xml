@@ -143,7 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Lanjut"
-            android:textColor="@color/color_black"
+            android:textColor="@color/color_black_65"
             android:textStyle="bold"
             android:background="@drawable/next_button"
             android:layout_gravity="center"

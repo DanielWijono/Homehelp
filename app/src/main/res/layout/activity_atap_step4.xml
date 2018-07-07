@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pesan"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_black_65"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:background="@drawable/next_button"

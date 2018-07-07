@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ahaha"
-            android:textColor="@color/color_black"
+            android:textColor="@color/color_black_65"
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/padding_margin_16dp"
             android:id="@+id/tv_reminder_success_dialog"/>
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Lihat Agenda"
-            android:textColor="@color/color_black"
+            android:textColor="@color/color_black_65"
             android:layout_gravity="center"
             android:paddingLeft="@dimen/padding_margin_16dp"
             android:paddingRight="@dimen/padding_margin_16dp"

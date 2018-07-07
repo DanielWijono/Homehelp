@@ -12,13 +12,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mencari Pekerja"
-            android:textColor="@color/color_black"/>
+            android:textColor="@color/color_black_65"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Request pekerjaan masuk. Mencari pekerja untuk anda"
-            android:textColor="@color/color_black"/>
+            android:textColor="@color/color_black_65"/>
     </LinearLayout>
 
     <LinearLayout
@@ -31,13 +31,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pekerja OTW"
-            android:textColor="@color/color_black"/>
+            android:textColor="@color/color_black_65"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kami menemukan pekerja untuk anda. Pekerja sedang menuju lokasi. "
-            android:textColor="@color/color_black"/>
+            android:textColor="@color/color_black_65"/>
     </LinearLayout>
 
 </LinearLayout>

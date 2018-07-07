@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mencari Pekerja..."
-            android:textColor="@color/color_black"
+            android:textColor="@color/color_black_65"
             android:textSize="24dp"
             android:layout_marginTop="@dimen/padding_margin_16dp"
             android:gravity="center"/>
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Silahkan menunggu sebentar ya,\n kami sedang mencari pekerja anda"
-            android:textColor="@color/color_black"
+            android:textColor="@color/color_black_65"
             android:gravity="center"/>
 
         <LinearLayout

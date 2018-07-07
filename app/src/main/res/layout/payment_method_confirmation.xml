@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Metode Pembayaran"
-            android:textColor="@color/color_black"/>
+            android:textColor="@color/color_black_65"/>
 
         <RadioGroup
             android:id="@+id/radioPayment"
@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tunai"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_black_65"
                 android:layout_marginBottom="@dimen/padding_margin_8dp"/>
 
             <RadioButton
@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kartu Kredit"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_black_65"
                 android:drawableRight="@drawable/ic_credit_card"
                 android:layout_marginRight="@dimen/padding_margin_8dp"/>
 

@@ -89,7 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Chat Pekerja"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:gravity="center"
                     android:layout_marginLeft="@dimen/padding_margin_16dp"
                     android:layout_marginRight="@dimen/padding_margin_16dp"

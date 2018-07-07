@@ -54,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bagian Rumah yang Rentan Rayap"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:textSize="20dp"/>
 
                 <TextView
@@ -70,7 +70,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:text="lala"
                     android:layout_marginTop="@dimen/padding_margin_16dp"
                     android:id="@+id/tv_tips_one"/>
@@ -78,7 +78,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:text="lala"
                     android:layout_marginTop="@dimen/padding_margin_16dp"
                     android:id="@+id/tv_tips_two"/>
@@ -86,7 +86,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:text="lala"
                     android:layout_marginTop="@dimen/padding_margin_16dp"
                     android:id="@+id/tv_tips_three"/>
@@ -107,21 +107,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Kayu"
-                        android:textColor="@color/color_black"
+                        android:textColor="@color/color_black_65"
                         android:layout_marginRight="@dimen/padding_margin_16dp"
                         android:background="@drawable/signup_border_background_white"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TipsHomehelp"
-                        android:textColor="@color/color_black"
+                        android:textColor="@color/color_black_65"
                         android:layout_marginRight="@dimen/padding_margin_16dp"
                         android:background="@drawable/signup_border_background_white"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rumah"
-                        android:textColor="@color/color_black"
+                        android:textColor="@color/color_black_65"
                         android:background="@drawable/signup_border_background_white"/>
                 </LinearLayout>
 
@@ -129,7 +129,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bagikan"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:layout_marginTop="@dimen/padding_margin_16dp"
                     android:gravity="center"/>
 

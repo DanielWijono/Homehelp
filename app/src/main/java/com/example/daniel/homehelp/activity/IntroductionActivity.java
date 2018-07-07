@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -39,6 +40,7 @@ public class IntroductionActivity extends AppCompatActivity implements ViewPager
     LinearLayout llSwipeToNext;
 
     int pageCount = 3;
+    String greenText = getColoredSpanned("Buat Akun","#36C0C0");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,10 @@ public class IntroductionActivity extends AppCompatActivity implements ViewPager
         introductionViewPager.setAdapter(new IntroductionAdapter(IntroductionActivity.this, this));
         introductionIndicator.setViewPager(introductionViewPager);
         introductionViewPager.addOnPageChangeListener(this);
+    }
+
+    private String getColoredSpanned(String text, String color) {
+        return "<font color=" + color + ">" + text + "</font>";
     }
 
     @Override
@@ -73,10 +79,10 @@ public class IntroductionActivity extends AppCompatActivity implements ViewPager
         }
         switch (position) {
             case 0:
-                tvSwipeToNext.setText("Ketuk untuk lanjut");
+                tvSwipeToNext.setText("Geser untuk lanjut");
                 break;
             case 1:
-                tvSwipeToNext.setText("Belum member ? Buat Akun");
+                tvSwipeToNext.setText(Html.fromHtml("Belum member ? " + greenText));
                 tvSwipeToNext.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -86,7 +92,7 @@ public class IntroductionActivity extends AppCompatActivity implements ViewPager
                 });
                 break;
             case 2:
-                tvSwipeToNext.setText("Belum member ? Buat Akun");
+                tvSwipeToNext.setText(Html.fromHtml("Belum member ? " + greenText));
                 tvSwipeToNext.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

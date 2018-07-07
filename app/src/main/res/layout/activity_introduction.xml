@@ -32,10 +32,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ketuk untuk lanjut"
-            android:textColor="@color/color_black"
-            android:textSize="13dp"
-            app:fontFamily="@font/proxima_nova_medium"
+            android:text="Geser untuk lanjut"
+            android:textColor="@color/color_black_65"
+            android:textSize="14dp"
+            app:fontFamily="@font/proxima_nova_regular"
             android:gravity="center"
             android:padding="@dimen/padding_margin_8dp"
             android:alpha="0.7"
@@ -55,6 +55,20 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Masuk"
+            android:textStyle="bold"
+            android:textColor="@color/color_black_65"
+            app:fontFamily="@font/proxima_nova_medium"
+            android:letterSpacing="0.025"
+            android:lineSpacingExtra="6dp"
+            android:gravity="center"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_sign_in"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Buat Akun"
             android:textStyle="bold"
             android:textColor="@color/color_white"
@@ -66,20 +80,6 @@
             android:layout_weight="0.5"
             android:layout_marginRight="10dp"
             android:id="@+id/tv_sign_up"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sign In"
-            android:textStyle="bold"
-            android:textColor="@color/color_black"
-            app:fontFamily="@font/proxima_nova_medium"
-            android:letterSpacing="0.025"
-            android:lineSpacingExtra="6dp"
-            android:gravity="center"
-            android:layout_weight="0.5"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/tv_sign_in"/>
 
     </LinearLayout>
 

@@ -63,7 +63,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Jeffry Agus"
-                    android:textColor="@color/color_black"/>
+                    android:textColor="@color/color_black_65"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -122,7 +122,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="LOKASI"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_black_65"
                 android:layout_marginLeft="@dimen/padding_margin_8dp"/>
 
             <LinearLayout
@@ -141,7 +141,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Jalan Syahdan"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:gravity="center_vertical"
                     android:id="@+id/tv_location"/>
             </LinearLayout>
@@ -162,7 +162,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Jalan Syahdan"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:gravity="center_vertical"
                     android:id="@+id/tv_notes"/>
             </LinearLayout>
@@ -177,7 +177,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tipe : harian"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:layout_weight="0.5"
                     android:id="@+id/tv_tipe"/>
 
@@ -185,7 +185,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Rp 200.000"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:layout_weight="0.5"
                     android:gravity="right"
                     android:id="@+id/tv_price"/>

@@ -33,12 +33,12 @@ public class IntroductionAdapter extends RecyclingPagerAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.content_introduction, null);
         }
 
-        String[] introTitle = {" Selamat Datang"," Kenyamanan Keluarga\n" + "adalah Prioritas",
+        String[] introTitle = {" Selamat Datang\n" + "di Homehelp!"," Kenyamanan Keluarga\n" + "adalah Prioritas",
                 " Mempermudah dan Mempercepat","Layanan Terjamin\n" + "untuk Anda"};
-        String[] introDescription = {"Homehelp akan membantu membuat\n" +
-                "rumah anda nyaman", "Merawat hunian anda sepenuh hati\n" +
+        String[] introDescription = {"Pekerja akan membantu\n" +
+                "membuat rumah anda nyaman", "Merawat hunian anda sepenuh hati\n" +
                 "demi kenyamanan keluarga","Perencanaan perbaikan dapat\n" +
-                "dilakukan dimanapun, kapanpun","Bebas rasa khawatir dengan pekerja\n" +
+                "dilakukan dimanapun, kapanpun","Bebas rasa khawatir, pekerja\n" +
                 "professional dan jaminan pekerjaan"};
         int [] introBgImage = {R.drawable.introduction_one, R.drawable.introduction_two,
                 R.drawable.introduction_three, R.drawable.introduction_four};

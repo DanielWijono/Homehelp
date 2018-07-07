@@ -105,7 +105,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="GAMBAR (OPSIONAL)"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:textStyle="bold"
                     android:layout_marginLeft="@dimen/padding_margin_8dp"/>
 
@@ -155,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:text="Jumlah Tukang"
                     android:textStyle="bold"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:layout_weight="0.6"/>
 
                 <LinearLayout
@@ -170,7 +170,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:textColor="@color/color_black"
+                        android:textColor="@color/color_black_65"
                         android:background="@drawable/ic_minus"
                         android:layout_marginRight="28dp"
                         android:id="@+id/tv_substract"/>
@@ -179,14 +179,14 @@
                         android:layout_height="wrap_content"
                         android:text="1"
                         android:textStyle="bold"
-                        android:textColor="@color/color_black"
+                        android:textColor="@color/color_black_65"
                         android:layout_marginRight="28dp"
                         android:id="@+id/tv_tukang_sum"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:textColor="@color/color_black"
+                        android:textColor="@color/color_black_65"
                         android:background="@drawable/ic_plus"
                         android:id="@+id/tv_plus"/>
                 </LinearLayout>
@@ -238,7 +238,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Lanjut"
-            android:textColor="@color/color_black"
+            android:textColor="@color/color_black_65"
             android:textStyle="bold"
             android:background="@drawable/next_button"
             android:layout_gravity="center"

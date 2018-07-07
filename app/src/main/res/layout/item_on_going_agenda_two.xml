@@ -47,7 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Kamis, 5 Juli 2018"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.4"
                     android:layout_marginLeft="@dimen/padding_margin_8dp"/>
@@ -62,7 +62,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="13.00"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_black_65"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.6"
                     android:layout_marginLeft="@dimen/padding_margin_8dp"
@@ -148,7 +148,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pekerja On the way"
-                            android:textColor="@color/color_black"
+                            android:textColor="@color/color_black_65"
                             android:layout_weight="0.7"
                             android:layout_gravity="center"/>
                         <ImageView

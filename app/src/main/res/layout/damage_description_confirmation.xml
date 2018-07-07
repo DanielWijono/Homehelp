@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:text="MASALAH"
                 android:textStyle="bold"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_black_65"
                 android:layout_weight="0.5"/>
 
             <ImageView
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bagian Kerusakan"
-            android:textColor="@color/color_black"
+            android:textColor="@color/color_black_65"
             android:textStyle="bold"
             android:layout_marginLeft="@dimen/padding_margin_8dp"/>
 
@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Ubah"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_black_65"
                 android:gravity="center_vertical"
                 android:visibility="gone"
                 android:id="@+id/tv_damage_title"/>
@@ -73,7 +73,7 @@
             android:layout_marginLeft="@dimen/padding_margin_8dp"
             android:text="Uraian Masalah"
             android:textStyle="bold"
-            android:textColor="@color/color_black"/>
+            android:textColor="@color/color_black_65"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="2 gambar"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_black_65"
                 android:layout_marginLeft="@dimen/padding_margin_8dp"/>
 
         </LinearLayout>
@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:text="Total"
                 android:textSize="@dimen/padding_margin_16dp"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_black_65"
                 android:textStyle="bold"
                 android:layout_weight="0.5"/>
             <TextView
@@ -156,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:text="Rp 200.000"
                 android:textSize="@dimen/padding_margin_16dp"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_black_65"
                 android:textStyle="bold"
                 android:gravity="right"
                 android:layout_weight="0.5"/>

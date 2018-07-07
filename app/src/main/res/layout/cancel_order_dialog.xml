@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:text="Batalkan"
                 android:textSize="20dp"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_black_65"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:layout_weight="0.5"
