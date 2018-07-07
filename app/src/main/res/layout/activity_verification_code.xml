@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_white"
     tools:context=".activity.VerificationCodeActivity">
 
@@ -34,16 +35,21 @@
         android:layout_height="wrap_content"
         android:text="Isi Kode Verifikasi"
         android:textColor="@color/color_black_65"
-        android:textStyle="bold"
+        android:textSize="22dp"
+        app:fontFamily="@font/proxima_nova_semibold"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:layout_marginTop="@dimen/padding_margin_16dp"
+        android:layout_marginBottom="@dimen/padding_margin_8dp"
         android:id="@+id/tv_verification_code_title"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kami sudah kirimkan kode melalui SMS ke nomor "
+        android:text="Kami sudah kirimkan kode melalui SMS ke
+        nomor dfgdgdgdfg "
+        android:lineSpacingExtra="4dp"
+        app:fontFamily="@font/proxima_nova_regular"
         android:layout_below="@id/tv_verification_code_title"
         android:gravity="center"
         android:id="@+id/tv_verification_code_desc"/>
@@ -53,6 +59,8 @@
         android:layout_height="wrap_content"
         android:text="Edit Nomor"
         android:textColor="@color/colorAccent"
+        android:textSize="14dp"
+        app:fontFamily="@font/proxima_nova_semibold"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_marginTop="@dimen/padding_margin_16dp"
@@ -102,10 +110,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tidak terima sms ?"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/padding_margin_56dp"
+        android:text="Kirim lagi"
+        android:textSize="14dp"
+        app:fontFamily="@font/proxima_nova_regular"
         android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
         android:id="@+id/tv_send_sms_again"/>
 
 </RelativeLayout>

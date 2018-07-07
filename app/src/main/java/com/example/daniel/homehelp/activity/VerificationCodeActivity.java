@@ -85,10 +85,10 @@ public class VerificationCodeActivity extends AppCompatActivity {
     }
 
     private void setText() {
-        String customString = "Kami sudah kirimkan kode melalui SMS<br>ke nomor <b>+62 28734784</b>";
+        String customString = "Kami sudah kirimkan kode melalui SMS<br>Silahkan masukkan kode OTP";
         String coloredString = getColoredSpanned("Kirim lagi", "#36C0C0");
         tvVerificationCodeDesc.setText(Html.fromHtml(customString));
-        tvSendSmsAgain.setText(Html.fromHtml("Tidak terima sms ?<br>" + coloredString));
+        tvSendSmsAgain.setText(Html.fromHtml("Tidak Menerima SMS ? " + coloredString));
     }
 
     private void initTextWatcher() {
