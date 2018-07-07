@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.daniel.homehelp.RecyclerViewOnClickTipsHome;
+import com.example.daniel.homehelp.SpacesItemDecoration;
 import com.example.daniel.homehelp.activity.DashBoardActivity;
 import com.example.daniel.homehelp.activity.HomeTipsDetailActivity;
 import com.example.daniel.homehelp.adapter.HomeAdapter;
