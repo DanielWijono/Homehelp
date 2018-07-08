@@ -49,6 +49,8 @@ public class AtapKerusakanAdapter extends RecyclerView.Adapter<RecyclerView.View
         TextView tvDescKerusakan;
         @BindView(R.id.rl_kerusakan_atap)
         RelativeLayout rlKerusakanAtap;
+        @BindView(R.id.line_separator_view)
+        View lineSeparatorView;
 
         String[] kerusakanTitle = {"Rangka Atap", "Kuda-kuda", "Struktur baja konvensional", "Jurai Dalam", "Jurai Luar", "Lisplang", "Nok", "Semua", "Lain - Lain"};
         String[] kerusakanDescription = {"Sebagai penahan beban dari bahan penutup atap, umumnya berupa\n" +
@@ -87,18 +89,19 @@ public class AtapKerusakanAdapter extends RecyclerView.Adapter<RecyclerView.View
                 public void onClick(View view) {
                     if (tvDescKerusakan.getVisibility() == View.GONE) {
                         tvDescKerusakan.setVisibility(View.VISIBLE);
-                        imgDropDownUp.setImageResource(R.drawable.ic_drop_down_yellow);
-                        imgDropDownUp.setColorFilter(ContextCompat.getColor(context, R.color.color_black), PorterDuff.Mode.SRC_IN);
-                        imgDropDownUp.setAlpha(0.5f);
+                        imgDropDownUp.setImageResource(R.drawable.ic_drop_down_green);
                         imgDropDownUp.setScaleY(-1f);
                     } else {
                         tvDescKerusakan.setVisibility(View.GONE);
-                        imgDropDownUp.setImageResource(R.drawable.ic_drop_down_yellow);
-                        imgDropDownUp.setColorFilter(ContextCompat.getColor(context, R.color.color_black), PorterDuff.Mode.SRC_IN);
-                        imgDropDownUp.setAlpha(0.5f);
+                        imgDropDownUp.setImageResource(R.drawable.ic_drop_down_green);
+                        imgDropDownUp.setScaleY(1f);
                     }
                 }
             });
+
+            if (position == (kerusakanTitle.length -1)) {
+                lineSeparatorView.setVisibility(View.GONE);
+            }
 
             switch (position) {
                 case 0:

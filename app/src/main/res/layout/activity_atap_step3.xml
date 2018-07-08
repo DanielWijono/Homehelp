@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_white"
     tools:context="com.example.daniel.homehelp.activity.AtapActivity">
 
@@ -47,7 +48,10 @@
                     android:layout_height="wrap_content"
                     android:text="Bagian Kerusakan"
                     android:textColor="@color/colorAccent"
-                    android:textSize="20dp"/>
+                    android:textSize="24dp"
+                    app:fontFamily="@font/proxima_nova_semibold"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"/>
 
                 <android.support.v7.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -74,7 +78,10 @@
                     android:layout_height="wrap_content"
                     android:text="Uraian Masalah"
                     android:textColor="@color/colorAccent"
-                    android:textSize="20dp"/>
+                    android:textSize="24dp"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"
+                    app:fontFamily="@font/proxima_nova_semibold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -96,6 +103,8 @@
                         android:layout_height="wrap_content"
                         android:hint="Tuliskan masalah hunian anda"
                         android:textSize="14dp"
+                        android:textColor="@color/color_black_65"
+                        app:fontFamily="@font/proxima_nova_regular"
                         android:layout_gravity="center"
                         android:background="@color/color_transparent"
                         android:id="@+id/et_problem_desc"/>
@@ -106,34 +115,35 @@
                     android:layout_height="wrap_content"
                     android:text="GAMBAR (OPSIONAL)"
                     android:textColor="@color/color_black_65"
-                    android:textStyle="bold"
+                    app:fontFamily="@font/proxima_nova_medium"
                     android:layout_marginLeft="@dimen/padding_margin_8dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
                     android:layout_marginLeft="@dimen/padding_margin_8dp">
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_marginRight="10dp"
-                        android:src="@drawable/introduction_four"
+                        android:src="@drawable/ic_plus_photo_empty"
                         android:id="@+id/image_capture_one"/>
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_marginRight="10dp"
-                        android:src="@drawable/introduction_one"
+                        android:src="@drawable/ic_plus_photo_empty"
                         android:id="@+id/image_capture_two"/>
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_marginRight="10dp"
-                        android:src="@drawable/introduction_four"
+                        android:src="@drawable/ic_plus_photo_empty"
                         android:id="@+id/image_capture_three"/>
 
                 </LinearLayout>
@@ -142,54 +152,71 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:background="@drawable/signup_border_background_white"
                 android:padding="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="70dp"
+                android:layout_marginBottom="100dp"
                 android:layout_below="@+id/ll_problem_desc">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Jumlah Tukang"
-                    android:textStyle="bold"
-                    android:textColor="@color/color_black_65"
-                    android:layout_weight="0.6"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="right"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.4">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
+                        android:text="JUMLAH PEKERJA"
+                        app:fontFamily="@font/proxima_nova_medium"
                         android:textColor="@color/color_black_65"
-                        android:background="@drawable/ic_minus"
-                        android:layout_marginRight="28dp"
-                        android:id="@+id/tv_substract"/>
-                    <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_weight="0.6"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="1"
-                        android:textStyle="bold"
-                        android:textColor="@color/color_black_65"
-                        android:layout_marginRight="28dp"
-                        android:id="@+id/tv_tukang_sum"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textColor="@color/color_black_65"
-                        android:background="@drawable/ic_plus"
-                        android:id="@+id/tv_plus"/>
+                        android:orientation="horizontal"
+                        android:gravity="right"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="0.4">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_black_65"
+                            android:background="@drawable/ic_minus"
+                            android:layout_marginRight="28dp"
+                            android:id="@+id/tv_substract"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1"
+                            android:textColor="@color/color_black_65"
+                            app:fontFamily="@font/proxima_nova_regular"
+                            android:layout_marginRight="28dp"
+                            android:id="@+id/tv_tukang_sum"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_black_65"
+                            android:background="@drawable/ic_plus"
+                            android:id="@+id/tv_plus"/>
+                    </LinearLayout>
+
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="*Maks 2 pekerja / hari"
+                    android:textColor="#FF0000"
+                    android:textSize="@dimen/padding_margin_12dp"
+                    android:textStyle="italic"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"
+                    app:fontFamily="@font/proxima_nova_regular"/>
 
             </LinearLayout>
 
@@ -199,14 +226,14 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/color_black"
+        android:background="@color/color_grey_line"
         android:layout_above="@id/ll_footer"></View>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp"
+        android:padding="16dp"
         android:layout_alignParentBottom="true"
         android:clipToPadding="true"
         android:background="@color/color_white"
@@ -222,13 +249,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total harga"
-                android:textStyle="bold"/>
+                android:text="Total Harga"
+                android:textSize="17dp"
+                app:fontFamily="@font/proxima_nova_regular"
+                android:layout_marginBottom="@dimen/padding_margin_3dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rp 200.000"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                app:fontFamily="@font/proxima_nova_medium"
                 android:textColor="@color/colorAccent"/>
 
         </LinearLayout>
@@ -238,9 +268,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Lanjut"
+            android:textSize="15dp"
             android:textColor="@color/color_black_65"
             android:textStyle="bold"
             android:background="@drawable/next_button"
+            app:fontFamily="@font/proxima_nova_semibold"
             android:layout_gravity="center"
             android:gravity="center"
             android:id="@+id/next_button"/>
