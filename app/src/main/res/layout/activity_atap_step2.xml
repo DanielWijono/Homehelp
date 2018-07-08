@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_white"
     tools:context="com.example.daniel.homehelp.activity.AtapActivity">
 
@@ -21,16 +22,16 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="170dp"
                 android:src="@drawable/ic_image_step_two"
                 android:layout_marginBottom="@dimen/padding_margin_4dp"
                 android:id="@+id/img_atap"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:background="@color/color_grey_500"
-                android:layout_below="@+id/img_atap"></View>
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0.1dp"-->
+                <!--android:background="@color/color_grey_500"-->
+                <!--android:layout_below="@+id/img_atap"></View>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,8 +49,10 @@
                     android:layout_height="wrap_content"
                     android:text="Lokasi"
                     android:textColor="@color/colorAccent"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
+                    android:textSize="24dp"
+                    app:fontFamily="@font/proxima_nova_semibold"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"
+                    android:layout_marginLeft="@dimen/padding_margin_8dp"
                     android:layout_marginBottom="@dimen/padding_margin_16dp"/>
 
                 <LinearLayout
@@ -60,6 +63,7 @@
                     android:focusableInTouchMode="true"
                     android:layout_marginLeft="@dimen/padding_margin_8dp"
                     android:layout_marginRight="@dimen/padding_margin_8dp"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
                     android:id="@+id/ll_address">
 
                     <ImageView
@@ -74,6 +78,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="16dp"
+                        app:fontFamily="@font/proxima_nova_medium"
                         android:imeOptions="actionNext"
                         android:singleLine="true"
                         android:background="@color/color_transparent"
@@ -101,6 +106,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Keterangan"
                         android:textSize="16dp"
+                        app:fontFamily="@font/proxima_nova_medium"
                         android:background="@color/color_transparent"
                         android:layout_gravity="center"
                         android:singleLine="true"
@@ -126,13 +132,17 @@
                     android:text="Waktu"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"
-                    android:textSize="20dp"
+                    android:textSize="24dp"
+                    app:fontFamily="@font/proxima_nova_semibold"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"
+                    android:layout_marginLeft="@dimen/padding_margin_8dp"
                     android:layout_marginBottom="@dimen/padding_margin_16dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:layout_marginLeft="@dimen/padding_margin_8dp"
                     android:id="@+id/ll_date">
 
                     <ImageView
@@ -146,6 +156,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Tanggal"
+                        android:textSize="@dimen/padding_margin_16dp"
+                        android:textColor="@color/color_black_65"
+                        app:fontFamily="@font/proxima_nova_medium"
                         android:layout_weight="0.5"
                         android:layout_gravity="center"/>
 
@@ -155,13 +168,15 @@
                         android:layout_weight="0.5"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
-                        android:background="@drawable/signup_border"
+                        android:background="@drawable/signup_border_background_white"
                         android:id="@+id/ll_date_picker">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="19 June 2018"
+                            android:textColor="@color/color_black_65"
+                            app:fontFamily="@font/proxima_nova_medium"
                             android:layout_gravity="center"
                             android:id="@+id/tv_date_begin"
                             android:layout_weight="0.2"/>
@@ -180,6 +195,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="8dp"
+                    android:layout_marginLeft="@dimen/padding_margin_8dp"
                     android:id="@+id/ll_hour">
 
                     <ImageView
@@ -193,6 +209,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Waktu"
+                        android:textColor="@color/color_black_65"
+                        android:textSize="@dimen/padding_margin_16dp"
+                        app:fontFamily="@font/proxima_nova_medium"
                         android:layout_weight="0.5"
                         android:layout_gravity="center"/>
 
@@ -202,13 +221,15 @@
                         android:layout_weight="0.5"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
-                        android:background="@drawable/signup_border"
+                        android:background="@drawable/signup_border_background_white"
                         android:id="@+id/ll_time_picker">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="13:55"
+                            android:textColor="@color/color_black_65"
+                            app:fontFamily="@font/proxima_nova_medium"
                             android:layout_gravity="center"
                             android:layout_weight="0.2"
                             android:id="@+id/tv_time"/>
@@ -228,7 +249,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/color_black"
+        android:background="@color/color_grey_line"
         android:layout_above="@id/ll_footer"></View>
 
     <LinearLayout
@@ -251,13 +272,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total harga"
-                android:textStyle="bold"/>
+                android:text="Total Harga"
+                android:textSize="17dp"
+                app:fontFamily="@font/proxima_nova_regular"
+                android:layout_marginBottom="@dimen/padding_margin_3dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rp 200.000"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                app:fontFamily="@font/proxima_nova_medium"
                 android:textColor="@color/colorAccent"/>
 
         </LinearLayout>
@@ -267,9 +291,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Lanjut"
+            android:textSize="15dp"
             android:textColor="@color/color_black_65"
             android:textStyle="bold"
             android:background="@drawable/next_button"
+            app:fontFamily="@font/proxima_nova_semibold"
             android:layout_gravity="center"
             android:gravity="center"
             android:id="@+id/next_button"/>

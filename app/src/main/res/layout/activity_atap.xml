@@ -55,10 +55,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/type_of_job_desc"
-                    android:textSize="14dp"
+                    android:textSize="16dp"
                     android:textColor="@color/color_black_65"
                     app:fontFamily="@font/proxima_nova_regular"
-                    android:lineSpacingExtra="3dp"
+                    android:lineSpacingExtra="2dp"
                     android:layout_marginTop="@dimen/padding_margin_16dp"
                     android:layout_marginBottom="@dimen/padding_margin_20dp"/>
 
@@ -121,7 +121,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/color_grey_500"
+        android:background="@color/color_grey_line"
         android:layout_above="@id/ll_footer"></View>
 
     <LinearLayout
