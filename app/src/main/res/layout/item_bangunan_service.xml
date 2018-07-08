@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -32,6 +33,8 @@
             android:layout_height="wrap_content"
             android:text="pintu"
             android:textSize="15dp"
+            android:textColor="@color/color_black_65"
+            app:fontFamily="@font/proxima_nova_medium"
             android:layout_marginTop="4dp"
             android:gravity="center"
             android:id="@+id/tv_service_name"/>

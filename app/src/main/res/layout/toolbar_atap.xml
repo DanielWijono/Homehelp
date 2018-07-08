@@ -23,10 +23,11 @@
             android:orientation="vertical"
             android:id="@+id/ll_toolbar_atap">
             <TextView
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:id="@+id/tv_title_toolbar"
                 android:textColor="@color/color_white"
                 android:text="Pemesanan"
+                app:fontFamily="@font/proxima_nova_medium"
                 android:gravity="center"
                 android:layout_marginTop="14dp"
                 android:layout_marginRight="40dp"
@@ -60,7 +61,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/padding_margin_4dp"
+                android:layout_marginTop="@dimen/padding_margin_8dp"
                 android:layout_marginBottom="@dimen/padding_margin_16dp"
                 android:layout_marginRight="30dp"
                 android:layout_gravity="left"

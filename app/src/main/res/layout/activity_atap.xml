@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_white"
     tools:context="com.example.daniel.homehelp.activity.AtapActivity">
 
@@ -21,15 +22,15 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="170dp"
                 android:src="@drawable/ic_image_step_one"
                 android:id="@+id/img_atap"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.1dp"
-                android:background="@color/color_grey_500"
-                android:layout_below="@+id/img_atap"></View>
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0.1dp"-->
+                <!--android:background="@color/color_grey_500"-->
+                <!--android:layout_below="@+id/img_atap"></View>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,20 +46,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pilih Tipe Pekerjaan"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-                    android:textColor="@color/colorAccent"/>
+                    android:textSize="24dp"
+                    android:textColor="@color/colorAccent"
+                    app:fontFamily="@font/proxima_nova_semibold"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/type_of_job_desc"/>
+                    android:text="@string/type_of_job_desc"
+                    android:textSize="14dp"
+                    android:textColor="@color/color_black_65"
+                    app:fontFamily="@font/proxima_nova_regular"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:layout_marginBottom="@dimen/padding_margin_20dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/padding_margin_32dp">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -66,6 +74,8 @@
                         android:text="Harian"
                         android:textColor="@color/color_white"
                         android:background="@drawable/signup_button"
+                        android:textSize="17dp"
+                        app:fontFamily="@font/proxima_nova_medium"
                         android:gravity="center"
                         android:layout_marginRight="6dp"
                         android:layout_weight="0.5"
@@ -74,6 +84,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Borongan"
+                        android:textSize="17dp"
+                        android:textColor="@color/color_black_65"
+                        app:fontFamily="@font/proxima_nova_medium"
+                        android:background="@drawable/signup_border_background_white"
                         android:gravity="center"
                         android:layout_weight="0.5"
                         android:id="@+id/tv_borongan"/>
@@ -83,9 +97,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cakupan Pekerjaan"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"/>
+                    android:text="CAKUPAN PEKERJAAN"
+                    android:textColor="@color/color_black_65"
+                    android:textSize="14dp"
+                    app:fontFamily="@font/proxima_nova_medium"
+                    android:layout_marginBottom="15dp"/>
 
                 <android.support.v7.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -105,7 +121,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/color_black"
+        android:background="@color/color_grey_500"
         android:layout_above="@id/ll_footer"></View>
 
     <LinearLayout
@@ -127,13 +143,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total harga"
-                android:textStyle="bold"/>
+                android:text="Total Harga"
+                android:textSize="17dp"
+                app:fontFamily="@font/proxima_nova_regular"
+                android:layout_marginBottom="@dimen/padding_margin_3dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Rp 200.000"
-                android:textStyle="bold"
+                android:textSize="15dp"
+                app:fontFamily="@font/proxima_nova_medium"
                 android:textColor="@color/colorAccent"/>
 
         </LinearLayout>
@@ -143,8 +162,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Lanjut"
+            android:textSize="15dp"
             android:textColor="@color/color_black_65"
-            android:textStyle="bold"
+            app:fontFamily="@font/proxima_nova_semibold"
             android:background="@drawable/next_button"
             android:layout_gravity="center"
             android:gravity="center"

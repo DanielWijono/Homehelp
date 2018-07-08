@@ -104,8 +104,8 @@ public class AtapActivity extends AppCompatActivity {
                 tvHarian.setBackgroundResource(R.drawable.signup_button);
                 tvHarian.setTextColor(getResources().getColor(R.color.color_white));
 
-                tvBorongan.setBackgroundResource(R.color.color_transparent);
-                tvBorongan.setTextColor(getResources().getColor(R.color.color_black));
+                tvBorongan.setBackgroundResource(R.drawable.signup_border_background_white);
+                tvBorongan.setTextColor(getResources().getColor(R.color.color_black_65));
                 MyApplication.getInstance().setIsHarian(true);
                 MyApplication.getInstance().setIsBorongan(false);
                 workType = "Harian";
@@ -116,8 +116,8 @@ public class AtapActivity extends AppCompatActivity {
                 tvBorongan.setBackgroundResource(R.drawable.signup_button);
                 tvBorongan.setTextColor(getResources().getColor(R.color.color_white));
 
-                tvHarian.setBackgroundResource(R.color.color_transparent);
-                tvHarian.setTextColor(getResources().getColor(R.color.color_black));
+                tvHarian.setBackgroundResource(R.drawable.signup_border_background_white);
+                tvHarian.setTextColor(getResources().getColor(R.color.color_black_65));
                 MyApplication.getInstance().setIsHarian(false);
                 MyApplication.getInstance().setIsBorongan(true);
                 workType = "Borongan";

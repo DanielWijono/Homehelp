@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/color_white"
     tools:context="com.example.daniel.homehelp.activity.BangunanActivity">
@@ -17,9 +18,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="24dp"
             android:layout_gravity="center"
             android:textColor="@color/color_white"
+            app:fontFamily="@font/proxima_nova_medium"
             android:id="@+id/tv_title_toolbar"/>
 
     </android.support.v7.widget.Toolbar>

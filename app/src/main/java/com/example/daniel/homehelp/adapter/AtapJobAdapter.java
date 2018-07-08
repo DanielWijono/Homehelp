@@ -37,8 +37,8 @@ public class AtapJobAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         @BindView(R.id.ll_item_roof)
         LinearLayout llItemRoof;
 
-        String[] serviceName = {"Atap\nBocor", "Perbaikan\nGenteng", "Perbaikan\nRangka", "Perbaikan\nTalang"
-                , "Water\nProofing", "Bongkar\nAtap", "Pasang\nAtap", "Pembuatan\nPenutup"};
+        String[] serviceName = {"ATAP\nBOCOR", "PERBAIKAN\nGENTENG", "PERBAIKAN\nRANGKA", "PERBAIKAN\nTALANG"
+                , "WATER\nPROOFING", "BONGKAR\nATAP", "PASANG\nATAP", "PEMBUATAN\nPENUTUP"};
 
         int[] serviceImage = {R.drawable.ic_pekerjaan_one, R.drawable.ic_pekerjaan_two,
                 R.drawable.ic_pekerjaan_tiga, R.drawable.ic_pekerjaan_empat,

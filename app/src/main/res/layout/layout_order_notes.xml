@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="@dimen/padding_margin_16dp"
     android:layout_marginRight="@dimen/padding_margin_16dp"
@@ -22,14 +24,20 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:textColor="@color/colorAccent"
+            app:fontFamily="@font/proxima_nova_semibold"
             android:layout_marginBottom="@dimen/padding_margin_16dp"
-            android:layout_marginLeft="@dimen/padding_margin_8dp"/>
+            android:layout_marginLeft="@dimen/padding_margin_8dp"
+            android:layout_marginTop="@dimen/padding_margin_6dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/terms_conditon_harian_one"
-            android:layout_marginBottom="@dimen/padding_margin_8dp"
+            android:textSize="13dp"
+            android:textColor="@color/color_black_65"
+            android:lineSpacingExtra="3dp"
+            app:fontFamily="@font/proxima_nova_regular"
+            android:layout_marginBottom="@dimen/padding_margin_12dp"
             android:layout_marginLeft="@dimen/padding_margin_20dp"
             android:id="@+id/tv_terms_condition_one"/>
 
@@ -37,7 +45,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/terms_conditon_harian_two"
-            android:layout_marginBottom="@dimen/padding_margin_8dp"
+            android:textSize="13dp"
+            android:textColor="@color/color_black_65"
+            android:lineSpacingExtra="3dp"
+            app:fontFamily="@font/proxima_nova_regular"
+            android:layout_marginBottom="@dimen/padding_margin_12dp"
             android:layout_marginLeft="@dimen/padding_margin_20dp"
             android:id="@+id/tv_terms_condition_two"/>
 
@@ -45,7 +57,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/terms_conditon_harian_three"
-            android:layout_marginBottom="@dimen/padding_margin_8dp"
+            android:textSize="13dp"
+            android:textColor="@color/color_black_65"
+            android:lineSpacingExtra="3dp"
+            app:fontFamily="@font/proxima_nova_regular"
+            android:layout_marginBottom="@dimen/padding_margin_12dp"
             android:layout_marginLeft="@dimen/padding_margin_20dp"
             android:id="@+id/tv_terms_condition_three"/>
 
@@ -53,7 +69,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/terms_conditon_harian_four"
-            android:layout_marginBottom="@dimen/padding_margin_8dp"
+            android:textSize="13dp"
+            android:textColor="@color/color_black_65"
+            android:lineSpacingExtra="3dp"
+            app:fontFamily="@font/proxima_nova_regular"
+            android:layout_marginBottom="@dimen/padding_margin_12dp"
             android:layout_marginLeft="@dimen/padding_margin_20dp"
             android:id="@+id/tv_terms_condition_four"/>
 
@@ -61,7 +81,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/terms_conditon_harian_five"
-            android:layout_marginBottom="@dimen/padding_margin_8dp"
+            android:textSize="13dp"
+            android:textColor="@color/color_black_65"
+            android:lineSpacingExtra="3dp"
+            app:fontFamily="@font/proxima_nova_regular"
+            android:layout_marginBottom="@dimen/padding_margin_12dp"
             android:layout_marginLeft="@dimen/padding_margin_20dp"
             android:id="@+id/tv_terms_condition_five"/>
 
