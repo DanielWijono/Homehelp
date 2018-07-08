@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_white"
     tools:context=".activity.AtapActivityStep4">
 
@@ -21,7 +22,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="160dp"
                 android:src="@drawable/ic_image_step_four"
                 android:id="@+id/img_atap"/>
 
@@ -41,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="Pesan"
                 android:textColor="@color/color_black_65"
-                android:textStyle="bold"
+                app:fontFamily="@font/proxima_nova_semibold"
                 android:gravity="center"
                 android:background="@drawable/next_button"
                 android:layout_margin="@dimen/padding_margin_16dp"
