@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_white"
     tools:context=".activity.TrackingWorkerActivity">
 
@@ -14,7 +15,8 @@
         android:id="@+id/toolbar">
 
         <TextView
-            android:textSize="20dp"
+            android:textSize="24dp"
+            app:fontFamily="@font/proxima_nova_medium"
             android:textColor="@color/color_white"
             android:id="@+id/tv_title_toolbar"
             android:layout_width="wrap_content"
@@ -39,6 +41,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Selasa 20 April, Jam 10.00"
+                android:textSize="14dp"
+                app:fontFamily="@font/proxima_nova_regular"
                 android:layout_weight="0.3"
                 android:id="@+id/tv_date_time"/>
 
@@ -65,12 +69,18 @@
             android:orientation="vertical"
             android:background="@drawable/signup_border_background_white"
             android:layout_alignParentBottom="true"
-            android:padding="@dimen/padding_margin_16dp">
+            android:paddingLeft="@dimen/padding_margin_16dp"
+            android:paddingRight="@dimen/padding_margin_16dp"
+            android:paddingBottom="@dimen/padding_margin_16dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_stars"
+                android:src="@drawable/ic_two_line"
+                android:paddingLeft="@dimen/padding_margin_16dp"
+                android:paddingRight="@dimen/padding_margin_16dp"
+                android:paddingBottom="@dimen/padding_margin_16dp"
+                android:paddingTop="@dimen/padding_margin_6dp"
                 android:layout_gravity="center"
                 android:id="@+id/img_expand_layout"/>
 
@@ -78,9 +88,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Informasi"
-                android:textSize="20dp"
+                android:textSize="24dp"
                 android:textColor="@color/colorAccent"
-                android:textStyle="bold"/>
+                app:fontFamily="@font/proxima_nova_semibold"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,7 +102,9 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/ic_kelistrikan"
+                    android:src="@drawable/ic_worker_face_one"
+                    app:civ_border_width="0.1dp"
+                    app:civ_border_color="@color/color_grey_500"
                     android:layout_gravity="center"/>
 
                 <LinearLayout
@@ -124,7 +136,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Pekerja OTW"
-                        android:textStyle="italic"
+                        android:textColor="@color/color_black_65"
+                        android:fontFamily="@font/proxima_nova_light_italic"
                         android:layout_gravity="center"
                         android:layout_marginLeft="@dimen/padding_margin_16dp"/>
                     </LinearLayout>

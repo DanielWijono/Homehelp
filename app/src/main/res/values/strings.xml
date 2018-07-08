@@ -49,4 +49,5 @@
     <string name="tips_three">Proin sem dolor, volutpat sit amet est vitae, sollicitudin dapibus magna. Curabitur sed tortor blandit, volutpat odio sed, aliquet arcu. Suspendisse et tortor commodo, cursus ligula ac, pulvinar leo. Donec tempor sagittis tellus ac laoreet. Nulla sagittis urna sed tristique luctus. Integer at leo sit amet nulla consequat porta. Aenean pellentesque suscipit posuere. In hac habitasse platea dictumst.</string>
 
     <string name="review_order_dialog_text">Silahkan periksa kembali\npesanan anda</string>
+    <string name="choose_worker_title">Setiap pekerjaan yang dilakukan diasuransi\ndan ada jaminan 30 hari.</string>
 </resources>

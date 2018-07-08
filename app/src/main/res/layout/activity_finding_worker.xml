@@ -25,15 +25,19 @@
             android:text="Mencari Pekerja..."
             android:textColor="@color/color_black_65"
             android:textSize="24dp"
-            android:layout_marginTop="@dimen/padding_margin_16dp"
+            app:fontFamily="@font/proxima_nova_medium"
+            android:layout_marginTop="@dimen/padding_margin_20dp"
             android:gravity="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Silahkan menunggu sebentar ya,\n kami sedang mencari pekerja anda"
+            android:text="Silahkan menunggu sebentar ya,\n kami sedang mencari pekerja untuk anda"
             android:textColor="@color/color_black_65"
+            android:textSize="@dimen/padding_margin_16dp"
+            android:lineSpacingExtra="2dp"
+            android:fontFamily="@font/proxima_nova_regular"
             android:gravity="center"/>
 
         <LinearLayout
@@ -68,9 +72,10 @@
                 android:layout_height="wrap_content"
                 android:text="Batalkan"
                 android:textStyle="bold"
-                android:textColor="@color/color_grey_700"
-                android:background="@drawable/signup_border"
-                app:fontFamily="@font/proxima_nova_medium"
+                android:textSize="@dimen/padding_margin_16dp"
+                android:textColor="@color/color_black_65"
+                android:background="@drawable/signup_border_background_white"
+                app:fontFamily="@font/proxima_nova_semibold"
                 android:letterSpacing="0.025"
                 android:lineSpacingExtra="6dp"
                 android:gravity="center"

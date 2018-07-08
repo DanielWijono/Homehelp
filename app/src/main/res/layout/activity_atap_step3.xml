@@ -214,9 +214,8 @@
                     android:text="*Maks 2 pekerja / hari"
                     android:textColor="#FF0000"
                     android:textSize="@dimen/padding_margin_12dp"
-                    android:textStyle="italic"
                     android:layout_marginTop="@dimen/padding_margin_6dp"
-                    app:fontFamily="@font/proxima_nova_regular"/>
+                    app:fontFamily="@font/proxima_nova_light_italic"/>
 
             </LinearLayout>
 

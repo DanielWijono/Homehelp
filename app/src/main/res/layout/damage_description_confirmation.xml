@@ -115,7 +115,7 @@
             android:layout_marginTop="@dimen/padding_margin_8dp"
             android:layout_marginLeft="@dimen/padding_margin_32dp"
             android:text="Atap saya bocor blablabla"
-            android:textStyle="italic"
+            android:fontFamily="@font/proxima_nova_regular_italic"
             android:id="@+id/tv_problem_desc"/>
 
         <LinearLayout
