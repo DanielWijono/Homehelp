@@ -84,7 +84,7 @@ public class AtapActivityStep3 extends AppCompatActivity {
     @BindView(R.id.image_capture_three)
     ImageView imageCaptureThree;
 
-    String workType, notes, date, problemDesc, location;
+    String workType, notes, date, problemDesc, location, time;
     AtapKerusakanAdapter atapKerusakanAdapter;
     List<String> listKerusakanFromAdapter = new ArrayList<>();
 
@@ -134,6 +134,7 @@ public class AtapActivityStep3 extends AppCompatActivity {
             notes = bundle.getString("NOTES");
             date = bundle.getString("DATE");
             location = bundle.getString("LOCATION");
+            time = bundle.getString("TIME");
         }
     }
 
@@ -267,6 +268,7 @@ public class AtapActivityStep3 extends AppCompatActivity {
                 intent.putExtra("LOCATION", location);
                 intent.putExtra("TOTAL_WORKER", tvTukangSum.getText().toString());
                 intent.putExtra("PROBLEM_DESC", problemDesc);
+                intent.putExtra("TIME", time);
                 intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromAdapter);
                 startActivity(intent);
                 break;

@@ -163,7 +163,8 @@
                 app:fontFamily="@font/proxima_nova_regular"
                 android:gravity="right"
                 android:layout_marginRight="8dp"
-                android:layout_weight="0.5"/>
+                android:layout_weight="0.5"
+                android:id="@+id/tv_time_begin"/>
 
         </LinearLayout>
 

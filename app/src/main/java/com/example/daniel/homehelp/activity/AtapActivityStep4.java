@@ -67,8 +67,18 @@ public class AtapActivityStep4 extends AppCompatActivity {
     TextView tvLocation;
     @BindView(R.id.tv_notes)
     TextView tvNotes;
+    @BindView(R.id.ll_order_confirmation)
+    LinearLayout llOrderConfirmation;
+    @BindView(R.id.tv_time_begin)
+    TextView tvTimeBegin;
+    @BindView(R.id.ll_time_location)
+    LinearLayout llTimeLocation;
+    @BindView(R.id.ll_problem_price_desc)
+    LinearLayout llProblemPriceDesc;
+    @BindView(R.id.ll_payment_method)
+    LinearLayout llPaymentMethod;
 
-    String workType, notes, date, listKerusakan, totalWorker, problemDesc, location;
+    String workType, notes, date, listKerusakan, totalWorker, problemDesc, location, time;
     List<String> listKerusakanFromStep3;
 
     @Override
@@ -106,6 +116,7 @@ public class AtapActivityStep4 extends AppCompatActivity {
             totalWorker = bundle.getString("TOTAL_WORKER");
             location = bundle.getString("LOCATION");
             problemDesc = bundle.getString("PROBLEM_DESC");
+            time = bundle.getString("TIME");
             listKerusakanFromStep3 = bundle.getStringArrayList("LIST_KERUSAKAN");
             System.out.println("list kerusakan from step 3 : " + listKerusakanFromStep3);
         }
@@ -119,6 +130,7 @@ public class AtapActivityStep4 extends AppCompatActivity {
         tvDateBegin.setText(date);
         tvProblemDesc.setText(problemDesc);
         tvWorkerSum.setText("Jumlah Pekerja : " + totalWorker);
+        tvTimeBegin.setText(time);
     }
 
     private void confirmationDialog() {

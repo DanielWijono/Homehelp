@@ -52,10 +52,13 @@ public class AtapKerusakanAdapter extends RecyclerView.Adapter<RecyclerView.View
         @BindView(R.id.line_separator_view)
         View lineSeparatorView;
 
-        String[] kerusakanTitle = {"Rangka Atap", "Kuda-kuda", "Struktur baja konvensional", "Jurai Dalam", "Jurai Luar", "Lisplang", "Nok", "Semua", "Lain - Lain"};
+        String[] kerusakanTitle = {"Rangka Atap", "Kuda-kuda", "Struktur baja konvensional",
+                "Jurai Dalam", "Jurai Luar", "Lisplang",
+                "Nok", "Semua", "Lain - Lain"};
+
         String[] kerusakanDescription = {"Sebagai penahan beban dari bahan penutup atap, umumnya berupa\n" +
                 "susunan kayu atau baja ringan", "Penyangga utama struktur, berupa batang untuk memberi bentuk atap",
-                "Bagian dari struktur atap yang menggunakan baja", "testing", "testing", "testing", "testing", "testing", "testing",};
+                "Bagian dari struktur atap yang menggunakan baja", "testing", "testing", "testing", "testing", "testing","testing"};
 
         public AtapKerusakanListViewHolder(View itemView) {
             super(itemView);
@@ -103,17 +106,7 @@ public class AtapKerusakanAdapter extends RecyclerView.Adapter<RecyclerView.View
                 lineSeparatorView.setVisibility(View.GONE);
             }
 
-            switch (position) {
-                case 0:
-                    checkBoxListener(position);
-                    break;
-                case 1:
-                    checkBoxListener(position);
-                    break;
-                case 2:
-                    checkBoxListener(position);
-                    break;
-            }
+            checkBoxListener(position);
         }
     }
 

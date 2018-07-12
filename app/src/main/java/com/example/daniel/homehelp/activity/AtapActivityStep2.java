@@ -89,11 +89,13 @@ public class AtapActivityStep2 extends AppCompatActivity {
 
     private DatePickerDialog dateBeginDialog;
     private Calendar dateCalendar;
-    private String workType, notes, location;
+    private String workType, notes, location, time;
     @SuppressLint("RestrictedApi")
     Context context = new ContextThemeWrapper(this, R.style.MyDatePickerDialogTheme);
     private int mYear, mMonth, mDay;
     private List<String> addressList = new ArrayList<>();
+    private int hour, minute;
+    Calendar mcurrentTime;
 
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
@@ -125,6 +127,11 @@ public class AtapActivityStep2 extends AppCompatActivity {
         initCalendar();
         dateBeginDialog.getDatePicker().setTag(tvDateBegin.getId());
         DateTimeUtils.setInDateFormalFormat(dateCalendar, tvDateBegin);
+        mcurrentTime = Calendar.getInstance();
+        hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+        minute = mcurrentTime.get(Calendar.MINUTE);
+        tvTime.setText(hour + ":" + minute);
+        time = String.format("%02d", hour) + ":" + String.format("%02d", minute);
         getBundle();
         etNotes.addTextChangedListener(textWatcher);
         autocompleteAddress.addTextChangedListener(textWatcher);
@@ -200,18 +207,20 @@ public class AtapActivityStep2 extends AppCompatActivity {
                 intent.putExtra("NOTES", notes);
                 intent.putExtra("LOCATION", location);
                 intent.putExtra("DATE", tvDateBegin.getText().toString());
+                intent.putExtra("TIME", time);
                 startActivity(intent);
                 break;
             case R.id.ll_time_picker:
-                Calendar mcurrentTime = Calendar.getInstance();
-                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
-                int minute = mcurrentTime.get(Calendar.MINUTE);
+                mcurrentTime = Calendar.getInstance();
+                hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                minute = mcurrentTime.get(Calendar.MINUTE);
                 TimePickerDialog mTimePicker;
 
                 mTimePicker = new TimePickerDialog(AtapActivityStep2.this, R.style.TimePickerTheme, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                         tvTime.setText(String.format("%02d", selectedHour) + ":" + String.format("%02d", selectedMinute));
+                        time = String.format("%02d", selectedHour) + ":" + String.format("%02d", selectedMinute);
                     }
                 }, hour, minute, true);//Yes 24 hour time
                 mTimePicker.setTitle("Select Time");
