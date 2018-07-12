@@ -105,7 +105,8 @@
                     android:src="@drawable/ic_worker_face_one"
                     app:civ_border_width="0.1dp"
                     app:civ_border_color="@color/color_grey_500"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:id="@+id/image_worker"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -118,7 +119,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Jeffry Agus"
-                        android:textColor="@color/color_black_65"/>
+                        android:textColor="@color/color_black_65"
+                        android:id="@+id/worker_name"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"

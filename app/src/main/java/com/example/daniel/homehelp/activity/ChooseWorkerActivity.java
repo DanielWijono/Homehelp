@@ -30,8 +30,13 @@ public class ChooseWorkerActivity extends AppCompatActivity {
     ImageView imgCheckWorkerTwo;
     @BindView(R.id.ll_worker_two)
     LinearLayout llWorkerTwo;
+    @BindView(R.id.tv_worker_one)
+    TextView tvWorkerOne;
+    @BindView(R.id.tv_worker_two)
+    TextView tvWorkerTwo;
 
     boolean isOneClicked, isTwoClicked;
+    String workType, notes, date, listKerusakan, totalWorker, problemDesc, location, time, workerClicked, workerName;
     List<String> listKerusakanFromStep3;
 
     @Override
@@ -46,8 +51,16 @@ public class ChooseWorkerActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         if (bundle != null) {
+            workType = bundle.getString("WORK_TYPE");
+            notes = bundle.getString("NOTES");
+            date = bundle.getString("DATE");
+            listKerusakan = bundle.getString("LIST_KERUSAKAN");
+            totalWorker = bundle.getString("TOTAL_WORKER");
+            location = bundle.getString("LOCATION");
+            problemDesc = bundle.getString("PROBLEM_DESC");
+            time = bundle.getString("TIME");
             listKerusakanFromStep3 = bundle.getStringArrayList("LIST_KERUSAKAN");
-            System.out.println("list kerusakan choose worker : " + listKerusakanFromStep3);
+            System.out.println("list kerusakan finding worker : " + listKerusakanFromStep3);
         }
     }
 
@@ -59,16 +72,29 @@ public class ChooseWorkerActivity extends AppCompatActivity {
                 isTwoClicked = false;
                 imgCheckWorkerOne.setImageResource(R.drawable.ic_already_choose);
                 imgCheckWorkerTwo.setImageResource(R.drawable.ic_not_choose);
+                workerClicked = "one";
+                workerName = tvWorkerOne.getText().toString();
                 break;
             case R.id.ll_worker_two:
                 isOneClicked = false;
                 isTwoClicked = true;
                 imgCheckWorkerOne.setImageResource(R.drawable.ic_not_choose);
                 imgCheckWorkerTwo.setImageResource(R.drawable.ic_already_choose);
+                workerClicked = "two";
+                workerName = tvWorkerTwo.getText().toString();
                 break;
             case R.id.tv_order_button:
-                if (isOneClicked || isTwoClicked ) {
+                if (isOneClicked || isTwoClicked) {
                     Intent intent = new Intent(ChooseWorkerActivity.this, TrackingWorkerActivity.class);
+                    intent.putExtra("WORK_TYPE", workType);
+                    intent.putExtra("NOTES", notes);
+                    intent.putExtra("DATE", date);
+                    intent.putExtra("LOCATION", location);
+                    intent.putExtra("TOTAL_WORKER", totalWorker);
+                    intent.putExtra("PROBLEM_DESC", problemDesc);
+                    intent.putExtra("TIME", time);
+                    intent.putExtra("WORKER_CLICKED", workerClicked);
+                    intent.putExtra("WORKER_NAME", workerName);
                     intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromStep3);
                     startActivity(intent);
                 } else {

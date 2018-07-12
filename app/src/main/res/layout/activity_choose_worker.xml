@@ -75,7 +75,8 @@
                     android:text="Jeffry Agus"
                     android:textColor="@color/color_black_65"
                     android:textSize="14dp"
-                    android:fontFamily="@font/proxima_nova_medium"/>
+                    android:fontFamily="@font/proxima_nova_medium"
+                    android:id="@+id/tv_worker_one"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -132,7 +133,8 @@
                     android:text="Yoshi Sudarso"
                     android:textColor="@color/color_black_65"
                     android:textSize="14dp"
-                    android:fontFamily="@font/proxima_nova_medium"/>
+                    android:fontFamily="@font/proxima_nova_medium"
+                    android:id="@+id/tv_worker_two"/>
 
                 <TextView
                     android:layout_width="match_parent"
