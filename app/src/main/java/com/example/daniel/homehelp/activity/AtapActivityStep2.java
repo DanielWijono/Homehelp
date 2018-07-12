@@ -208,7 +208,7 @@ public class AtapActivityStep2 extends AppCompatActivity {
                 int minute = mcurrentTime.get(Calendar.MINUTE);
                 TimePickerDialog mTimePicker;
 
-                mTimePicker = new TimePickerDialog(AtapActivityStep2.this, new TimePickerDialog.OnTimeSetListener() {
+                mTimePicker = new TimePickerDialog(AtapActivityStep2.this, R.style.TimePickerTheme, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                         tvTime.setText(String.format("%02d", selectedHour) + ":" + String.format("%02d", selectedMinute));
