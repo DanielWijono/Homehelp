@@ -2,6 +2,7 @@ package com.example.daniel.homehelp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
@@ -11,8 +12,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.daniel.homehelp.DepthPageTransformer;
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.Utils;
+import com.example.daniel.homehelp.ZoomOutPageTransformer;
 import com.example.daniel.homehelp.adapter.IntroductionAdapter;
 
 import butterknife.BindView;
@@ -54,6 +57,7 @@ public class IntroductionActivity extends AppCompatActivity implements ViewPager
     private void initialization() {
         introductionViewPager.setAdapter(new IntroductionAdapter(IntroductionActivity.this, this));
         introductionIndicator.setViewPager(introductionViewPager);
+        introductionViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
         introductionViewPager.addOnPageChangeListener(this);
     }
 
