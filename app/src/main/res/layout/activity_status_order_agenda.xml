@@ -16,8 +16,9 @@
         android:id="@+id/toolbar">
 
         <TextView
-            android:textSize="20dp"
+            android:textSize="24dp"
             android:textColor="@color/color_white"
+            android:fontFamily="@font/proxima_nova_medium"
             android:id="@+id/tv_title_toolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,7 +39,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/ic_rating_image_top"
+                android:src="@drawable/ic_status_agenda_top_layout"
                 android:id="@+id/img_status_order_agenda"/>
 
             <View
@@ -63,8 +64,10 @@
                     android:layout_height="wrap_content"
                     android:text="Order #09120245"
                     android:textColor="@color/colorAccent"
-                    android:textSize="@dimen/padding_margin_16dp"
-                    android:textStyle="bold"/>
+                    android:textSize="@dimen/padding_margin_24dp"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -72,16 +75,16 @@
                     android:orientation="horizontal"
                     android:layout_marginTop="@dimen/padding_margin_8dp">
 
-                    <include layout="@layout/order_date_time_agenda"></include>
+                    <include layout="@layout/order_date_time_agenda"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_line_agenda"
+                        android:src="@drawable/ic_line_dot_status_agenda"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"/>
 
-                    <include layout="@layout/order_status_agenda_desc"></include>
+                    <include layout="@layout/order_status_agenda_desc"/>
 
                 </LinearLayout>
 
@@ -90,11 +93,14 @@
                     android:layout_height="wrap_content"
                     android:text="Chat Pekerja"
                     android:textColor="@color/color_black_65"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/proxima_nova_semibold"
                     android:gravity="center"
+                    android:padding="@dimen/padding_margin_16dp"
                     android:layout_marginLeft="@dimen/padding_margin_16dp"
                     android:layout_marginRight="@dimen/padding_margin_16dp"
                     android:layout_marginBottom="@dimen/padding_margin_16dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="55dp"
                     android:background="@drawable/signup_border_background_white"/>
 
                 <TextView
@@ -102,7 +108,10 @@
                     android:layout_height="wrap_content"
                     android:text="Rincian Pesanan"
                     android:textColor="@color/color_white"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/proxima_nova_semibold"
                     android:gravity="center"
+                    android:padding="@dimen/padding_margin_16dp"
                     android:layout_marginLeft="@dimen/padding_margin_16dp"
                     android:layout_marginRight="@dimen/padding_margin_16dp"
                     android:layout_marginBottom="@dimen/padding_margin_16dp"

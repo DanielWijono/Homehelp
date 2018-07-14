@@ -48,6 +48,7 @@
                     android:layout_height="wrap_content"
                     android:text="Kamis, 5 Juli 2018"
                     android:textColor="@color/color_black_65"
+                    android:fontFamily="@font/proxima_nova_regular"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.4"
                     android:layout_marginLeft="@dimen/padding_margin_8dp"/>
@@ -63,6 +64,7 @@
                     android:layout_height="wrap_content"
                     android:text="13.00"
                     android:textColor="@color/color_black_65"
+                    android:fontFamily="@font/proxima_nova_regular"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="0.6"
                     android:layout_marginLeft="@dimen/padding_margin_8dp"
@@ -108,12 +110,16 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Layanan"/>
+                            android:text="Layanan"
+                            android:textColor="#969696"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:layout_marginBottom="@dimen/padding_margin_2dp"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Pekerjaan Atap"
-                            android:textColor="@color/colorAccent"/>
+                            android:textColor="@color/colorAccent"
+                            android:fontFamily="@font/proxima_nova_regular"/>
 
                     </LinearLayout>
 
@@ -137,7 +143,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Status"/>
+                        android:text="Status"
+                        android:textColor="#969696"
+                        android:fontFamily="@font/proxima_nova_regular"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -149,6 +157,7 @@
                             android:layout_height="wrap_content"
                             android:text="Pekerja On the way"
                             android:textColor="@color/color_black_65"
+                            android:fontFamily="@font/proxima_nova_regular"
                             android:layout_weight="0.7"
                             android:layout_gravity="center"/>
                         <ImageView

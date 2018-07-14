@@ -15,7 +15,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Agenda"
-            android:textSize="@dimen/padding_margin_20dp"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/padding_margin_24dp"
+            android:fontFamily="@font/proxima_nova_medium"
             android:layout_gravity="center"/>
 
         <ImageView
@@ -35,10 +37,10 @@
         android:layout_height="wrap_content"
         android:minHeight="?actionBarSize"
         android:background="@color/color_white"
-        app:tabSelectedTextColor="@color/color_blue_A400"
-        app:tabTextColor="@color/color_black"
-        app:tabIndicatorColor="@color/color_blue_A400"
-        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabSelectedTextColor="@color/color_black_65"
+        app:tabTextColor="#cccccc"
+        app:tabIndicatorColor="@color/colorAccent"
+        app:tabTextAppearance="@style/MineCustomTabText"
         app:tabIndicatorHeight="@dimen/padding_margin_3dp"
         app:tabGravity="fill" />
 

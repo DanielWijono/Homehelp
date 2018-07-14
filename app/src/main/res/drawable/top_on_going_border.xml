@@ -6,6 +6,6 @@
         android:top="10dp"
         android:bottom="10dp"/>
 
-    <solid android:color="@color/colorAccent" />
+    <solid android:color="@color/color_green_background_kerusakan" />
     <corners android:topLeftRadius="6dp" android:topRightRadius="6dp"/>
 </shape>

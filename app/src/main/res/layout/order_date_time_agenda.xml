@@ -11,7 +11,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/padding_margin_6dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -23,6 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/padding_margin_8dp"
                 android:text="20 April"
+                android:fontFamily="@font/proxima_nova_regular"
                 android:gravity="center"/>
 
         </LinearLayout>
@@ -43,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/padding_margin_8dp"
                 android:text="08.00"
+                android:fontFamily="@font/proxima_nova_regular"
                 android:gravity="center"/>
 
         </LinearLayout>
@@ -51,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="65dp">
+            android:layout_marginTop="60dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -63,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/padding_margin_8dp"
                 android:text="08.00"
+                android:fontFamily="@font/proxima_nova_regular"
                 android:gravity="center"/>
 
         </LinearLayout>

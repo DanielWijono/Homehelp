@@ -23,9 +23,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Batalkan Pesanan"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textColor="@color/colorAccent"
-            android:textStyle="bold"
+            android:fontFamily="@font/proxima_nova_semibold"
             android:gravity="center"
             android:layout_marginTop="@dimen/padding_margin_16dp"
             android:id="@+id/tv_title_agenda_dialog"/>
@@ -50,7 +50,7 @@
             android:layout_marginBottom="@dimen/padding_margin_16dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kembali"
                 android:textSize="15dp"
@@ -63,7 +63,7 @@
                 android:id="@+id/tv_cancel_order_back"/>
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Batalkan"
                 android:textSize="15dp"

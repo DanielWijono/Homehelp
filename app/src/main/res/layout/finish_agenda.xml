@@ -15,10 +15,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Belum ada pekerjaan"
+        android:text="Belum Ada Pekerjaan"
         android:textColor="@color/color_black_65"
+        android:textSize="@dimen/padding_margin_20dp"
+        android:fontFamily="@font/proxima_nova_medium"
         android:gravity="center"
-        android:layout_marginTop="@dimen/padding_margin_20dp"
+        android:layout_marginTop="@dimen/padding_margin_30dp"
         android:layout_centerInParent="true"
         android:id="@+id/tv_agenda_finish_desc"/>
 
@@ -27,8 +29,10 @@
         android:layout_height="wrap_content"
         android:text="Silahkan lakukan pesanan terlebih dahulu ya"
         android:textColor="@color/color_black_65"
+        android:fontFamily="@font/proxima_nova_regular"
         android:layout_below="@+id/tv_agenda_finish_desc"
         android:layout_marginTop="@dimen/padding_margin_8dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:id="@+id/tv_desc_empty_data"/>
 
 </RelativeLayout>
