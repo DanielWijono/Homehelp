@@ -54,6 +54,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         TextView notifDesc;
         @BindView(R.id.ll_notif_list)
         LinearLayout llNotifList;
+        @BindView(R.id.line_separator_view)
+        View lineSeparatorView;
 
         String[] notificationTitle = {"Hot Day Promo", "Lantai", "Menunggu konfirmasi survey", "Pekerja ditemukan untuk anda"};
         String[] notificationDesc = {"Promo layanan musim hujan", "Silahkan pilih tanggal anda survey", "Silahkan menunggu pekerja anda datang"};
@@ -83,6 +85,12 @@ public class NotificationAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                     }
                 }
             });
+
+            if (position == 2) {
+                lineSeparatorView.setVisibility(View.GONE);
+            } else {
+                lineSeparatorView.setVisibility(View.VISIBLE);
+            }
         }
     }
 }

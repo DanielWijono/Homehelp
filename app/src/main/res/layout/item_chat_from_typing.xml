@@ -30,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="Halo Bu Adeline"
                 android:textColor="@color/color_black_65"
+                android:fontFamily="@font/proxima_nova_regular"
                 android:layout_gravity="center"
                 android:layout_marginLeft="@dimen/padding_margin_16dp"
                 android:padding="8dp"
@@ -42,6 +43,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="09.01"
+            android:textColor="#969696"
+            android:fontFamily="@font/proxima_nova_regular"
             android:gravity="right"
             android:layout_marginRight="@dimen/padding_margin_16dp"
             android:id="@+id/tv_time_typing"/>

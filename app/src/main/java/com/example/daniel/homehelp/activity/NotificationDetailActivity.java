@@ -22,6 +22,8 @@ public class NotificationDetailActivity extends AppCompatActivity {
     ImageView btnDelete;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.tv_notification_title)
+    TextView tvNotificationTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +37,6 @@ public class NotificationDetailActivity extends AppCompatActivity {
                 Toast.makeText(NotificationDetailActivity.this, "DELETE", Toast.LENGTH_SHORT).show();
             }
         });
+        tvNotificationTitle.setText("Yuk, cobain perbaikan\nAC GRATIS!");
     }
 }

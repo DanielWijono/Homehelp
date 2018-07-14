@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_white"
     tools:context=".activity.InboxDetailActivity">
 
@@ -27,17 +28,21 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    app:civ_border_width="0.1dp"
+                    app:civ_border_color="@color/color_grey_500"
                     android:src="@drawable/ic_worker_face_one"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Halo Bu Adeline. Perkenalkan saya Jeffrey, pekerja yang akan memperbaiki atap ya"
+                    android:text="Halo Bu. Perkenalkan saya Jeffrey, pekerja yang akan memperbaiki atap ya"
                     android:textColor="@color/color_black_65"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:lineSpacingExtra="@dimen/padding_margin_3dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/padding_margin_16dp"
                     android:padding="8dp"
-                    android:background="@drawable/bangunan_border"/>
+                    android:background="@drawable/chat_border"/>
 
             </LinearLayout>
 
@@ -45,6 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="09.01"
+                android:textColor="#969696"
+                android:fontFamily="@font/proxima_nova_regular"
                 android:gravity="right"
                 android:layout_marginRight="@dimen/padding_margin_16dp"/>
 
@@ -78,6 +85,7 @@
             android:layout_height="wrap_content"
             android:background="@color/color_transparent"
             android:hint="Type Something"
+            android:fontFamily="@font/proxima_nova_regular"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="@dimen/padding_margin_16dp"
             android:layout_marginRight="@dimen/padding_margin_16dp"

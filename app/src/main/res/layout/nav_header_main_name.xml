@@ -37,7 +37,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Buzz lightyear"
+            android:text="Adeline Atmadja"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/padding_margin_16dp"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:layout_marginTop="@dimen/padding_margin_8dp"
             android:gravity="center"
             android:id="@+id/profile_name"/>
 
@@ -46,18 +50,23 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginBottom="@dimen/padding_margin_24dp">
+            android:layout_marginBottom="@dimen/padding_margin_24dp"
+            android:layout_marginTop="@dimen/padding_margin_4dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0 point | "
+                android:textColor="@color/color_white"
+                android:fontFamily="@font/proxima_nova_medium"
                 android:id="@+id/profile_point"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Regu8ler Member"
+                android:text="Reguler Member"
+                android:textColor="@color/color_white"
+                android:fontFamily="@font/proxima_nova_medium"
                 android:id="@+id/profile_member"/>
 
         </LinearLayout>

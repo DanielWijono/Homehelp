@@ -23,8 +23,9 @@
         android:text="testing"
         android:textColor="@color/color_black_65"
         android:textSize="15dp"
+        android:fontFamily="@font/proxima_nova_medium"
         android:gravity="center"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="16dp"
         android:id="@+id/tv_drawer_layout"/>
     </LinearLayout>
 

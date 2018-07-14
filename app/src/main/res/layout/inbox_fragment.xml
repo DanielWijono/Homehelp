@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_white"
     android:orientation="vertical">
 
@@ -22,6 +22,8 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                app:civ_border_width="0.1dp"
+                app:civ_border_color="@color/color_grey_500"
                 android:src="@drawable/ic_worker_face_one"/>
 
             <LinearLayout
@@ -35,12 +37,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jeffry Agus"/>
+                    android:text="Jeffry Agus"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/proxima_nova_medium"
+                    android:layout_marginBottom="@dimen/padding_margin_4dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Baik, ditunggu ya pak"/>
+                    android:text="Baik, ditunggu ya pak"
+                    android:fontFamily="@font/proxima_nova_regular"/>
 
             </LinearLayout>
 
@@ -49,15 +55,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginLeft="@dimen/padding_margin_8dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
                 android:layout_weight="0.7">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="09.01"
+                    android:textColor="#969696"
+                    android:fontFamily="@font/proxima_nova_regular"
                     android:gravity="right"
                     android:layout_marginBottom="8dp"
+                    android:layout_marginTop="@dimen/padding_margin_8dp"
                     android:id="@+id/tv_time_inbox"/>
 
                 <ImageView
