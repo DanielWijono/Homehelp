@@ -37,8 +37,10 @@ public class TrackingWorkerExpandedActivity extends AppCompatActivity {
     CircleImageView imageWorker;
     @BindView(R.id.tv_worker_name)
     TextView tvWorkerName;
+    @BindView(R.id.tv_bottom_button)
+    TextView tvBottomButton;
 
-    String workType, notes, date, listKerusakan, totalWorker, problemDesc, location, time, workerClicked, workerName;
+    String workType, notes, date, listKerusakan, totalWorker, problemDesc, location, time, workerClicked, workerName, bottomButton;
     List<String> listKerusakanFromStep3;
 
     @Override
@@ -49,19 +51,6 @@ public class TrackingWorkerExpandedActivity extends AppCompatActivity {
         Utils.setupAppToolbarForActivity(this, toolbar, "Tracking Pekerja");
         getBundle();
         setView();
-    }
-
-    private void setView() {
-        if (workerClicked.equalsIgnoreCase("one")) {
-            imageWorker.setImageResource(R.drawable.ic_worker_face_one);
-            tvWorkerName.setText(workerName);
-        } else if (workerClicked.equalsIgnoreCase("two")) {
-            imageWorker.setImageResource(R.drawable.ic_worker_face_two);
-            tvWorkerName.setText(workerName);
-        }
-        tvLocation.setText(location);
-        tvNotes.setText(notes);
-        tvTipe.setText("Tipe : " + workType);
     }
 
     private void getBundle() {
@@ -78,8 +67,28 @@ public class TrackingWorkerExpandedActivity extends AppCompatActivity {
             time = bundle.getString("TIME");
             workerClicked = bundle.getString("WORKER_CLICKED");
             workerName = bundle.getString("WORKER_NAME");
+            bottomButton = bundle.getString("BOTTOM_BUTTON");
             listKerusakanFromStep3 = bundle.getStringArrayList("LIST_KERUSAKAN");
             System.out.println("list kerusakan tracking worker : " + listKerusakanFromStep3);
+        }
+    }
+
+    private void setView() {
+        if (workerClicked.equalsIgnoreCase("one")) {
+            imageWorker.setImageResource(R.drawable.ic_worker_face_one);
+            tvWorkerName.setText(workerName);
+        } else if (workerClicked.equalsIgnoreCase("two")) {
+            imageWorker.setImageResource(R.drawable.ic_worker_face_two);
+            tvWorkerName.setText(workerName);
+        }
+        tvLocation.setText(location);
+        tvNotes.setText(notes);
+        tvTipe.setText("Tipe : " + workType);
+
+        if (bottomButton != null) {
+            tvBottomButton.setText("Selesai");
+        } else {
+            tvBottomButton.setText("Batalkan");
         }
     }
 }

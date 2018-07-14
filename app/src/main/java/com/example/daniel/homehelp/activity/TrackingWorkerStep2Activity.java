@@ -21,6 +21,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 
@@ -40,9 +41,17 @@ public class TrackingWorkerStep2Activity extends AppCompatActivity {
     GifImageView gifImageView;
     @BindView(R.id.tv_done_button)
     TextView tvDoneButton;
+    @BindView(R.id.img_expand_layout)
+    ImageView imgExpandLayout;
+    @BindView(R.id.image_worker)
+    CircleImageView imageWorker;
+    @BindView(R.id.worker_name)
+    TextView tvWorkerName;
 
-    List<String> listKerusakanFromStep3;
     GifDrawable gifFromResource;
+    List<String> listKerusakanFromStep3;
+    String workType, notes, date, listKerusakan, totalWorker, problemDesc, location, time, workerClicked, workerName;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +60,7 @@ public class TrackingWorkerStep2Activity extends AppCompatActivity {
         ButterKnife.bind(this);
         Utils.setupAppToolbarForActivity(this, toolbar, "Tracking Pekerja");
         try {
-            gifFromResource = new GifDrawable( getResources(), R.raw.tracking_pekerja_animated);
+            gifFromResource = new GifDrawable(getResources(), R.raw.tracking_pekerja_animated);
             gifFromResource.setSpeed(0.8f);
         } catch (IOException e) {
             e.printStackTrace();
@@ -60,22 +69,35 @@ public class TrackingWorkerStep2Activity extends AppCompatActivity {
             gifImageView.setBackground(gifFromResource);
         }
         getBundle();
+        validateUIWorker();
     }
 
     private void getBundle() {
         Bundle bundle = getIntent().getExtras();
 
         if (bundle != null) {
+            workType = bundle.getString("WORK_TYPE");
+            notes = bundle.getString("NOTES");
+            date = bundle.getString("DATE");
+            listKerusakan = bundle.getString("LIST_KERUSAKAN");
+            totalWorker = bundle.getString("TOTAL_WORKER");
+            location = bundle.getString("LOCATION");
+            problemDesc = bundle.getString("PROBLEM_DESC");
+            time = bundle.getString("TIME");
+            workerClicked = bundle.getString("WORKER_CLICKED");
+            workerName = bundle.getString("WORKER_NAME");
             listKerusakanFromStep3 = bundle.getStringArrayList("LIST_KERUSAKAN");
-            System.out.println("list kerusakan tracking worker step 2 : " + listKerusakanFromStep3);
         }
     }
 
-    @OnClick(R.id.tv_done_button)
-    public void onViewClicked() {
-        Intent intent = new Intent(this, RatingActivity.class);
-        intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromStep3);
-        startActivity(intent);
+    private void validateUIWorker() {
+        if (workerClicked.equalsIgnoreCase("one")) {
+            imageWorker.setImageResource(R.drawable.ic_worker_face_one);
+            tvWorkerName.setText(workerName);
+        } else if (workerClicked.equalsIgnoreCase("two")) {
+            imageWorker.setImageResource(R.drawable.ic_worker_face_two);
+            tvWorkerName.setText(workerName);
+        }
     }
 
     private void showDialogBackPressed() {
@@ -111,11 +133,37 @@ public class TrackingWorkerStep2Activity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
     @Override
     public void onBackPressed() {
         showDialogBackPressed();
+    }
+
+    @OnClick({R.id.img_expand_layout, R.id.tv_done_button})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.img_expand_layout:
+                Intent intents = new Intent(this, TrackingWorkerExpandedActivity.class);
+                intents.putExtra("WORK_TYPE", workType);
+                intents.putExtra("NOTES", notes);
+                intents.putExtra("DATE", date);
+                intents.putExtra("LOCATION", location);
+                intents.putExtra("TOTAL_WORKER", totalWorker);
+                intents.putExtra("PROBLEM_DESC", problemDesc);
+                intents.putExtra("TIME", time);
+                intents.putExtra("WORKER_CLICKED", workerClicked);
+                intents.putExtra("WORKER_NAME", workerName);
+                intents.putExtra("BOTTOM_BUTTON","selesai");
+                intents.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromStep3);
+                startActivity(intents);
+                overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+                break;
+            case R.id.tv_done_button:
+                Intent intent = new Intent(this, RatingActivity.class);
+                intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromStep3);
+                startActivity(intent);
+                break;
+        }
     }
 }

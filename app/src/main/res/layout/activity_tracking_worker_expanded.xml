@@ -220,7 +220,8 @@
                 android:layout_marginTop="@dimen/padding_margin_32dp"
                 android:paddingLeft="60dp"
                 android:paddingRight="60dp"
-                android:background="@drawable/signup_border_background_white"/>
+                android:background="@drawable/signup_border_background_white"
+                android:id="@+id/tv_bottom_button"/>
 
         </LinearLayout>
     </LinearLayout>
