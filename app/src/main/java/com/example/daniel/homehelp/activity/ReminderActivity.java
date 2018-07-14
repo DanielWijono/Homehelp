@@ -156,7 +156,7 @@ public class ReminderActivity extends AppCompatActivity implements RecyclerViewO
                 int minute = mcurrentTime.get(Calendar.MINUTE);
                 TimePickerDialog mTimePicker;
 
-                mTimePicker = new TimePickerDialog(ReminderActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                mTimePicker = new TimePickerDialog(ReminderActivity.this, R.style.TimePickerTheme, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                         tvTime.setText(String.format("%02d", selectedHour) + ":" + String.format("%02d", selectedMinute));
