@@ -50,6 +50,10 @@ public class RatingActivity extends AppCompatActivity {
 
     List<String> listKerusakanFromStep3;
     int i = 0;
+    @BindView(R.id.tv_rincian)
+    TextView tvRincian;
+    @BindView(R.id.promo_desc)
+    TextView promoDesc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,7 @@ public class RatingActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         getBundle();
         setViewBagianKerusakan();
+        promoDesc.setText("Untuk pemesanan berikutnya,\ngunakan kode promo: HOMEASIK");
     }
 
     private void getBundle() {

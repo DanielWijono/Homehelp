@@ -16,9 +16,10 @@
         android:id="@+id/toolbar">
 
         <TextView
-            android:textSize="20dp"
+            android:textSize="24dp"
             android:text="Pekerjaan Selesai"
             android:textColor="@color/color_white"
+            android:fontFamily="@font/proxima_nova_medium"
             android:id="@+id/tv_title_toolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,15 +66,15 @@
                     android:layout_height="wrap_content"
                     android:text="Terima Kasih!"
                     android:textColor="@color/color_black_65"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
+                    android:textSize="24dp"
+                    android:fontFamily="@font/proxima_nova_semibold"
                     android:gravity="center"/>
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/ic_worker_face_one"
-                    app:civ_border_width="1dp"
+                    app:civ_border_width="0.1dp"
                     app:civ_border_color="@color/color_grey_500"
                     android:layout_marginTop="@dimen/padding_margin_16dp"/>
 
@@ -81,19 +82,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Jeffrey Agus"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/proxima_nova_medium"
                     android:gravity="center"
+                    android:layout_marginBottom="@dimen/padding_margin_6dp"
                     android:layout_marginTop="@dimen/padding_margin_16dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pekerjaan Atap"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:layout_marginBottom="@dimen/padding_margin_4dp"
                     android:gravity="center"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Selasa, 20 April, jam 10.00"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/proxima_nova_regular"
                     android:gravity="center"/>
 
                 <TextView
@@ -101,6 +110,8 @@
                     android:layout_height="wrap_content"
                     android:text="Berikan Rating Anda"
                     android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/padding_margin_16dp"
+                    android:fontFamily="@font/proxima_nova_medium"
                     android:gravity="center"
                     android:layout_marginTop="@dimen/padding_margin_20dp"
                     android:id="@+id/tv_give_your_rating"/>
@@ -116,6 +127,8 @@
                     android:layout_height="wrap_content"
                     android:text="Berikan Review Anda"
                     android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/padding_margin_16dp"
+                    android:fontFamily="@font/proxima_nova_medium"
                     android:gravity="center"
                     android:visibility="gone"
                     android:layout_marginTop="@dimen/padding_margin_16dp"
@@ -146,10 +159,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Submit"
+                    android:textSize="15dp"
                     android:textColor="@color/color_black_65"
+                    android:fontFamily="@font/proxima_nova_semibold"
                     android:paddingLeft="40dp"
                     android:paddingRight="40dp"
                     android:layout_marginTop="30dp"
+                    android:layout_marginBottom="15dp"
                     android:background="@drawable/next_button"
                     android:id="@+id/tv_submit_rating"/>
 
@@ -171,14 +187,36 @@
                     android:text="Ringkasan Order"
                     android:textColor="@color/colorAccent"
                     android:textSize="24dp"
+                    android:fontFamily="@font/proxima_nova_medium"
+                    android:layout_marginTop="15dp"
                     android:gravity="center"/>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Order No. #09120245"
-                    android:textColor="@color/color_black_65"
-                    android:layout_marginTop="@dimen/padding_margin_16dp"/>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/padding_margin_24dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Order No. #09120245"
+                        android:textColor="@color/color_black_65"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:layout_weight="0.5"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rincian"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/proxima_nova_medium"
+                        android:gravity="right"
+                        android:layout_weight="0.5"
+                        android:id="@+id/tv_rincian"/>
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -192,12 +230,17 @@
                         android:layout_height="wrap_content"
                         android:text="Tipe : Harian"
                         android:textColor="@color/color_black_65"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/proxima_nova_medium"
                         android:layout_weight="0.5"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Rp 200.000"
                         android:textColor="@color/color_black_65"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:gravity="right"
                         android:layout_weight="0.5"/>
                 </LinearLayout>
 
@@ -207,6 +250,7 @@
                     android:text="Bagian Kerusakan"
                     android:textColor="@color/color_black_65"
                     android:textSize="16dp"
+                    android:fontFamily="@font/proxima_nova_medium"
                     android:layout_marginBottom="@dimen/padding_margin_8dp"/>
 
                 <LinearLayout
@@ -233,6 +277,8 @@
                         android:text="Total"
                         android:textColor="@color/color_black_65"
                         android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/proxima_nova_medium"
                         android:layout_weight="0.5"/>
 
                     <TextView
@@ -241,6 +287,9 @@
                         android:text="Rp 200.000"
                         android:textColor="@color/color_black_65"
                         android:textStyle="bold"
+                        android:textSize="@dimen/padding_margin_20dp"
+                        android:fontFamily="@font/proxima_nova_medium"
+                        android:gravity="right"
                         android:layout_weight="0.5"/>
 
                 </LinearLayout>
@@ -262,13 +311,17 @@
                     android:layout_height="wrap_content"
                     android:text="Metode Pembayaran"
                     android:textColor="@color/color_black_65"
+                    android:textSize="@dimen/padding_margin_16dp"
+                    android:fontFamily="@font/proxima_nova_regular"
                     android:layout_marginBottom="@dimen/padding_margin_16dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="\u2022 Tunai"
-                    android:textColor="@color/color_black_65"/>
+                    android:textColor="@color/color_black_65"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/proxima_nova_regular"/>
 
             </LinearLayout>
 
@@ -277,14 +330,18 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_below="@+id/ll_payment_method"
-                android:layout_margin="@dimen/padding_margin_16dp">
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:layout_marginTop="@dimen/padding_margin_24dp"
+                android:layout_marginBottom="@dimen/padding_margin_40dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_price_discount"
-                    android:layout_marginRight="@dimen/padding_margin_16dp"/>
+                    android:layout_marginRight="@dimen/padding_margin_16dp"
+                    android:layout_marginLeft="@dimen/padding_margin_6dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -296,13 +353,18 @@
                         android:layout_height="wrap_content"
                         android:text="Potongan 10K!"
                         android:textColor="@color/color_black_65"
-                        android:textStyle="bold"/>
+                        android:textSize="@dimen/padding_margin_16dp"
+                        android:fontFamily="@font/proxima_nova_semibold"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Untuk pemesanan berikutnya, gunakan kode promo: HOMEASIK"
-                        android:textColor="@color/color_black_65"/>
+                        android:textColor="@color/color_black_65"
+                        android:textSize="14dp"
+                        android:lineSpacingExtra="3dp"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:id="@+id/promo_desc"/>
 
                 </LinearLayout>
 

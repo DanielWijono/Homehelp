@@ -135,6 +135,54 @@ public class TrackingWorkerStep2Activity extends AppCompatActivity {
         });
     }
 
+    private void confirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        View dialoglayout = getLayoutInflater().inflate(R.layout.confirmation_dialog, null, false);
+        builder.setView(dialoglayout);
+        final AlertDialog ad = builder.show();
+
+        TextView tvBack = dialoglayout.findViewById(R.id.back_dialog);
+        TextView tvNext = dialoglayout.findViewById(R.id.next_button_dialog);
+        TextView tvTitle = dialoglayout.findViewById(R.id.dialog_title);
+        TextView tvDesc = dialoglayout.findViewById(R.id.dialog_desc);
+
+        tvTitle.setText("Pekerjaan Sudah Selesai?");
+        tvDesc.setText("Tekan Selesai untuk mengakhir,\natau Pesan Lagi jika belum selesai");
+        tvBack.setText("Selesai");
+        tvNext.setText("Pesan Lagi");
+
+        tvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+                Intent intent = new Intent(TrackingWorkerStep2Activity.this, RatingActivity.class);
+                intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromStep3);
+                startActivity(intent);
+            }
+        });
+
+        tvNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ad.dismiss();
+                Intent intents = new Intent(TrackingWorkerStep2Activity.this, BangunanActivity.class);
+                startActivity(intents);
+//                Intent intent = new Intent(TrackingWorkerStep2Activity.this, RatingActivity.class);
+//                intent.putExtra("WORK_TYPE", workType);
+//                intent.putExtra("NOTES", notes);
+//                intent.putExtra("DATE", date);
+//                intent.putExtra("LOCATION", location);
+//                intent.putExtra("TOTAL_WORKER", totalWorker);
+//                intent.putExtra("PROBLEM_DESC", problemDesc);
+//                intent.putExtra("TIME", time);
+//                intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromStep3);
+//                startActivity(intent);
+
+            }
+        });
+    }
+
     @Override
     public void onBackPressed() {
         showDialogBackPressed();
@@ -160,9 +208,7 @@ public class TrackingWorkerStep2Activity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
                 break;
             case R.id.tv_done_button:
-                Intent intent = new Intent(this, RatingActivity.class);
-                intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromStep3);
-                startActivity(intent);
+                confirmationDialog();
                 break;
         }
     }

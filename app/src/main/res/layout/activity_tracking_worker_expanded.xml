@@ -68,6 +68,8 @@
                     android:layout_height="wrap_content"
                     android:text="Jeffry Agus"
                     android:textColor="@color/color_black_65"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/proxima_nova_medium"
                     android:id="@+id/tv_worker_name"/>
 
                 <LinearLayout
