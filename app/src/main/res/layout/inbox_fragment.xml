@@ -6,6 +6,22 @@
     android:background="@color/color_white"
     android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorAccent"
+        android:id="@+id/toolbar">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chat"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/padding_margin_24dp"
+        android:fontFamily="@font/proxima_nova_medium"
+        android:layout_gravity="center"/>
+    </android.support.v7.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

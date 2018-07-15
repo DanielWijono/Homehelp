@@ -2,6 +2,7 @@ package com.example.daniel.homehelp.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.Utils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +30,8 @@ public class InboxDetailActivity extends AppCompatActivity {
     LinearLayout llSendChat;
     @BindView(R.id.et_chat_type)
     EditText etChatType;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     String chatType;
 
@@ -55,6 +59,7 @@ public class InboxDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_inbox_detail);
         ButterKnife.bind(this);
         etChatType.addTextChangedListener(textWatcher);
+        Utils.setupAppToolbarForActivity(this, toolbar, "Jeffry Agus");
     }
 
     @OnClick(R.id.img_send_chat)

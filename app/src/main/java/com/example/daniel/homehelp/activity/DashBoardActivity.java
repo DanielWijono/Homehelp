@@ -172,14 +172,14 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
                     if (fragment.getClass() != InboxFragment.class) {
                         fragment = InboxFragment.newInstance();
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
-                        toolbar.setVisibility(View.VISIBLE);
+                        toolbar.setVisibility(View.GONE);
                     }
                     break;
                 case R.id.action_favorite:
                     if (fragment.getClass() != FavoriteFragment.class) {
                         fragment = FavoriteFragment.newInstance();
                         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
-                        toolbar.setVisibility(View.VISIBLE);
+                        toolbar.setVisibility(View.GONE);
                     }
                     break;
             }

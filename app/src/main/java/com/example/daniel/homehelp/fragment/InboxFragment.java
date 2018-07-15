@@ -29,6 +29,7 @@ public class InboxFragment extends Fragment {
     TextView tvTimeInbox;
     @BindView(R.id.ll_chat)
     LinearLayout llChat;
+
     private View rootView;
     private DashBoardActivity mActivity;
 

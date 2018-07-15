@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="@dimen/padding_margin_16dp"
-        android:background="@drawable/signup_border">
+        android:background="@drawable/signup_border_background_white">
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
