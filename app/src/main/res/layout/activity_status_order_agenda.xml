@@ -101,7 +101,8 @@
                     android:layout_marginRight="@dimen/padding_margin_16dp"
                     android:layout_marginBottom="@dimen/padding_margin_16dp"
                     android:layout_marginTop="55dp"
-                    android:background="@drawable/signup_border_background_white"/>
+                    android:background="@drawable/signup_border_background_white"
+                    android:id="@+id/tv_chat"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -115,7 +116,8 @@
                     android:layout_marginLeft="@dimen/padding_margin_16dp"
                     android:layout_marginRight="@dimen/padding_margin_16dp"
                     android:layout_marginBottom="@dimen/padding_margin_16dp"
-                    android:background="@drawable/signup_button"/>
+                    android:background="@drawable/signup_button"
+                    android:id="@+id/tv_order_detail"/>
 
             </LinearLayout>
 

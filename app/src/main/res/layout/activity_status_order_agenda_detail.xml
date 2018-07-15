@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".activity.StatusOrderAgendaDetailActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:theme="@style/ToolbarColoredBackArrowWhite"
+        android:layout_gravity="center"
+        android:id="@+id/toolbar">
+
+        <TextView
+            android:textSize="24dp"
+            android:textColor="@color/color_white"
+            android:fontFamily="@font/proxima_nova_medium"
+            android:id="@+id/tv_title_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll_view"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_status_agenda_top_layout"
+                android:id="@+id/img_status_order_agenda_detail"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/color_grey_500"
+                android:layout_below="@+id/img_status_order_agenda_detail"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/signup_border_background_white"
+                android:layout_marginTop="120dp"
+                android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginRight="@dimen/padding_margin_16dp"
+                android:gravity="center"
+                android:id="@+id/ll_worker">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PEKERJA"
+                        android:textColor="@color/color_black_65"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:layout_weight="0.5"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lihat"
+                        android:textColor="@color/colorAccent"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:gravity="right"
+                        android:layout_weight="0.5"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/padding_margin_10dp"
+                    android:layout_marginTop="@dimen/padding_margin_16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_worker_face_one"
+                        app:civ_border_width="0.1dp"
+                        app:civ_border_color="@color/color_grey_500"
+                        android:layout_gravity="center"
+                        android:id="@+id/image_worker"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="@dimen/padding_margin_16dp"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jeffry Agus"
+                            android:textColor="@color/color_black_65"
+                            android:textSize="15dp"
+                            android:fontFamily="@font/proxima_nova_medium"
+                            android:id="@+id/worker_name"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_stars"
+                                android:paddingTop="@dimen/padding_margin_8dp"
+                                android:paddingBottom="@dimen/padding_margin_8dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Pekerja OTW"
+                                android:textColor="@color/color_black_65"
+                                android:fontFamily="@font/proxima_nova_light_italic"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/padding_margin_16dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_worker"
+                android:layout_margin="@dimen/padding_margin_16dp"
+                android:orientation="vertical"
+                android:background="@drawable/signup_border_background_white"
+                android:id="@+id/ll_order_confirmation_detail">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Order #09120245"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/padding_margin_24dp"
+                    app:fontFamily="@font/proxima_nova_semibold"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TIPE"
+                    android:textSize="16dp"
+                    android:textColor="@color/color_black_65"
+                    app:fontFamily="@font/proxima_nova_medium"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Harian"
+                    android:textSize="15dp"
+                    android:textColor="@color/color_black_65"
+                    app:fontFamily="@font/proxima_nova_regular"
+                    android:id="@+id/tv_work_type"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/padding_margin_16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="LOKASI"
+                        android:textColor="@color/color_black_65"
+                        android:textSize="@dimen/padding_margin_16dp"
+                        app:fontFamily="@font/proxima_nova_medium"
+                        android:layout_weight="0.5"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_location"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Jalan Syahdan"
+                        android:textSize="16dp"
+                        app:fontFamily="@font/proxima_nova_regular"
+                        android:textColor="@color/color_black_65"
+                        android:gravity="center_vertical"
+                        android:id="@+id/tv_location"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_notes"
+                        android:layout_marginRight="8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Jalan Syahdan"
+                        android:textSize="16dp"
+                        app:fontFamily="@font/proxima_nova_regular"
+                        android:textColor="@color/color_black_65"
+                        android:gravity="center_vertical"
+                        android:id="@+id/tv_notes"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WAKTU"
+                    android:textSize="@dimen/padding_margin_16dp"
+                    app:fontFamily="@font/proxima_nova_medium"
+                    android:layout_marginRight="@dimen/padding_margin_8dp"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_date"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/padding_margin_8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal"
+                        android:textSize="@dimen/padding_margin_16dp"
+                        android:textColor="@color/color_black_65"
+                        app:fontFamily="@font/proxima_nova_regular"
+                        android:layout_weight="0.5"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="21 may 2018"
+                        android:textColor="@color/color_black_65"
+                        app:fontFamily="@font/proxima_nova_regular"
+                        android:gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/tv_date_begin"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_time"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/padding_margin_8dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Waktu"
+                        android:textColor="@color/color_black_65"
+                        android:textSize="@dimen/padding_margin_16dp"
+                        app:fontFamily="@font/proxima_nova_regular"
+                        android:layout_weight="0.5"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="13:55"
+                        android:textColor="@color/color_black_65"
+                        app:fontFamily="@font/proxima_nova_regular"
+                        android:gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="0.5"
+                        android:id="@+id/tv_time_begin"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/ll_order_confirmation_detail"
+                android:background="@drawable/signup_border_background_white"
+                android:layout_margin="@dimen/padding_margin_16dp"
+                android:id="@+id/order_confirmation_damage">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="@dimen/padding_margin_8dp"
+                        android:layout_marginBottom="@dimen/padding_margin_16dp"
+                        android:layout_marginTop="@dimen/padding_margin_8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MASALAH"
+                            android:textSize="@dimen/padding_margin_16dp"
+                            app:fontFamily="@font/proxima_nova_medium"
+                            android:textColor="@color/color_black_65"
+                            android:layout_weight="0.5"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/padding_margin_6dp"
+                            android:src="@drawable/ic_ubah"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bagian Kerusakan"
+                        android:textColor="@color/color_black_65"
+                        android:textSize="@dimen/padding_margin_16dp"
+                        app:fontFamily="@font/proxima_nova_medium"
+                        android:layout_marginLeft="@dimen/padding_margin_8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/padding_margin_16dp"
+                        android:id="@+id/ll_title_kerusakan">
+
+                        <ImageView
+                            android:layout_width="@dimen/padding_margin_30dp"
+                            android:layout_height="@dimen/padding_margin_30dp"
+                            android:src="@color/color_black"
+                            android:layout_marginRight="@dimen/padding_margin_8dp"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Ubah"
+                            android:textColor="@color/color_black_65"
+                            android:gravity="center_vertical"
+                            android:visibility="gone"
+                            android:id="@+id/tv_damage_title"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_margin_8dp"
+                        android:layout_marginLeft="@dimen/padding_margin_8dp"
+                        android:text="Uraian Masalah"
+                        android:textSize="@dimen/padding_margin_16dp"
+                        android:layout_marginBottom="@dimen/padding_margin_8dp"
+                        app:fontFamily="@font/proxima_nova_medium"
+                        android:textColor="@color/color_black_65"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/padding_margin_8dp"
+                        android:layout_marginLeft="@dimen/padding_margin_8dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_image_attachment"
+                            android:layout_marginRight="@dimen/padding_margin_8dp"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="3 Gambar"
+                            android:textColor="@color/color_black_65"
+                            app:fontFamily="@font/proxima_nova_regular"
+                            android:layout_marginLeft="@dimen/padding_margin_8dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_margin_8dp"
+                        android:layout_marginLeft="@dimen/padding_margin_32dp"
+                        android:text="Atap saya bocor"
+                        android:fontFamily="@font/proxima_nova_regular_italic"
+                        android:id="@+id/tv_problem_desc"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="@dimen/padding_margin_8dp"
+                        android:layout_marginLeft="@dimen/padding_margin_8dp"
+                        android:layout_marginBottom="@dimen/padding_margin_8dp"
+                        android:layout_marginTop="@dimen/padding_margin_24dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jumlah Pekerja : 1"
+                            android:textSize="@dimen/padding_margin_16dp"
+                            app:fontFamily="@font/proxima_nova_medium"
+                            android:layout_weight="0.5"
+                            android:gravity="center_vertical"
+                            android:id="@+id/tv_worker_sum"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 200.000"
+                            android:textSize="@dimen/padding_margin_16dp"
+                            app:fontFamily="@font/proxima_nova_regular"
+                            android:gravity="right"
+                            android:layout_weight="0.5"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:background="@color/color_grey_500"
+                        android:layout_marginTop="@dimen/padding_margin_8dp"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/padding_margin_16dp"
+                        android:layout_marginLeft="@dimen/padding_margin_8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total"
+                            android:textSize="@dimen/padding_margin_20dp"
+                            android:textColor="@color/color_black_80"
+                            app:fontFamily="@font/proxima_nova_medium"
+                            android:layout_weight="0.5"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 200.000"
+                            android:textSize="@dimen/padding_margin_20dp"
+                            android:textColor="@color/color_black_80"
+                            app:fontFamily="@font/proxima_nova_medium"
+                            android:gravity="right"
+                            android:layout_weight="0.5"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gunakan kode promo"
+                        android:textColor="@color/colorAccent"
+                        app:fontFamily="@font/proxima_nova_medium"
+                        android:layout_marginLeft="@dimen/padding_margin_8dp"
+                        android:layout_marginTop="@dimen/padding_margin_8dp"
+                        android:layout_marginBottom="@dimen/padding_margin_8dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/signup_border_background_white"
+                android:layout_margin="@dimen/padding_margin_16dp"
+                android:layout_below="@+id/order_confirmation_damage"
+                android:id="@+id/order_payment_method">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Metode Pembayaran"
+                    android:textColor="@color/color_black_65"
+                    android:textSize="@dimen/padding_margin_16dp"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:layout_marginBottom="@dimen/padding_margin_16dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="\u2022 Tunai"
+                    android:textColor="@color/color_black_65"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/proxima_nova_regular"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kembali"
+                android:textColor="@color/color_white"
+                android:background="@drawable/signup_button"
+                android:layout_margin="16dp"
+                android:layout_below="@+id/order_payment_method"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

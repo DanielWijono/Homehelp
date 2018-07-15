@@ -3,8 +3,10 @@
     package="com.example.daniel.homehelp">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
@@ -69,7 +71,8 @@
         <activity android:name=".activity.ReminderActivity" />
         <activity android:name=".activity.InboxDetailActivity" />
         <activity android:name=".activity.HomeTipsDetailActivity" />
-        <activity android:name=".activity.VerificationCodeActivity"></activity>
+        <activity android:name=".activity.VerificationCodeActivity" />
+        <activity android:name=".activity.StatusOrderAgendaDetailActivity"></activity>
     </application>
 
 </manifest>
