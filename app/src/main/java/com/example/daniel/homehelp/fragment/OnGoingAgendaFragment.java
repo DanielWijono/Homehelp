@@ -126,7 +126,7 @@ public class OnGoingAgendaFragment extends Fragment {
     private void popupDialogCancelSuccessDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
         builder.setCancelable(true);
-        View dialoglayout = getLayoutInflater().inflate(R.layout.cancel_order_dialog, null, false);
+        View dialoglayout = getLayoutInflater().inflate(R.layout.cancel_order_dialog_success, null, false);
         builder.setView(dialoglayout);
         final AlertDialog ad = builder.show();
 

@@ -47,13 +47,25 @@ public class RatingActivity extends AppCompatActivity {
     TextView tvGiveYourRating;
     @BindView(R.id.tv_give_your_comment)
     TextView tvGiveYourComment;
-
-    List<String> listKerusakanFromStep3;
-    int i = 0;
     @BindView(R.id.tv_rincian)
     TextView tvRincian;
     @BindView(R.id.promo_desc)
     TextView promoDesc;
+    @BindView(R.id.img_rating_one)
+    ImageView imgRatingOne;
+    @BindView(R.id.img_rating_two)
+    ImageView imgRatingTwo;
+    @BindView(R.id.img_rating_three)
+    ImageView imgRatingThree;
+    @BindView(R.id.img_rating_four)
+    ImageView imgRatingFour;
+    @BindView(R.id.img_rating_five)
+    ImageView imgRatingFive;
+    @BindView(R.id.tv_rating_desc)
+    TextView tvRatingDesc;
+
+    List<String> listKerusakanFromStep3;
+    int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +75,11 @@ public class RatingActivity extends AppCompatActivity {
         getBundle();
         setViewBagianKerusakan();
         promoDesc.setText("Untuk pemesanan berikutnya,\ngunakan kode promo: HOMEASIK");
+        imgRatingOne.setAlpha(0.2f);
+        imgRatingTwo.setAlpha(0.2f);
+        imgRatingThree.setAlpha(0.2f);
+        imgRatingFour.setAlpha(0.2f);
+        imgRatingFive.setAlpha(0.2f);
     }
 
     private void getBundle() {
@@ -86,16 +103,61 @@ public class RatingActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.tv_submit_rating)
-    public void onViewClicked() {
-        if (i == 0) {
-            tvGiveYourRating.setVisibility(View.GONE);
-            ratingBar.setVisibility(View.GONE);
-            llCommentRating.setVisibility(View.VISIBLE);
-            tvGiveYourComment.setVisibility(View.VISIBLE);
-            i++;
-        } else {
-            Utils.intentWithClearTask(this, DashBoardActivity.class);
+    @OnClick({R.id.img_rating_one, R.id.img_rating_two, R.id.img_rating_three, R.id.img_rating_four, R.id.img_rating_five, R.id.tv_submit_rating})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.img_rating_one:
+                imgRatingOne.setAlpha(1f);
+                imgRatingTwo.setAlpha(0.2f);
+                imgRatingThree.setAlpha(0.2f);
+                imgRatingFour.setAlpha(0.2f);
+                imgRatingFive.setAlpha(0.2f);
+                tvRatingDesc.setText("Mengecewakan");
+                break;
+            case R.id.img_rating_two:
+                imgRatingOne.setAlpha(0.2f);
+                imgRatingTwo.setAlpha(1f);
+                imgRatingThree.setAlpha(0.2f);
+                imgRatingFour.setAlpha(0.2f);
+                imgRatingFive.setAlpha(0.2f);
+                tvRatingDesc.setText("Netral");
+                break;
+            case R.id.img_rating_three:
+                imgRatingOne.setAlpha(0.2f);
+                imgRatingTwo.setAlpha(0.2f);
+                imgRatingThree.setAlpha(1f);
+                imgRatingFour.setAlpha(0.2f);
+                imgRatingFive.setAlpha(0.2f);
+                tvRatingDesc.setText("Baik");
+                break;
+            case R.id.img_rating_four:
+                imgRatingOne.setAlpha(0.2f);
+                imgRatingTwo.setAlpha(0.2f);
+                imgRatingThree.setAlpha(0.2f);
+                imgRatingFour.setAlpha(1f);
+                imgRatingFive.setAlpha(0.2f);
+                tvRatingDesc.setText("Puas");
+                break;
+            case R.id.img_rating_five:
+                imgRatingOne.setAlpha(0.2f);
+                imgRatingTwo.setAlpha(0.2f);
+                imgRatingThree.setAlpha(0.2f);
+                imgRatingFour.setAlpha(0.2f);
+                imgRatingFive.setAlpha(1f);
+                tvRatingDesc.setText("Sangat Puas");
+                break;
+            case R.id.tv_submit_rating:
+                if (i == 0) {
+                    tvGiveYourRating.setVisibility(View.GONE);
+                    ratingBar.setVisibility(View.GONE);
+                    llCommentRating.setVisibility(View.VISIBLE);
+                    tvGiveYourComment.setVisibility(View.VISIBLE);
+                    tvRatingDesc.setVisibility(View.GONE);
+                    i++;
+                } else {
+                    Utils.intentWithClearTask(this, DashBoardActivity.class);
+                }
+                break;
         }
     }
 }

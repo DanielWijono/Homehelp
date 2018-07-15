@@ -120,7 +120,48 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:visibility="gone"
                     android:id="@+id/rating_bar"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_rating_one"
+                        android:layout_marginRight="@dimen/padding_margin_16dp"
+                        android:id="@+id/img_rating_one"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_rating_two"
+                        android:layout_marginRight="@dimen/padding_margin_16dp"
+                        android:id="@+id/img_rating_two"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_rating_three"
+                        android:layout_marginRight="@dimen/padding_margin_16dp"
+                        android:id="@+id/img_rating_three"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_rating_four"
+                        android:layout_marginRight="@dimen/padding_margin_16dp"
+                        android:id="@+id/img_rating_four"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_rating_five"
+                        android:layout_marginRight="@dimen/padding_margin_16dp"
+                        android:id="@+id/img_rating_five"/>
+
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -154,6 +195,17 @@
                         android:layout_gravity="center"/>
 
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/color_black_65"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:id="@+id/tv_rating_desc"/>
 
                 <TextView
                     android:layout_width="wrap_content"
