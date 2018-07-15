@@ -52,7 +52,6 @@ public class TrackingWorkerStep2Activity extends AppCompatActivity {
     List<String> listKerusakanFromStep3;
     String workType, notes, date, listKerusakan, totalWorker, problemDesc, location, time, workerClicked, workerName;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +97,7 @@ public class TrackingWorkerStep2Activity extends AppCompatActivity {
             imageWorker.setImageResource(R.drawable.ic_worker_face_two);
             tvWorkerName.setText(workerName);
         }
+        tvDateTime.setText(date + " Jam " + time);
     }
 
     private void showDialogBackPressed() {

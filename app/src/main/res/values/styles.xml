@@ -12,6 +12,10 @@
         <item name="android:textColorSecondary">@color/color_black</item>
     </style>
 
+    <style name="ToolbarColoredBackArrow65" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/color_black_65</item>
+    </style>
+
     <style name="ToolbarColoredBackArrowWhite" parent="AppTheme">
         <item name="android:textColorSecondary">@color/color_white</item>
     </style>

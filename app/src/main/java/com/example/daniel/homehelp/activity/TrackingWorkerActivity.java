@@ -65,6 +65,7 @@ public class TrackingWorkerActivity extends AppCompatActivity {
             imageWorker.setImageResource(R.drawable.ic_worker_face_two);
             tvWorkerName.setText(workerName);
         }
+        tvDateTime.setText(date + " Jam " + time);
     }
 
     private void getBundle() {

@@ -10,7 +10,8 @@
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorAccent"
+        android:background="@color/color_white"
+        style="@style/ToolbarColoredBackArrow65"
         android:id="@+id/toolbar">
 
     <TextView
@@ -18,8 +19,8 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textColor="@color/color_black_65"
-        android:textSize="@dimen/padding_margin_24dp"
-        android:fontFamily="@font/proxima_nova_medium"
+        android:textSize="@dimen/padding_margin_20dp"
+        android:fontFamily="@font/proxima_nova_regular"
         android:layout_gravity="center"
         android:id="@+id/tv_title_toolbar"/>
     </android.support.v7.widget.Toolbar>
