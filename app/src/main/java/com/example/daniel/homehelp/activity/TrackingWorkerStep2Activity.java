@@ -157,6 +157,16 @@ public class TrackingWorkerStep2Activity extends AppCompatActivity {
             public void onClick(View view) {
                 ad.dismiss();
                 Intent intent = new Intent(TrackingWorkerStep2Activity.this, RatingActivity.class);
+                intent.putExtra("WORK_TYPE", workType);
+                intent.putExtra("NOTES", notes);
+                intent.putExtra("DATE", date);
+                intent.putExtra("LOCATION", location);
+                intent.putExtra("TOTAL_WORKER", totalWorker);
+                intent.putExtra("PROBLEM_DESC", problemDesc);
+                intent.putExtra("TIME", time);
+                intent.putExtra("WORKER_CLICKED", workerClicked);
+                intent.putExtra("WORKER_NAME", workerName);
+                intent.putExtra("BOTTOM_BUTTON","selesai");
                 intent.putStringArrayListExtra("LIST_KERUSAKAN", (ArrayList<String>) listKerusakanFromStep3);
                 startActivity(intent);
             }

@@ -18,6 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RatingActivity extends AppCompatActivity {
 
@@ -63,8 +64,17 @@ public class RatingActivity extends AppCompatActivity {
     ImageView imgRatingFive;
     @BindView(R.id.tv_rating_desc)
     TextView tvRatingDesc;
+    @BindView(R.id.img_worker)
+    CircleImageView imgWorker;
+    @BindView(R.id.tv_worker_name)
+    TextView tvWorkerName;
+    @BindView(R.id.tv_date_time)
+    TextView tvDateTime;
+    @BindView(R.id.tv_work_type)
+    TextView tvWorkType;
 
     List<String> listKerusakanFromStep3;
+    String workType, notes, date, listKerusakan, totalWorker, problemDesc, location, time, workerClicked, workerName;
     int i = 0;
 
     @Override
@@ -75,19 +85,42 @@ public class RatingActivity extends AppCompatActivity {
         getBundle();
         setViewBagianKerusakan();
         promoDesc.setText("Untuk pemesanan berikutnya,\ngunakan kode promo: HOMEASIK");
+        setViewRatingPage();
+    }
+
+    private void setViewRatingPage() {
         imgRatingOne.setAlpha(0.2f);
         imgRatingTwo.setAlpha(0.2f);
         imgRatingThree.setAlpha(0.2f);
         imgRatingFour.setAlpha(0.2f);
         imgRatingFive.setAlpha(0.2f);
+
+        if (workerName.contains("jeff")) {
+            imgWorker.setImageResource(R.drawable.ic_worker_face_one);
+        } else {
+            imgWorker.setImageResource(R.drawable.ic_worker_face_two);
+        }
+
+        tvWorkType.setText("Tipe : " + workType);
+        tvWorkerName.setText(workerName);
+        tvDateTime.setText(date + " Jam " + time);
     }
 
     private void getBundle() {
         Bundle bundle = getIntent().getExtras();
 
         if (bundle != null) {
+            workType = bundle.getString("WORK_TYPE");
+            notes = bundle.getString("NOTES");
+            date = bundle.getString("DATE");
+            listKerusakan = bundle.getString("LIST_KERUSAKAN");
+            totalWorker = bundle.getString("TOTAL_WORKER");
+            location = bundle.getString("LOCATION");
+            problemDesc = bundle.getString("PROBLEM_DESC");
+            time = bundle.getString("TIME");
+            workerClicked = bundle.getString("WORKER_CLICKED");
+            workerName = bundle.getString("WORKER_NAME");
             listKerusakanFromStep3 = bundle.getStringArrayList("LIST_KERUSAKAN");
-            System.out.println("list kerusakan rating : " + listKerusakanFromStep3);
         }
     }
 
