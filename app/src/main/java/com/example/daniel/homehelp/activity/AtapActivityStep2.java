@@ -130,7 +130,7 @@ public class AtapActivityStep2 extends AppCompatActivity {
         mcurrentTime = Calendar.getInstance();
         hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
         minute = mcurrentTime.get(Calendar.MINUTE);
-        tvTime.setText(hour + ":" + minute);
+        tvTime.setText(String.format("%02d", hour) + ":" + String.format("%02d", minute));
         time = String.format("%02d", hour) + ":" + String.format("%02d", minute);
         getBundle();
         etNotes.addTextChangedListener(textWatcher);

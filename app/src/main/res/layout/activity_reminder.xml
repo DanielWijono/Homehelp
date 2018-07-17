@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_white"
     tools:context=".activity.ReminderActivity">
 
@@ -15,12 +16,13 @@
         android:id="@+id/toolbar">
 
         <TextView
-            android:textSize="20dp"
+            android:textSize="24dp"
             android:textColor="@color/color_white"
             android:id="@+id/tv_title_toolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:fontFamily="@font/proxima_nova_medium"/>
 
     </android.support.v7.widget.Toolbar>
 
@@ -61,14 +63,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Buat Reminder"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
+                    android:textSize="24dp"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"
                     android:textColor="@color/colorAccent"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sebagai fitur alarm untuk membantu perencanaan Anda memesan layanan."/>
+                    android:text="Sebagai fitur alarm untuk membantu perencanaan Anda memesan layanan."
+                    android:textSize="16dp"
+                    android:textColor="@color/color_black_65"
+                    app:fontFamily="@font/proxima_nova_regular"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:layout_marginBottom="@dimen/padding_margin_20dp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -86,8 +95,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pilih Layanan"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
+                    android:textSize="24dp"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"
                     android:textColor="@color/colorAccent"/>
 
                 <android.support.v7.widget.RecyclerView
@@ -95,7 +105,6 @@
                     android:layout_height="match_parent"
                     android:clipToPadding="false"
                     android:paddingBottom="8dp"
-                    android:layout_margin="8dp"
                     android:id="@+id/bangunan_recycler_view"
                     android:scrollbars="none"></android.support.v7.widget.RecyclerView>
 
@@ -116,8 +125,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Note"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
+                    android:textSize="24dp"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"
                     android:textColor="@color/colorAccent"
                     android:layout_marginBottom="@dimen/padding_margin_8dp"/>
 
@@ -158,8 +168,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Lokasi"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
+                    android:textSize="24dp"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:layout_marginTop="@dimen/padding_margin_6dp"
                     android:textColor="@color/colorAccent"
                     android:layout_marginBottom="@dimen/padding_margin_8dp"/>
 
@@ -179,6 +190,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Tambah Alamat"
+                        android:textSize="16dp"
+                        app:fontFamily="@font/proxima_nova_medium"
                         android:background="@color/color_transparent"
                         android:gravity="center_vertical"/>
                 </LinearLayout>
@@ -199,6 +212,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Keterangan"
+                        android:textSize="16dp"
+                        app:fontFamily="@font/proxima_nova_medium"
                         android:background="@color/color_transparent"
                         android:gravity="center_vertical"/>
                 </LinearLayout>
@@ -219,8 +234,9 @@
                 android:layout_height="wrap_content"
                 android:text="Waktu"
                 android:textColor="@color/colorAccent"
-                android:textStyle="bold"
-                android:textSize="20dp"
+                android:textSize="24dp"
+                android:fontFamily="@font/proxima_nova_semibold"
+                android:layout_marginTop="@dimen/padding_margin_6dp"
                 android:layout_marginBottom="@dimen/padding_margin_16dp"/>
 
             <LinearLayout
@@ -240,6 +256,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tanggal"
+                    android:textSize="@dimen/padding_margin_16dp"
+                    android:textColor="@color/color_black_65"
+                    app:fontFamily="@font/proxima_nova_medium"
                     android:layout_weight="0.5"
                     android:layout_gravity="center"/>
 
@@ -256,6 +275,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="19 June 2018"
+                        android:textColor="@color/color_black_65"
+                        app:fontFamily="@font/proxima_nova_medium"
                         android:layout_gravity="center"
                         android:id="@+id/tv_date_begin"
                         android:layout_weight="0.2"/>
@@ -287,6 +308,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Waktu"
+                    android:textSize="@dimen/padding_margin_16dp"
+                    android:textColor="@color/color_black_65"
+                    app:fontFamily="@font/proxima_nova_medium"
                     android:layout_weight="0.5"
                     android:layout_gravity="center"/>
 
@@ -303,6 +327,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="13:55"
+                        android:textColor="@color/color_black_65"
+                        app:fontFamily="@font/proxima_nova_medium"
                         android:layout_gravity="center"
                         android:layout_weight="0.2"
                         android:id="@+id/tv_time"/>
@@ -328,6 +354,8 @@
                 android:layout_height="wrap_content"
                 android:text="Simpan"
                 android:textColor="@color/color_black_65"
+                android:textSize="15dp"
+                android:fontFamily="@font/proxima_nova_semibold"
                 android:background="@drawable/next_button"
                 android:padding="@dimen/padding_margin_16dp"
                 android:layout_marginRight="@dimen/padding_margin_16dp"

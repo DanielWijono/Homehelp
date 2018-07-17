@@ -75,6 +75,8 @@ public class ReminderActivity extends AppCompatActivity implements RecyclerViewO
     private DatePickerDialog dateBeginDialog;
     private Calendar dateCalendar;
     private int mYear, mMonth, mDay;
+    private int hour, minute;
+    Calendar mcurrentTime;
     HomeServiceAdapter homeServiceAdapter;
     RecyclerViewOnClick recyclerViewOnClick = this;
     @SuppressLint("RestrictedApi")
@@ -92,6 +94,10 @@ public class ReminderActivity extends AppCompatActivity implements RecyclerViewO
         initCalendar();
         dateBeginDialog.getDatePicker().setTag(tvDateBegin.getId());
         DateTimeUtils.setInDateFormalFormat(dateCalendar, tvDateBegin);
+        mcurrentTime = Calendar.getInstance();
+        hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+        minute = mcurrentTime.get(Calendar.MINUTE);
+        tvTime.setText(String.format("%02d", hour) + ":" + String.format("%02d", minute));
     }
 
     @SuppressWarnings("ResourceType")
