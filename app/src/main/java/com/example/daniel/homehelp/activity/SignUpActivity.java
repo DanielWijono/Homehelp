@@ -82,4 +82,9 @@ public class SignUpActivity extends AppCompatActivity {
     public void onViewClicked() {
         startActivity(new Intent(this, VerificationCodeActivity.class));
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

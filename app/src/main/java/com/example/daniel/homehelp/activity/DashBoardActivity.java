@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.example.daniel.homehelp.BottomNavigationViewHelper;
 import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.RecyclerViewOnClick;
 import com.example.daniel.homehelp.adapter.DrawerLayoutAdapter;
 import com.example.daniel.homehelp.fragment.AgendaFragment;
 import com.example.daniel.homehelp.fragment.FavoriteFragment;
@@ -35,7 +36,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DashBoardActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, BottomNavigationView.OnNavigationItemSelectedListener {
+public class DashBoardActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, BottomNavigationView.OnNavigationItemSelectedListener, RecyclerViewOnClick {
 
     @BindView(R.id.drawer_layout_view)
     ImageView drawerLayoutView;
@@ -61,6 +62,7 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
     Fragment fragment;
     DrawerLayoutAdapter drawerLayoutAdapter;
     String bundleReminder;
+    RecyclerViewOnClick recyclerViewOnClick = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +112,7 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
             }
         });
 
-        drawerLayoutAdapter = new DrawerLayoutAdapter(this);
+        drawerLayoutAdapter = new DrawerLayoutAdapter(this, recyclerViewOnClick);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerViewDrawer.setLayoutManager(layoutManager);
@@ -185,5 +187,10 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
             }
         }
         return true;
+    }
+
+    @Override
+    public void itemOnClick(View view, int position) {
+        finish();
     }
 }

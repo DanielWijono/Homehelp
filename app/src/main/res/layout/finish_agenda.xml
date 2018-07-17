@@ -30,6 +30,7 @@
         android:text="Silahkan lakukan pesanan terlebih dahulu ya"
         android:textColor="@color/color_black_65"
         android:fontFamily="@font/proxima_nova_regular"
+        android:lineSpacingExtra="4dp"
         android:layout_below="@+id/tv_agenda_finish_desc"
         android:layout_marginTop="@dimen/padding_margin_8dp"
         android:gravity="center"

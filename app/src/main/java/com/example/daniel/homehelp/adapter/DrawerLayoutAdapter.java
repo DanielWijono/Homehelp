@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.RecyclerViewOnClick;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,9 +28,12 @@ public class DrawerLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private int[] drawerImageArray = {R.drawable.ic_account, R.drawable.ic_rewards, R.drawable.ic_settings
     ,R.drawable.ic_become_worker, R.drawable.ic_sign_out};
 
-    public DrawerLayoutAdapter(Context context) {
+    RecyclerViewOnClick recyclerViewOnClick;
+
+    public DrawerLayoutAdapter(Context context, RecyclerViewOnClick recyclerViewOnClick) {
         this.context = context;
         drawerArray = context.getResources().getStringArray(R.array.drawer_menu);
+        this.recyclerViewOnClick = recyclerViewOnClick;
     }
 
     @NonNull
@@ -53,6 +58,14 @@ public class DrawerLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
                 viewHolderItems.tvTitle.setText(drawerArray[position - 1]);
                 viewHolderItems.imgDrawer.setBackgroundResource(drawerImageArray[position - 1]);
+                viewHolderItems.llDrawer.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (position == 5) {
+                            recyclerViewOnClick.itemOnClick(view, position);
+                        }
+                    }
+                });
                 break;
             case TYPE_HEADER:
                 ViewHolderHeader viewHolderHeader = (ViewHolderHeader) holder;
@@ -86,6 +99,8 @@ public class DrawerLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         TextView tvTitle;
         @BindView(R.id.img_drawer_layout)
         ImageView imgDrawer;
+        @BindView(R.id.ll_drawer)
+        LinearLayout llDrawer;
 
         public ViewHolderItems(View itemView) {
             super(itemView);
