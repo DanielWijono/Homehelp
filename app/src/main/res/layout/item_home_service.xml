@@ -6,10 +6,10 @@
     android:orientation="vertical">
 
     <FrameLayout
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_margin="@dimen/padding_margin_16dp"
-        android:background="@color/color_green_400"
+        android:background="@drawable/border_background_green"
         android:visibility="gone"
         android:id="@+id/frame_layout_service">
 
@@ -17,9 +17,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|left"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/ic_bell"/>
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_checkbox_checked"/>
 
     </FrameLayout>
 
@@ -28,7 +28,9 @@
         android:layout_height="130dp"
         android:orientation="vertical"
         android:background="@drawable/border_background_transparent"
-        android:layout_margin="@dimen/padding_margin_16dp"
+        android:layout_marginTop="@dimen/padding_margin_16dp"
+        android:layout_marginBottom="@dimen/padding_margin_16dp"
+        android:layout_centerHorizontal="true"
         android:id="@+id/ll_home">
 
         <ImageView

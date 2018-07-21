@@ -24,8 +24,10 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.daniel.homehelp.DateTimeUtils;
+import com.example.daniel.homehelp.GridSpacingItemDecoration;
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.RecyclerViewOnClick;
+import com.example.daniel.homehelp.SpaceItemDecoration;
 import com.example.daniel.homehelp.Utils;
 import com.example.daniel.homehelp.adapter.HomeServiceAdapter;
 
@@ -126,6 +128,8 @@ public class ReminderActivity extends AppCompatActivity implements RecyclerViewO
         serviceHomeRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
         homeServiceAdapter = new HomeServiceAdapter(this, recyclerViewOnClick, "reminder");
+        SpaceItemDecoration spaceItemDecoration = new SpaceItemDecoration(5);
+        serviceHomeRecyclerView.addItemDecoration(spaceItemDecoration);
         serviceHomeRecyclerView.setAdapter(homeServiceAdapter);
     }
 
