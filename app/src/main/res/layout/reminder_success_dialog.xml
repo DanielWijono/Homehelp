@@ -13,7 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/padding_margin_16dp"
+            android:layout_marginTop="@dimen/padding_margin_24dp"
             android:layout_marginBottom="@dimen/padding_margin_16dp"
             android:id="@+id/img_reminder_success_dialog"/>
 
@@ -21,9 +21,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ahaha"
-            android:textColor="@color/color_black_65"
+            android:textSize="18dp"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/proxima_nova_semibold"
             android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/padding_margin_16dp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/padding_margin_24dp"
+            android:layout_marginBottom="@dimen/padding_margin_24dp"
             android:id="@+id/tv_reminder_success_dialog"/>
 
         <TextView
@@ -31,10 +35,12 @@
             android:layout_height="wrap_content"
             android:text="Lihat Agenda"
             android:textColor="@color/color_black_65"
+            android:textSize="15dp"
+            android:fontFamily="@font/proxima_nova_semibold"
             android:layout_gravity="center"
             android:paddingLeft="@dimen/padding_margin_16dp"
             android:paddingRight="@dimen/padding_margin_16dp"
-            android:layout_marginBottom="@dimen/padding_margin_16dp"
+            android:layout_marginBottom="@dimen/padding_margin_24dp"
             android:background="@drawable/next_button"
             android:id="@+id/tv_see_agenda_reminder"/>
 

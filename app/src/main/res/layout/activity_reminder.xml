@@ -147,6 +147,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/color_transparent"
                         android:hint="Keterangan"
+                        android:textSize="16dp"
+                        app:fontFamily="@font/proxima_nova_medium"
                         android:layout_marginLeft="@dimen/padding_margin_16dp"/>
 
                 </LinearLayout>
@@ -268,7 +270,7 @@
                     android:layout_weight="0.5"
                     android:orientation="horizontal"
                     android:layout_gravity="center"
-                    android:background="@drawable/signup_border"
+                    android:background="@drawable/signup_border_background_white"
                     android:id="@+id/ll_date_picker">
 
                     <TextView
@@ -320,7 +322,7 @@
                     android:layout_weight="0.5"
                     android:orientation="horizontal"
                     android:layout_gravity="center"
-                    android:background="@drawable/signup_border"
+                    android:background="@drawable/signup_border_background_white"
                     android:id="@+id/ll_time_picker">
 
                     <TextView
@@ -350,17 +352,19 @@
                 android:layout_below="@+id/ll_reminder_time">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:text="Simpan"
                 android:textColor="@color/color_black_65"
                 android:textSize="15dp"
                 android:fontFamily="@font/proxima_nova_semibold"
                 android:background="@drawable/next_button"
-                android:padding="@dimen/padding_margin_16dp"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
                 android:layout_marginRight="@dimen/padding_margin_16dp"
                 android:layout_marginBottom="@dimen/padding_margin_16dp"
                 android:layout_gravity="right"
+                android:gravity="center"
                 android:id="@+id/tv_save_reminder"/>
             </LinearLayout>
 
