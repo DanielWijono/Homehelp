@@ -24,7 +24,6 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.daniel.homehelp.DateTimeUtils;
-import com.example.daniel.homehelp.GridSpacingItemDecoration;
 import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.RecyclerViewOnClick;
 import com.example.daniel.homehelp.SpaceItemDecoration;
