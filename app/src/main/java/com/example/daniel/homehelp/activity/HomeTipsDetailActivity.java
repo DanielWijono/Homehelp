@@ -16,6 +16,7 @@ import com.example.daniel.homehelp.adapter.HomeTipsAdapterDetail;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class HomeTipsDetailActivity extends AppCompatActivity {
 
@@ -41,6 +42,8 @@ public class HomeTipsDetailActivity extends AppCompatActivity {
     RecyclerView tipsHomeRecyclerView;
     @BindView(R.id.tips_title)
     TextView tipsTitle;
+    @BindView(R.id.tv_back_to_top)
+    TextView tvBackToTop;
 
     HomeTipsAdapterDetail homeTipsAdapterDetail;
 
@@ -67,5 +70,10 @@ public class HomeTipsDetailActivity extends AppCompatActivity {
 
         homeTipsAdapterDetail = new HomeTipsAdapterDetail(this);
         tipsHomeRecyclerView.setAdapter(homeTipsAdapterDetail);
+    }
+
+    @OnClick(R.id.tv_back_to_top)
+    public void onViewClicked() {
+        scrollView.smoothScrollTo(0,0);
     }
 }

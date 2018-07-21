@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/padding_margin_24dp"
-            android:layout_marginBottom="@dimen/padding_margin_16dp"
+            android:layout_marginBottom="@dimen/padding_margin_8dp"
             android:id="@+id/img_reminder_success_dialog"/>
 
         <TextView

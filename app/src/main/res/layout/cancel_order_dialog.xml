@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/ic_cancel_agenda"
+            android:layout_marginTop="@dimen/padding_margin_16dp"
             android:id="@+id/img_agenda_dialog"/>
 
         <TextView
