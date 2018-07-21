@@ -14,8 +14,10 @@
         android:id="@+id/toolbar">
 
         <TextView
-            android:textSize="20dp"
+            android:textSize="24dp"
             android:textColor="@color/color_white"
+            android:layout_gravity="center"
+            android:fontFamily="@font/proxima_nova_medium"
             android:id="@+id/tv_title_toolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -40,127 +42,168 @@
                 android:id="@+id/img_atap"/>
 
             <LinearLayout
+                android:id="@+id/ll_home_tips_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginTop="120dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="118dp"
                 android:background="@drawable/signup_border_background_white"
-                android:id="@+id/ll_home_tips_detail">
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tips_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_margin_8dp"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:paddingLeft="@dimen/padding_margin_8dp"
+                    android:paddingTop="@dimen/padding_margin_6dp"
                     android:text="Bagian Rumah yang Rentan Rayap"
                     android:textColor="@color/color_black_65"
-                    android:textSize="20dp"/>
+                    android:textSize="24dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="IDEAonline - Oleh Maulina Kadiranti"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Mei 12, 2018 12:33PM"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_margin_4dp"
+                    android:fontFamily="@font/proxima_nova_medium"
+                    android:paddingLeft="@dimen/padding_margin_8dp"
+                    android:text="IDEAonline - Oleh Maulina Kadiranti"
                     android:textColor="@color/color_black_65"
-                    android:text="lala"
-                    android:layout_marginTop="@dimen/padding_margin_16dp"
-                    android:id="@+id/tv_tips_one"/>
+                    android:textSize="13dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:text="Mei 12, 2018 12:33PM"
                     android:textColor="@color/color_black_65"
-                    android:text="lala"
-                    android:layout_marginTop="@dimen/padding_margin_16dp"
-                    android:id="@+id/tv_tips_two"/>
+                    android:textSize="13dp"
+                    android:paddingLeft="@dimen/padding_margin_8dp"/>
 
                 <TextView
+                    android:id="@+id/tv_tips_one"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:text="lala"
                     android:textColor="@color/color_black_65"
-                    android:text="lala"
+                    android:paddingLeft="@dimen/padding_margin_8dp"/>
+
+                <TextView
+                    android:id="@+id/tv_tips_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/padding_margin_16dp"
-                    android:id="@+id/tv_tips_three"/>
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:text="lala"
+                    android:textColor="@color/color_black_65"
+                    android:paddingLeft="@dimen/padding_margin_8dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:fontFamily="@font/proxima_nova_medium"
+                    android:text="Tips!"
+                    android:paddingLeft="@dimen/padding_margin_8dp"/>
+
+                <TextView
+                    android:id="@+id/tv_tips_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:text="lala"
+                    android:textColor="@color/color_black_65"
+                    android:paddingLeft="@dimen/padding_margin_8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:fontFamily="@font/proxima_nova_regular"
                     android:text="Kategori"
-                    android:layout_marginTop="@dimen/padding_margin_16dp"/>
+                    android:textSize="14dp"
+                    android:paddingLeft="@dimen/padding_margin_8dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="@dimen/padding_margin_16dp">
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/padding_margin_16dp"
+                        android:background="@drawable/signup_border_background_white"
+                        android:fontFamily="@font/proxima_nova_regular"
                         android:text="Kayu"
-                        android:textColor="@color/color_black_65"
-                        android:layout_marginRight="@dimen/padding_margin_16dp"
-                        android:background="@drawable/signup_border_background_white"/>
+                        android:textColor="@color/color_black_65" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/padding_margin_16dp"
+                        android:background="@drawable/signup_border_background_white"
+                        android:fontFamily="@font/proxima_nova_regular"
                         android:text="TipsHomehelp"
-                        android:textColor="@color/color_black_65"
-                        android:layout_marginRight="@dimen/padding_margin_16dp"
-                        android:background="@drawable/signup_border_background_white"/>
+                        android:textColor="@color/color_black_65" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/signup_border_background_white"
+                        android:fontFamily="@font/proxima_nova_regular"
                         android:text="Rumah"
-                        android:textColor="@color/color_black_65"
-                        android:background="@drawable/signup_border_background_white"/>
+                        android:textColor="@color/color_black_65" />
                 </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_margin_24dp"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:gravity="center"
                     android:text="Bagikan"
-                    android:textColor="@color/color_black_65"
-                    android:layout_marginTop="@dimen/padding_margin_16dp"
-                    android:gravity="center"/>
+                    android:textColor="@color/color_black_65" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="@dimen/padding_margin_16dp"
                     android:layout_marginBottom="@dimen/padding_margin_16dp"
-                    android:gravity="center">
+                    android:layout_marginTop="@dimen/padding_margin_16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/padding_margin_8dp"
-                        android:src="@drawable/ic_facebook"/>
+                        android:src="@drawable/ic_facebook" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/padding_margin_8dp"
-                        android:src="@drawable/ic_instagram"/>
+                        android:src="@drawable/ic_instagram" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/padding_margin_8dp"
-                        android:src="@drawable/ic_twitter"/>
+                        android:src="@drawable/ic_twitter" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/padding_margin_8dp"
-                        android:src="@drawable/ic_whatsapp"/>
+                        android:src="@drawable/ic_whatsapp" />
 
                 </LinearLayout>
 
@@ -171,9 +214,10 @@
                 android:layout_height="wrap_content"
                 android:text="Cek juga artikel lainnya"
                 android:textColor="@color/colorAccent"
-                android:textStyle="bold"
                 android:textSize="20dp"
+                android:fontFamily="@font/proxima_nova_semibold"
                 android:layout_marginLeft="@dimen/padding_margin_16dp"
+                android:layout_marginTop="@dimen/padding_margin_16dp"
                 android:id="@+id/tv_check_article"
                 android:layout_below="@+id/ll_home_tips_detail"/>
 
@@ -181,14 +225,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
-                android:layout_margin="@dimen/padding_margin_16dp"
+                android:layout_marginLeft="@dimen/padding_margin_8dp"
+                android:layout_marginRight="@dimen/padding_margin_8dp"
+                android:layout_marginTop="@dimen/padding_margin_6dp"
+                android:layout_marginBottom="@dimen/padding_margin_8dp"
                 android:background="@color/color_transparent"
                 android:layout_below="@+id/tv_check_article"
                 android:id="@+id/tips_home_recycler_view"
                 android:scrollbars="none"></android.support.v7.widget.RecyclerView>
 
         </RelativeLayout>
-
 
     </ScrollView>
 

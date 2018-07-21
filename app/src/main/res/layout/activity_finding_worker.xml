@@ -13,11 +13,17 @@
         android:orientation="vertical"
         android:layout_gravity="center">
 
-        <ImageView
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/ic_find_worker"-->
+            <!--android:layout_gravity="center"/>-->
+
+        <pl.droidsonroids.gif.GifImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_find_worker"
-            android:layout_gravity="center"/>
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:id="@+id/gif_image_view"/>
 
         <TextView
             android:layout_width="match_parent"

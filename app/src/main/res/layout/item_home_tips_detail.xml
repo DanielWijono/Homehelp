@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -21,15 +22,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hama"
+            android:textSize="13dp"
+            android:textColor="#95989A"
+            app:fontFamily="@font/proxima_nova_medium"
             android:gravity="center"
             android:layout_marginLeft="@dimen/padding_margin_8dp"
             android:layout_marginRight="@dimen/padding_margin_8dp"
+            android:layout_marginBottom="@dimen/padding_margin_4dp"
+            android:layout_marginTop="@dimen/padding_margin_8dp"
             android:id="@+id/tips_title"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hama desc"
+            android:textSize="14dp"
+            android:textColor="@color/color_black_65"
+            app:fontFamily="@font/proxima_nova_medium"
+            android:lineSpacingExtra="3dp"
             android:gravity="center"
             android:layout_marginLeft="@dimen/padding_margin_8dp"
             android:layout_marginRight="@dimen/padding_margin_8dp"

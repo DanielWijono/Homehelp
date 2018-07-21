@@ -5,16 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.daniel.homehelp.R;
-import com.example.daniel.homehelp.RecyclerViewOnClickTipsHome;
 import com.example.daniel.homehelp.Utils;
-import com.example.daniel.homehelp.adapter.HomeTipsAdapter;
 import com.example.daniel.homehelp.adapter.HomeTipsAdapterDetail;
 
 import butterknife.BindView;
@@ -42,6 +39,8 @@ public class HomeTipsDetailActivity extends AppCompatActivity {
     TextView tvCheckArticle;
     @BindView(R.id.tips_home_recycler_view)
     RecyclerView tipsHomeRecyclerView;
+    @BindView(R.id.tips_title)
+    TextView tipsTitle;
 
     HomeTipsAdapterDetail homeTipsAdapterDetail;
 
@@ -56,6 +55,7 @@ public class HomeTipsDetailActivity extends AppCompatActivity {
     }
 
     private void setTextArticle() {
+        tipsTitle.setText(getResources().getString(R.string.tips_title));
         tvTipsOne.setText(getResources().getString(R.string.tips_one));
         tvTipsTwo.setText(getResources().getString(R.string.tips_two));
         tvTipsThree.setText(getResources().getString(R.string.tips_three));
