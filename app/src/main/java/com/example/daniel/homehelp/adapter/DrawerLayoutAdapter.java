@@ -109,8 +109,8 @@ public class DrawerLayoutAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     class ViewHolderHeader extends RecyclerView.ViewHolder {
-        @BindView(R.id.circle_image_view)
-        CircleImageView cvProfileImg;
+        @BindView(R.id.image_view)
+        ImageView imgProfile;
         @BindView(R.id.profile_name)
         TextView profileName;
         @BindView(R.id.profile_point)

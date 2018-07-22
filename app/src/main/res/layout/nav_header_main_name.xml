@@ -10,14 +10,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_circular_profile"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/padding_margin_24dp"
-        android:layout_marginBottom="@dimen/padding_margin_6dp"
-        android:id="@+id/circle_image_view"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_circular_profile"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/padding_margin_24dp"
+            android:padding="@dimen/padding_margin_16dp"
+            android:id="@+id/image_view"/>
 
     </FrameLayout>
 
