@@ -39,7 +39,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/ic_status_agenda_top_layout"
+                android:src="@drawable/ic_image_step_four"
                 android:id="@+id/img_status_order_agenda_detail"/>
 
             <View

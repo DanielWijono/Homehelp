@@ -19,7 +19,15 @@
             android:layout_gravity="center"
             android:src="@drawable/ic_cancel_agenda_success"
             android:layout_marginTop="30dp"
+            android:visibility="gone"
             android:id="@+id/img_agenda_dialog"/>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/padding_margin_30dp"
+            android:id="@+id/gif_image_view"/>
 
         <TextView
             android:layout_width="match_parent"

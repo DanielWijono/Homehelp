@@ -30,11 +30,14 @@ import com.example.daniel.homehelp.SpaceItemDecoration;
 import com.example.daniel.homehelp.Utils;
 import com.example.daniel.homehelp.adapter.HomeServiceAdapter;
 
+import java.io.IOException;
 import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
 
 public class ReminderActivity extends AppCompatActivity implements RecyclerViewOnClick {
 
@@ -190,9 +193,22 @@ public class ReminderActivity extends AppCompatActivity implements RecyclerViewO
         TextView tvReminder = dialoglayout.findViewById(R.id.tv_reminder_success_dialog);
         TextView tvSeeAgenda = dialoglayout.findViewById(R.id.tv_see_agenda_reminder);
         ImageView imageReminder = dialoglayout.findViewById(R.id.img_reminder_success_dialog);
+        GifImageView gifImageView = dialoglayout.findViewById(R.id.gif_image_view);
 
         imageReminder.setImageResource(R.drawable.ic_reminder_success);
         tvReminder.setText("Reminder \nBerhasil Dibuat!");
+
+        GifDrawable gifFromResource = null;
+
+        try {
+            gifFromResource = new GifDrawable(getResources(), R.raw.ic_reminder_success_gif);
+            gifFromResource.setSpeed(0.5f);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            gifImageView.setBackground(gifFromResource);
+        }
 
         tvSeeAgenda.setOnClickListener(new View.OnClickListener() {
             @Override

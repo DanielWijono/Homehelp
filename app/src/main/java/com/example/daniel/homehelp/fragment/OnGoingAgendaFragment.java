@@ -2,6 +2,7 @@ package com.example.daniel.homehelp.fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,9 +22,13 @@ import com.example.daniel.homehelp.R;
 import com.example.daniel.homehelp.activity.DashBoardActivity;
 import com.example.daniel.homehelp.activity.StatusOrderAgendaActivity;
 
+import java.io.IOException;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
 
 import static android.view.Gravity.BOTTOM;
 
@@ -135,11 +140,25 @@ public class OnGoingAgendaFragment extends Fragment {
         TextView tvCancelTitle = dialoglayout.findViewById(R.id.tv_title_agenda_dialog);
         TextView tvCancelDesc = dialoglayout.findViewById(R.id.tv_cancel_desc);
         ImageView imageView = dialoglayout.findViewById(R.id.img_agenda_dialog);
+        GifImageView gifImageView = dialoglayout.findViewById(R.id.gif_image_view);
+        GifDrawable gifFromResource = null;
+
+        try {
+            gifFromResource = new GifDrawable(getResources(), R.raw.ic_cancel_agenda_success_gif);
+            gifFromResource.setSpeed(0.5f);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            gifImageView.setBackground(gifFromResource);
+        }
 
         tvCancelTitle.setText("Berhasil dibatalkan");
         tvCancel.setText("Ok");
         tvCancelDesc.setVisibility(View.GONE);
         imageView.setImageResource(R.drawable.ic_cancel_agenda_success);
+        imageView.setVisibility(View.GONE);
+
 
         tvKembali.setVisibility(View.GONE);
 

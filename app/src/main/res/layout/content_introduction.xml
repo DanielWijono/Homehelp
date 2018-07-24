@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/introduction_one"
     android:id="@+id/parent_linear_layout">
 
     <LinearLayout
@@ -45,6 +44,12 @@ dkdkdk"
             app:fontFamily="@font/proxima_nova_regular"
             android:id="@+id/tv_description"
             android:gravity="center"/>
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:id="@+id/gif_image_view"/>
 
     </LinearLayout>
 
