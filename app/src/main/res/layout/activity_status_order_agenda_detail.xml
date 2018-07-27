@@ -78,7 +78,8 @@
                         android:textColor="@color/colorAccent"
                         android:fontFamily="@font/proxima_nova_regular"
                         android:gravity="right"
-                        android:layout_weight="0.5"/>
+                        android:layout_weight="0.5"
+                        android:id="@+id/tv_see_worker"/>
 
                 </LinearLayout>
 
@@ -503,16 +504,6 @@
 
                     </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Gunakan kode promo"
-                        android:textColor="@color/colorAccent"
-                        app:fontFamily="@font/proxima_nova_medium"
-                        android:layout_marginLeft="@dimen/padding_margin_8dp"
-                        android:layout_marginTop="@dimen/padding_margin_8dp"
-                        android:layout_marginBottom="@dimen/padding_margin_8dp"/>
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -552,7 +543,8 @@
                 android:background="@drawable/signup_button"
                 android:layout_margin="16dp"
                 android:layout_below="@+id/order_payment_method"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentRight="true"
+                android:id="@+id/tv_scroll_to_top"/>
 
         </RelativeLayout>
 

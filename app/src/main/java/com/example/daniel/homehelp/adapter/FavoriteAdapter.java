@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.RecyclerViewOnClick;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,9 +19,11 @@ import butterknife.ButterKnife;
 public class FavoriteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Context context;
+    RecyclerViewOnClick recyclerViewOnClick;
 
-    public FavoriteAdapter(Context context) {
+    public FavoriteAdapter(Context context, RecyclerViewOnClick recyclerViewOnClick) {
         this.context = context;
+        this.recyclerViewOnClick = recyclerViewOnClick;
     }
 
     @NonNull
@@ -64,10 +67,17 @@ public class FavoriteAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ButterKnife.bind(this, itemView);
         }
 
-        public void setView(int position) {
+        public void setView(final int position) {
             imgFavorite.setBackgroundResource(introBgImageFavorite[position]);
             imgService.setBackgroundResource(bgImageService[position]);
             tvServiceName.setText(serviceName[position]);
+
+            llItemBangunan.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    recyclerViewOnClick.itemOnClick(view, position);
+                }
+            });
         }
     }
 }

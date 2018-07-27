@@ -61,7 +61,7 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
 
     Fragment fragment;
     DrawerLayoutAdapter drawerLayoutAdapter;
-    String bundleReminder;
+    String bundleReminder, fromStatusOrder;
     RecyclerViewOnClick recyclerViewOnClick = this;
 
     @Override
@@ -73,8 +73,24 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
         initDrawerLayout();
         BottomNavigationViewHelper.disableShiftMode(bottomNavigation);
         bottomNavigation.setOnNavigationItemSelectedListener(DashBoardActivity.this);
+        initFragment();
         getBundle();
-        if (bundleReminder != null) {
+    }
+
+    private void getBundle() {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            bundleReminder = extras.getString("REMINDER");
+            fromStatusOrder = extras.getString("FROM_STATUS_ORDER");
+        }
+        if (fromStatusOrder != null) {
+            if (fragment.getClass() != InboxFragment.class) {
+                fragment = InboxFragment.newInstance();
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+                toolbar.setVisibility(View.GONE);
+            }
+            bottomNavigation.setSelectedItemId(R.id.action_inbox);
+        } else if (bundleReminder != null) {
             Bundle bundle = new Bundle();
             bundle.putString("REMINDER",bundleReminder);
             fragment = AgendaFragment.newInstance();
@@ -82,15 +98,6 @@ public class DashBoardActivity extends AppCompatActivity implements ViewPager.On
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
             toolbar.setVisibility(View.GONE);
             bottomNavigation.setSelectedItemId(R.id.action_agenda);
-        } else {
-            initFragment();
-        }
-    }
-
-    private void getBundle() {
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            bundleReminder = extras.getString("REMINDER");
         }
     }
 

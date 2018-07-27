@@ -58,13 +58,21 @@ public class TrackingWorkerActivity extends AppCompatActivity {
     }
 
     private void validateUIWorker() {
-        if (workerClicked.equalsIgnoreCase("one")) {
-            imageWorker.setImageResource(R.drawable.ic_worker_face_one);
-            tvWorkerName.setText(workerName);
-        } else if (workerClicked.equalsIgnoreCase("two")) {
-            imageWorker.setImageResource(R.drawable.ic_worker_face_two);
-            tvWorkerName.setText(workerName);
+        if (workerClicked != null) {
+            if (workerClicked.equalsIgnoreCase("one")) {
+                imageWorker.setImageResource(R.drawable.ic_worker_face_one);
+                tvWorkerName.setText(workerName);
+            } else if (workerClicked.equalsIgnoreCase("two")) {
+                imageWorker.setImageResource(R.drawable.ic_worker_face_two);
+                tvWorkerName.setText(workerName);
+            }
+        } else {
+            imgTrackMap.setEnabled(false);
+            imgExpandLayout.setEnabled(false);
+            llChat.setEnabled(false);
+            llCallPhone.setEnabled(false);
         }
+
         tvDateTime.setText(date + " Jam " + time);
     }
 

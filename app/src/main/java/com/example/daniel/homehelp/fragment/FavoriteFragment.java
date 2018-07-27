@@ -1,6 +1,7 @@
 package com.example.daniel.homehelp.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,8 +11,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.daniel.homehelp.R;
+import com.example.daniel.homehelp.RecyclerViewOnClick;
+import com.example.daniel.homehelp.activity.AtapActivity;
 import com.example.daniel.homehelp.activity.DashBoardActivity;
 import com.example.daniel.homehelp.adapter.FavoriteAdapter;
 
@@ -22,13 +24,14 @@ import butterknife.ButterKnife;
  * Created by Daniel on 5/13/2018.
  */
 
-public class FavoriteFragment extends Fragment {
+public class FavoriteFragment extends Fragment implements RecyclerViewOnClick {
 
     @BindView(R.id.favorite_recycler_view)
     RecyclerView favoriteRecyclerView;
     private View rootView;
     private DashBoardActivity mActivity;
     private FavoriteAdapter favoriteAdapter;
+    RecyclerViewOnClick recyclerViewOnClick = this;
 
     @Override
     public void onAttach(Context context) {
@@ -69,12 +72,18 @@ public class FavoriteFragment extends Fragment {
 
     private void initRecyclerView() {
         favoriteRecyclerView.setLayoutManager(new GridLayoutManager(mActivity, 2));
-        favoriteAdapter = new FavoriteAdapter(mActivity);
+        favoriteAdapter = new FavoriteAdapter(mActivity, recyclerViewOnClick);
         favoriteRecyclerView.setAdapter(favoriteAdapter);
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+    }
+
+
+    @Override
+    public void itemOnClick(View view, int position) {
+        startActivity(new Intent(mActivity, AtapActivity.class));
     }
 }

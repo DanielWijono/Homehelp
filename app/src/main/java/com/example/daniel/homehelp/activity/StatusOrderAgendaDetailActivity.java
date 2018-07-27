@@ -1,8 +1,10 @@
 package com.example.daniel.homehelp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -13,6 +15,7 @@ import com.example.daniel.homehelp.Utils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StatusOrderAgendaDetailActivity extends AppCompatActivity {
@@ -51,6 +54,14 @@ public class StatusOrderAgendaDetailActivity extends AppCompatActivity {
     TextView tvWorkerSum;
     @BindView(R.id.scroll_view)
     ScrollView scrollView;
+    @BindView(R.id.order_confirmation_damage)
+    LinearLayout orderConfirmationDamage;
+    @BindView(R.id.order_payment_method)
+    LinearLayout orderPaymentMethod;
+    @BindView(R.id.tv_scroll_to_top)
+    TextView tvScrollToTop;
+    @BindView(R.id.tv_see_worker)
+    TextView tvSeeWorker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,5 +69,20 @@ public class StatusOrderAgendaDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_status_order_agenda_detail);
         ButterKnife.bind(this);
         Utils.setupAppToolbarForActivity(this, toolbar, "Rincian");
+    }
+
+    @OnClick({R.id.tv_see_worker, R.id.tv_scroll_to_top})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tv_see_worker:
+                Intent intent = new Intent(this, TrackingWorkerActivity.class);
+                intent.putExtra("DATE", tvDateBegin.getText().toString());
+                intent.putExtra("TIME",tvTimeBegin.getText().toString());
+                startActivity(intent);
+                break;
+            case R.id.tv_scroll_to_top:
+                scrollView.smoothScrollTo(0, 0);
+                break;
+        }
     }
 }

@@ -46,9 +46,12 @@ public class StatusOrderAgendaActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_chat:
+                Intent intents = new Intent(this, DashBoardActivity.class);
+                intents.putExtra("FROM_STATUS_ORDER","INBOX_PAGE");
+                startActivity(intents);
                 break;
             case R.id.tv_order_detail:
-                Intent intent = new Intent(StatusOrderAgendaActivity.this, StatusOrderAgendaDetailActivity.class);
+                Intent intent = new Intent(this, StatusOrderAgendaDetailActivity.class);
                 startActivity(intent);
                 break;
         }
