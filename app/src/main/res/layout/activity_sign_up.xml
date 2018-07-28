@@ -47,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Nama Lengkap"
                 android:textSize="14dp"
+                android:textColor="@color/color_black_65"
                 app:fontFamily="@font/proxima_nova_medium"
                 android:inputType="textCapSentences"
                 android:singleLine="true"

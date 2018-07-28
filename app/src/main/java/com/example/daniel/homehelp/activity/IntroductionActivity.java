@@ -126,7 +126,6 @@ public class IntroductionActivity extends AppCompatActivity implements ViewPager
                 finish();
                 break;
             case R.id.tv_sign_in:
-                Toast.makeText(this, "SIGN IN", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

@@ -122,7 +122,6 @@ public class AtapActivityStep3 extends AppCompatActivity {
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);
-            Toast.makeText(this, "asking permission", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -239,8 +238,8 @@ public class AtapActivityStep3 extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 0) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED
-                    && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "permission granted", Toast.LENGTH_SHORT).show();
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
             }
         }
     }
@@ -273,13 +272,25 @@ public class AtapActivityStep3 extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.image_capture_one:
-                cameraIntent();
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);
+                } else {
+                    cameraIntent();
+                }
                 break;
             case R.id.image_capture_two:
-                cameraIntentTwo();
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);
+                } else {
+                    cameraIntentTwo();
+                }
                 break;
             case R.id.image_capture_three:
-                cameraIntentThree();
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0);
+                } else {
+                    cameraIntentThree();
+                }
                 break;
         }
     }

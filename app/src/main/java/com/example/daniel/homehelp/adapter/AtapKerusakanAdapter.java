@@ -58,7 +58,10 @@ public class AtapKerusakanAdapter extends RecyclerView.Adapter<RecyclerView.View
 
         String[] kerusakanDescription = {"Sebagai penahan beban dari bahan penutup atap, umumnya berupa\n" +
                 "susunan kayu atau baja ringan", "Penyangga utama struktur, berupa batang untuk memberi bentuk atap",
-                "Bagian dari struktur atap yang menggunakan baja", "testing", "testing", "testing", "testing", "testing","testing"};
+                "Bagian dari struktur atap yang menggunakan baja", "Pertemuan dua bidang atap pada sudut bangunan kedalam",
+                "Bagian yang tajam pada atap, berjalan dari garis tiris ", "Sebagai pengunci susunan kaso dan menutupi bagian atas bangunan ",
+                "Merupakan sisi atap yang teratas, selalu dalam keadaan datar", "Tandai ini, jika semua bagian atap perlu diperbaiki",
+                "Silahkan tulis permasalahan pada Uraian Masalah"};
 
         public AtapKerusakanListViewHolder(View itemView) {
             super(itemView);

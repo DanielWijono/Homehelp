@@ -31,12 +31,6 @@ public class NotificationDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notification_detail);
         ButterKnife.bind(this);
         Utils.setupAppToolbarForActivity(this, toolbar, "Hot Day Promo");
-        btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(NotificationDetailActivity.this, "DELETE", Toast.LENGTH_SHORT).show();
-            }
-        });
         tvNotificationTitle.setText("Yuk, cobain perbaikan\nAC GRATIS!");
     }
 }

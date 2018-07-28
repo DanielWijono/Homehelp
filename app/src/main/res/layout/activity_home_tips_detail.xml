@@ -184,25 +184,25 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/padding_margin_8dp"
+                        android:layout_marginRight="15dp"
                         android:src="@drawable/ic_facebook" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/padding_margin_8dp"
+                        android:layout_marginRight="15dp"
                         android:src="@drawable/ic_instagram" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/padding_margin_8dp"
+                        android:layout_marginRight="15dp"
                         android:src="@drawable/ic_twitter" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/padding_margin_8dp"
+                        android:layout_marginRight="15dp"
                         android:src="@drawable/ic_whatsapp" />
 
                 </LinearLayout>

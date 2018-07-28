@@ -135,10 +135,6 @@ public class HomeFragment extends Fragment implements RecyclerViewOnClick, Recyc
     public void itemOnClick(View view, int position) {
         if (position == 0) {
             startActivity(new Intent(mActivity, BangunanActivity.class));
-        } else if (position == 1) {
-            Toast.makeText(mActivity, "position 1", Toast.LENGTH_SHORT).show();
-        } else if (position == 2) {
-            Toast.makeText(mActivity, "position 2", Toast.LENGTH_SHORT).show();
         }
     }
 

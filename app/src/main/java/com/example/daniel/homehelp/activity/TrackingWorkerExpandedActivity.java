@@ -1,5 +1,6 @@
 package com.example.daniel.homehelp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class TrackingWorkerExpandedActivity extends AppCompatActivity {
@@ -90,5 +92,12 @@ public class TrackingWorkerExpandedActivity extends AppCompatActivity {
         } else {
             tvBottomButton.setText("Batalkan");
         }
+    }
+
+    @OnClick(R.id.ll_chat)
+    public void onViewClicked() {
+        Intent intents = new Intent(this, DashBoardActivity.class);
+        intents.putExtra("FROM_STATUS_ORDER","INBOX_PAGE");
+        startActivity(intents);
     }
 }

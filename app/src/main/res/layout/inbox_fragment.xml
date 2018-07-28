@@ -61,7 +61,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Baik, ditunggu ya pak"
+                    android:text="Halo Bu. Perkenalkan saya ....."
                     android:fontFamily="@font/proxima_nova_regular"/>
 
             </LinearLayout>

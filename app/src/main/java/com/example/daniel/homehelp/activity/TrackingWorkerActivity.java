@@ -98,7 +98,9 @@ public class TrackingWorkerActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_chat:
-                Toast.makeText(this, "chat clicked", Toast.LENGTH_SHORT).show();
+                Intent intentChat = new Intent(this, DashBoardActivity.class);
+                intentChat.putExtra("FROM_STATUS_ORDER","INBOX_PAGE");
+                startActivity(intentChat);
                 break;
             case R.id.ll_call_phone:
                 Toast.makeText(this, "phone clicked", Toast.LENGTH_SHORT).show();

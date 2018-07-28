@@ -57,8 +57,8 @@
                 android:textColor="@color/color_black_65"
                 app:fontFamily="@font/proxima_nova_regular"
                 android:lineSpacingExtra="3dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginLeft="40dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginLeft="44dp"
                 android:layout_marginBottom="@dimen/padding_margin_3dp"
                 android:visibility="gone"
                 android:id="@+id/tv_desc_kerusakan"/>
