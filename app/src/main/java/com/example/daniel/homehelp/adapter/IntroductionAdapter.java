@@ -85,9 +85,7 @@ public class IntroductionAdapter extends RecyclingPagerAdapter {
             e.printStackTrace();
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            gifImageViews.setImageDrawable(gifFromResource);
-        }
+        gifImageViews.setImageDrawable(gifFromResource);
     }
 
     @Override

@@ -46,9 +46,10 @@ dkdkdk"
             android:gravity="center"/>
 
         <pl.droidsonroids.gif.GifImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="350dp"
+            android:layout_height="320dp"
             android:layout_gravity="center"
+            android:layout_marginTop="@dimen/padding_margin_20dp"
             android:id="@+id/gif_image_view"/>
 
     </LinearLayout>
