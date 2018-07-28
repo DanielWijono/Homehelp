@@ -67,12 +67,10 @@ public class IntroductionAdapter extends RecyclingPagerAdapter {
                 initGifView(gifImageView, R.raw.ic_introduction_two_gif);
                 break;
             case 2:
-                parentLinearLayout.setBackgroundResource(introBgImage[position]);
-                gifImageView.setVisibility(View.GONE);
+                initGifView(gifImageView, R.raw.ic_introduction_three_gif);
                 break;
             case 3:
-                parentLinearLayout.setBackgroundResource(introBgImage[position]);
-                gifImageView.setVisibility(View.GONE);
+                initGifView(gifImageView, R.raw.ic_introduction_four_gif);
                 break;
         }
 
@@ -88,7 +86,7 @@ public class IntroductionAdapter extends RecyclingPagerAdapter {
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            gifImageViews.setBackground(gifFromResource);
+            gifImageViews.setImageDrawable(gifFromResource);
         }
     }
 
